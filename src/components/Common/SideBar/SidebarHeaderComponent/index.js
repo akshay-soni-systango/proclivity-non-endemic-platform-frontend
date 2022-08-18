@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../../../../assets/Logo.svg'; 
-import icon from '../../../../assets/Icon.svg'; 
+import proclivityLogo from '../../../../assets/Icons/Logo.svg'; 
+import icon from '../../../../assets/Icons/Icon.svg'; 
 
 const SidebarHeader = () => {
     return (
         <div className="logo-header">
-            <Link to='/'><img src={logo} alt={logo} /></Link>
+            <Link to='/'><img src={proclivityLogo} alt={proclivityLogo} /></Link>
             <Link to='/'><img src={icon} alt={icon} /></Link>
         </div>
     )
