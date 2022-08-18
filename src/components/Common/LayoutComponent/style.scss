@@ -1,0 +1,18 @@
+@import '../../../global.scss';
+
+
+.wrapper {
+    position: relative;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    min-height: calc(100vh - 3.98rem);
+    background-color: $bg-light;
+
+    .main-container {
+        position: relative;
+        transition: all .3s ease;
+        min-height: 100vh;
+        margin-left: 240px;
+    }
+}

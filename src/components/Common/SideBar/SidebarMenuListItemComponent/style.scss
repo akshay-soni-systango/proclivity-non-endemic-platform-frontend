@@ -1,0 +1,28 @@
+@import '../../../../global.scss';
+
+.list-wrapper {
+    margin: 8px 16px;
+    list-style-type: none;
+    a {
+        color: $fonts-primary-600;
+        text-decoration: none;
+        font-family: 'Heebo', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background: transparent;
+        padding: 12px 14px;
+        border-radius: 8px;
+        &:hover {
+            color: $white;
+            background: $primary-600;
+        }
+        span {
+            margin-left: 15px
+        }
+    }
+}
