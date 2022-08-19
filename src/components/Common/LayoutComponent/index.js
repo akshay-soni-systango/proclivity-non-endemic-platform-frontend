@@ -6,12 +6,13 @@ import './style.scss'
 
 const Layout = ({ children }) => {
 
+
     return (
-        <div  className="wrapper">            
-                 <SidebarComponent/>
-            <div className="main-container">             
-                <main>{children}</main>
-                {/* <div className='card-wrapper'>
+        <div  className='wrapper'>            
+                 <SidebarComponent />
+            <div className='main-container'>             
+                {/* <main>{children}</main> */}
+                <div className='card-wrapper'>
                     <div className='card-top'>
                         <img src='' alt='' />
                         <p>Pfizer Pulmonary</p>
@@ -32,7 +33,7 @@ const Layout = ({ children }) => {
                             <p>12%</p>
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
 
         </div>

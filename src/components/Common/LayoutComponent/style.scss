@@ -8,13 +8,17 @@
     overflow: hidden;
     min-height: calc(100vh - 3.98rem);
     background-color: $bg-light;
-
     .main-container {
         position: relative;
         transition: all .3s ease;
         min-height: 100vh;
         margin-left: 80px;
         padding: 50px;
+        transition: all 0.5s ease 0s;
+    }
+
+    .app-sidebar:hover +   .main-container {
+        padding-left: 208px;
     }
 }
 .card-wrapper {
