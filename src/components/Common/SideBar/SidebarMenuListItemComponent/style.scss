@@ -1,7 +1,7 @@
 @import '../../../../global.scss';
 
 .list-wrapper {
-    margin: 8px 16px;
+    // margin: 8px 16px;
     list-style-type: none;
     a {
         color: $fonts-primary-600;
@@ -22,7 +22,8 @@
             background: $primary-600;
         }
         span {
-            margin-left: 15px
+            margin-left: 15px;
+            display: none;
         }
     }
 }
