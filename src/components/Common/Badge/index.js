@@ -1,11 +1,16 @@
 import React from 'react'
+import {Badge as BootstrapBadge} from 'react-bootstrap';
 
 import './style.scss'
 
-const Badge = ({children}) => {
+const Badge = ({children, bg}) => {
   return (
-    <span class="badge rounded-pill bg-success">{children}</span>
+    <BootstrapBadge pill bg={bg}>{children}</BootstrapBadge>
   )
+}
+
+Badge.defaultProps = {
+  bg: 'success',
 }
 
 export default Badge

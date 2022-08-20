@@ -1,26 +1,31 @@
-import React from 'react'
+import React from 'react';
+
+import Badge from '../Common/Badge';
+import './style.scss';
 
 const UserCard = () => {
     return (
         <div className='card-wrapper'>
             <div className='card-top'>
-                <img src='' alt='' />
-                <p>Pfizer Pulmonary</p>
+                <img className='avatar' src='' alt='' />
+                <p className='title'>Pfizer Pulmonary</p>
                 <img src='' alt='' />
             </div>
-            <h3>Proclivity Pulmonary HCP - USA, Northeast General</h3>
-            <p>20288 <span> • </span> April 30, 2022</p>
-            <p className='active'>Active</p>
+            <h3 className='product-name'>Proclivity Pulmonary HCP - USA, Northeast General</h3>
+            <div className='date-wrapper'>
+                <p className='sub-title'>20288 <span> • </span> April 30, 2022</p>
+                <Badge>Active</Badge>
+            </div>
             <div className='card-colum-wrapper'>
                 <div className='card-colum'>
                     <p>Unique HCPs</p>
-                    <h5>32,148</h5>
-                    <p>12%</p>
+                    <h5 className='colum-title'>32,148</h5>
+                    <p className='green-status'>12%</p>
                 </div>
                 <div className='card-colum'>
                     <p>Unique HCPs</p>
-                    <h5>32,148</h5>
-                    <p>12%</p>
+                    <h5 className='colum-title'>32,148</h5>
+                    <p className='green-status'>12%</p>
                 </div>
             </div>
         </div>
