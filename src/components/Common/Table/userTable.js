@@ -1,15 +1,12 @@
 import React, { useMemo } from 'react';
 import { useTable, useSortBy } from 'react-table';
-import campaignData from '../../util/campaignData/CAMPAIGN_DATA.json';
-import { COLUMNS } from './columns';
-import './table.css';
-import arrowUp from '../../assets/Icons/arrow-up.svg';
-import arrowDown from '../../assets/Icons/arrow-down.svg';
-import logo from '../../assets/Icons/Avatar.svg'
+import './table.scss';
+import arrowUp from '../../../assets/Icons/arrow-up.svg';
+import arrowDown from '../../../assets/Icons/arrow-down.svg';
 
-const CampaignTable = () => {
-    const columns = useMemo(() => COLUMNS, []);
-    const data = useMemo(() => campaignData, []);
+const Table = ({tableColumn, tableData}) => {
+    const columns = useMemo(() => tableColumn, [tableColumn]);
+    const data = useMemo(() => tableData, [tableData]);
     const tableInstance = useTable({
         columns,
         data
@@ -49,12 +46,8 @@ const CampaignTable = () => {
                 {
                     rows.map(row => {
                         prepareRow(row)
-                        return (<>
-                            <span>
-                                <img src={logo} alt='loading...' />
-                            </span>
+                        return (<>                         
                             <tr {...row.getRowProps()}>
-
                                 {
                                     row.cells.map(cell => {
                                         return <td {...cell.getCellProps()}>
@@ -72,4 +65,4 @@ const CampaignTable = () => {
     )
 }
 
-export default CampaignTable
+export default Table
