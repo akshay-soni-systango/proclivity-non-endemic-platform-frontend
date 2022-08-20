@@ -5,6 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import CampaignTable from "../components/Campaign Table/campaignTable";
+import UserCard from "../components/Cards";
 import Layout from "../components/Common/LayoutComponent";
 import AudiencePage from "../pages/AudiencePage";
 import HomePage from "../pages/HomePage";
@@ -20,6 +21,7 @@ const Routes = () => {
             <Route path="/home" element={<HomePage />} />
             <Route path="/audiences" element={<AudiencePage />} />
             <Route path="/campaigns" element={<CampaignTable />} />
+            <Route path="/analytics" element={<UserCard />} />
           </Switch>
         </Layout>
       </BrowserRouter>
