@@ -18,63 +18,65 @@ const Table = ({ tableColumn, tableData }) => {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     tableInstance;
   return (
-    <table {...getTableProps()}>
-      <thead>
-        {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                {column.render("Header")}
-                <span>
-                  {column.isSorted ? (
-                    column.isSortedDesc ? (
-                      <img
-                        className="toggle_sort"
-                        src={arrowUp}
-                        alt={arrowUp}
-                      />
-                    ) : (
-                      <img
-                        className="toggle_sort"
-                        src={arrowDown}
-                        alt={arrowDown}
-                      />
-                    )
-                  ) : null}
-                </span>
-              </th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map((row) => {
-          prepareRow(row);
-          return (
-            <>
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell, index) => {
-                  return (
-                    <td {...cell.getCellProps()}>
-                        {index === 0 ?
-                         <div className='d-flex align-items-center'>
-                            <span className='img-wrapper'>
-                            <img src={avatar} alt={avatar} />
-                        </span>
-                        <div className='campaign-name' >
-                           <p className='title'>{cell.render("Cell")}</p> 
-                            <p className='sub-title'>hello</p>
-                        </div>
-                        </div> : cell.render("Cell")}
-                    </td>
-                  );
-                })}
-              </tr>
-            </>
-          );
-        })}
-      </tbody>
-    </table>
+    <div className='table-wrapper'>
+      <table {...getTableProps()}>
+        <thead>
+          {headerGroups.map((headerGroup) => (
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column) => (
+                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  {column.render("Header")}
+                  <span>
+                    {column.isSorted ? (
+                      column.isSortedDesc ? (
+                        <img
+                          className="toggle_sort"
+                          src={arrowUp}
+                          alt={arrowUp}
+                        />
+                      ) : (
+                        <img
+                          className="toggle_sort"
+                          src={arrowDown}
+                          alt={arrowDown}
+                        />
+                      )
+                    ) : null}
+                  </span>
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody {...getTableBodyProps()}>
+          {rows.map((row) => {
+            prepareRow(row);
+            return (
+              <>
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell, index) => {
+                    return (
+                      <td {...cell.getCellProps()}>
+                          {index === 0 ?
+                          <div className='d-flex align-items-center'>
+                              <span className='img-wrapper'>
+                              <img src={avatar} alt={avatar} />
+                          </span>
+                          <div className='campaign-name' >
+                            <p className='title'>{cell.render("Cell")}</p> 
+                              <p className='sub-title'>hello</p>
+                          </div>
+                          </div> : cell.render("Cell")}
+                      </td>
+                    );
+                  })}
+                </tr>
+              </>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
