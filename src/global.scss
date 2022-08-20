@@ -6,8 +6,19 @@ $primary: #404968;
 $primary-600: #4A5578;
 $white: #ffffff;
 $bg-light: #F9F9FB;
+$bg-light-green: #ECFDF3;
+
 
 // fonts color
 $fonts-black: #111322;
 $fonts-light: #667085;
 $fonts-primary-600: #DCDFEA;
+$fonts-primary-500: #556187;
+$fonts-grey-700: #344054;
+$fonts-grey-900: #101828;
+$fonts-green: #027A48;
+
+body {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+}
