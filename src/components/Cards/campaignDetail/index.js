@@ -1,13 +1,13 @@
 import React from 'react';
-
-import Badge from '../Common/Badge';
+import Badge from '../../Common/Badge';
+import Avatar from '../../../assets/Icons/Avatar.svg'
 import './style.scss';
 
-const UserCard = () => {
+const CampaignDetailCard = () => {
     return (
         <div className='card-wrapper'>
             <div className='card-top'>
-                <img className='avatar' src='' alt='' />
+                <img className='avatar' src={Avatar} alt='Loading...' />
                 <p className='title'>Pfizer Pulmonary</p>
                 <img src='' alt='' />
             </div>
@@ -32,4 +32,4 @@ const UserCard = () => {
     )
 }
 
-export default UserCard
+export default CampaignDetailCard
