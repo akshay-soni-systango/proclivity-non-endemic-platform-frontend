@@ -1,5 +1,5 @@
-import Badge from '../Common/Badge'
 import {ProgressBar} from 'react-bootstrap';
+import {Badge} from 'react-bootstrap';
 export const COLUMNS = [
     {
         Header: 'Name',
@@ -8,12 +8,12 @@ export const COLUMNS = [
     {
         Header: 'Status',
         accessor: 'Status',
-        Cell: ({value}) => <Badge>{value}</Badge>
+        Cell: ({value}) => <Badge bg="success">{value}</Badge>
     },
     {
         Header: 'Pacing',
         accessor: 'Pacing',
-        Cell: ({value}) => <Badge>{value}</Badge>
+        Cell: ({value}) => <Badge bg="success">{value}</Badge>
     },
     {
         Header: 'Total Budget',

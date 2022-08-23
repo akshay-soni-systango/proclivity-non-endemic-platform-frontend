@@ -1,5 +1,5 @@
 import React from 'react';
-import Badge from '../../Common/Badge';
+import { Badge } from 'react-bootstrap';
 import Avatar from '../../../assets/Icons/Avatar.svg'
 import './style.scss';
 
@@ -14,7 +14,7 @@ const CampaignDetailCard = () => {
             <h3 className='product-name'>Proclivity Pulmonary HCP - USA, Northeast General</h3>
             <div className='date-wrapper'>
                 <p className='sub-title'>20288 <span> • </span> April 30, 2022</p>
-                <Badge>Active</Badge>
+                <Badge bg="success">Active</Badge>
             </div>
             <div className='card-colum-wrapper'>
                 <div className='card-colum'>
