@@ -1,14 +1,18 @@
-import React from 'react'
+import React from "react";
 
-const UserButton = ({ src, text }) => {
-    return (
-        <div className='user__button'>
-            <button className='user__button__main'>
-                <img className='user__button__logo' src={src} />
-                <span className='user__button__text'>{text}</span>
-            </button>
-        </div>
-    )
-}
+import { Button as BootstrapButton } from 'react-bootstrap';
+import './style.scss'
 
-export default UserButton
+const Button = ({ src, text, variant }) => {
+  return (
+    <BootstrapButton variant={variant}>
+      <img src={src} alt="" className="btn-icon" />
+        {text}
+    </BootstrapButton>
+  );
+};
+
+Button.defaultProps = {
+    variant: 'primary',
+  }
+export default Button;

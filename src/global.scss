@@ -1,33 +1,55 @@
-// Font family 'heebo 
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;800&display=swap');
-@import url('~bootstrap/scss/bootstrap.scss');
+// Font family 'heebo
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;800&display=swap");
+@import url("~bootstrap/scss/bootstrap.scss");
 
 // color variables
 $primary: #404968;
-$primary-600: #4A5578;
+$primary-600: #4a5578;
 $white: #ffffff;
-$bg-light: #F9F9FB;
-$bg-light-green: #ECFDF3;
-$bg-grey-100: #F2F4F7;
+$bg-light: #f9f9fb;
+$bg-light-green: #ecfdf3;
+$bg-grey-100: #f2f4f7;
 
 // fonts color
 $fonts-black: #111322;
 $fonts-light: #667085;
-$fonts-primary-600: #DCDFEA;
+$fonts-primary-600: #dcdfea;
 $fonts-primary-500: #556187;
 $fonts-grey-700: #344054;
 $fonts-grey-900: #101828;
-$fonts-green: #027A48;
+$fonts-green: #027a48;
 
-body {
-    font-family: 'Heebo', sans-serif;
+html {
+  scroll-behavior: smooth;
+  body {
+    height: 100%;
+    margin: 0;
+    font-family: "Heebo", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-display: swap;
     font-weight: 500;
+    font-style: normal;
+    background: var(--body-color);
+  }
 }
 
-// override css
+*,
+*::after,
+*::before {
+  &:focus {
+    outline: none !important;
+  }
+}
+*:focus {
+  outline: none !important;
+}
+
+// override css 
+// Progress Bar
 .progress {
-    height: 8px;
-    &-bar {
-        background: $primary-600;
-    }
+  height: 8px;
+  &-bar {
+    background: $primary-600;
+  }
 }
