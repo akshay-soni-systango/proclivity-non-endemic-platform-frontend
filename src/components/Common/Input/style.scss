@@ -1,0 +1,21 @@
+@import '../../../global.scss'; 
+
+
+.input-container {
+    position: relative;
+    input {
+        background: $white;
+        border-radius: 8px;
+        border: 1px solid $fonts-primary-600;
+        &.has-img {
+            padding: 10px 14px 10px 33px;
+        }
+    }
+    img {
+        position: absolute;
+        top: 14px;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+    }
+}

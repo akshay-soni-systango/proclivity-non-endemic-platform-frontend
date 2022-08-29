@@ -1,0 +1,19 @@
+@import "../../../global.scss";
+
+.nav-tabs {
+    margin: 25px 0 59px 0;
+  .nav-link {
+    font-size: 14px;
+    line-height: 20px;
+    color: $fonts-light;
+    border: none;
+    &.active,
+    &:hover,
+    &:focus {
+      color: $primary;
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid $primary;
+    }
+  }
+}
