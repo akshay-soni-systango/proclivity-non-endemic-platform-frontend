@@ -9,7 +9,8 @@ import calendar from "../../assets/Icons/calendar.svg";
 import grid from "../../assets/Icons/grid.svg";
 import list from "../../assets/Icons/list.svg";
 import CampaignTable from "../CampaignTable";
-import { Badge, Tab, Tabs } from "react-bootstrap";
+import Tab from "../Common/Tab";
+import { Badge } from "react-bootstrap";
 import Input from "../Common/Input";
 import Dropdown from "../Common/Dropdown";
 import CampaignListView from "../Cards/campaignListview";
@@ -19,6 +20,61 @@ import "react-datepicker/dist/react-datepicker.css";
 const CampaignHomeComponent = () => {
   const [startDate, setStartDate] = useState(new Date());
 
+  const tabs = [
+    {
+      title: 'Campaigns',
+      key: 'Campaigns',
+      content: <>
+      <div className="row">
+            <div className="col-md-8">
+              <h3>Active Live Campaign Metrics</h3>
+            </div>
+            <div className="col-md-4 d-flex align-items-center justify-content-end">
+              <Dropdown className="me-2" />
+
+              <div className="date-picker-wrapper">
+                <DatePicker
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                />
+                <img src={calendar} alt="calendar" className="calendar-img" />
+              </div>
+            </div>
+            <div className="col-md-4">
+              <CampaignListView
+                text="Budget"
+                amount="600,000.00"
+                percentage="100%"
+              />
+            </div>
+            <div className="col-md-4">
+              <CampaignListView
+                text="Budget"
+                amount="600,000.00"
+                percentage="100%"
+              />
+            </div>
+            <div className="col-md-4">
+              <CampaignListView
+                text="Budget"
+                amount="600,000.00"
+                percentage="100%"
+              />
+            </div>
+          </div>
+        </>
+    },
+    {
+      title: 'Ad Groups',
+      key: 'AdGroups',
+      content: 'Ad Groups'
+    },
+    {
+      title: 'Ads',
+      key: 'Ads',
+      content: 'Ads'
+    },
+  ]
   return (
     <>
       <div className="campaign-header">
@@ -36,7 +92,7 @@ const CampaignHomeComponent = () => {
           <Button className="ms-1" src={addIcon} text="Create a Campaign" />
         </div>
       </div>
-      <Tabs>
+      {/* <Tabs>
         <Tab eventKey="Campaigns" title="Campaigns">
           <div className="row">
             <div className="col-md-8">
@@ -82,7 +138,8 @@ const CampaignHomeComponent = () => {
         <Tab eventKey="Ads" title="Ads">
           <div>Ads</div>
         </Tab>
-      </Tabs>
+      </Tabs> */}
+      <Tab tabs={tabs} />
       <div className="table-header">
         <div className="table-title-wrapper d-flex align-items-center">
           <p className="table-title mb-0 me-2">All campaigns</p>
