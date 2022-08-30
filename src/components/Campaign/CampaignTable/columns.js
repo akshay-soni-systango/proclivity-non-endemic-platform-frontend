@@ -22,7 +22,7 @@ export const COLUMNS = [
     {
         Header: 'Percent',
         accessor: 'Percent',
-        Cell: ({value}) => <Badge bg="secondary" >{value}</Badge>
+        Cell: ({ value }) => <Badge bg="secondary" >{value}</Badge>
     },
     {
         Header: 'Total Spend',
@@ -33,9 +33,9 @@ export const COLUMNS = [
         accessor: 'Projected Spend',
         Cell: () =>
             <ProgressBar
-            min='0'
-            now="30"
-            max="100"
+                min='0'
+                now="30"
+                max="100"
             />
     },
     {
@@ -47,9 +47,9 @@ export const COLUMNS = [
         accessor: 'Burn Rate',
         Cell: () =>
             <ProgressBar
-            min='0'
-            now="30"
-            max="100"
+                min='0'
+                now="30"
+                max="100"
             />
     }
 ]

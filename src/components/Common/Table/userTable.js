@@ -57,15 +57,15 @@ const Table = ({ tableColumn, tableData }) => {
                   {row.cells.map((cell, index) => {
                     return (
                       <td {...cell.getCellProps()}>
-                          {index === 0 ?
+                        {index === 0 ?
                           <div className='d-flex align-items-center'>
-                              <span className='img-wrapper'>
+                            <span className='img-wrapper'>
                               <img src={avatar} alt={avatar} />
-                          </span>
-                          <div className='campaign-name' >
-                            <p className='title'>{cell.render("Cell")}</p> 
+                            </span>
+                            <div className='campaign-name' >
+                              <p className='title'>{cell.render("Cell")}</p>
                               <p className='sub-title'>hello</p>
-                          </div>
+                            </div>
                           </div> : cell.render("Cell")}
                       </td>
                     );

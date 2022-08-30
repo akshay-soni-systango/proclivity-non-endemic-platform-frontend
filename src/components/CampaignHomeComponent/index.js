@@ -8,7 +8,7 @@ import searchIcon from "../../assets/Icons/search.svg";
 import calendar from "../../assets/Icons/calendar.svg";
 import grid from "../../assets/Icons/grid.svg";
 import list from "../../assets/Icons/list.svg";
-import CampaignTable from "../CampaignTable";
+import CampaignTable from "../Campaign/CampaignTable";
 import Tab from "../Common/Tab";
 import { Badge } from "react-bootstrap";
 import Input from "../Common/Input";
