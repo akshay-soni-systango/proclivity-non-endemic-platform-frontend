@@ -4,11 +4,6 @@ import Avatar from "../../../assets/Icons/Avatar.svg";
 import "./style.scss";
 import { ReactComponent as Menu } from "../../../assets/Icons/menu.svg";
 import { ReactComponent as ArrowUp } from "../../../assets/Icons/up-arrow.svg";
-import Tab from "../../Common/Tab";
-import CampaignListView from "../campaignListView";
-import Button from "../../Common/Button";
-import Dropdown from "../../Common/Dropdown";
-import Input from "../../Common/Input";
 
 const CampaignDetailCard = () => {
   return (
@@ -51,11 +46,7 @@ const CampaignDetailCard = () => {
         </div>
       </Card.Body>
     </Card>
-    <CampaignListView amount="600,000.00" text="Budget" percentage="12%" />
-    <Button text="Create a Campaign" />
-    <Input placeholder="Search" icon={Avatar} />
-    <Dropdown variant="secondary" text="Advertiser name " />
-    <Tab />
+   
     </>
   );
 };

@@ -1,7 +1,6 @@
 import React from "react";
-
 import { Tabs } from "react-bootstrap";
-import CampaignListView from "../../Cards/campaignListView";
+import CampaignListView from "../../Cards/campaignListview";
 import "./style.scss";
 
 const Tab = () => {

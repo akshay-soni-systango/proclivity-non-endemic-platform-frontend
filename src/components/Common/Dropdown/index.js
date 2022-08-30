@@ -1,6 +1,5 @@
 import React from "react";
-import Select from 'react-select'
-
+import Select from 'react-select';
 // import { DropdownButton } from "react-bootstrap";
 import './style.scss';
 
@@ -11,9 +10,6 @@ const Dropdown = ({ ...props }) => {
         { value: 'vanilla', label: 'Vanilla' }
       ]
       const customStyles = {
-        // container: () => ({
-        //   padding: '5px 16px',
-        // }),
         control: () => ({
             border: 'none',
             display: 'flex',

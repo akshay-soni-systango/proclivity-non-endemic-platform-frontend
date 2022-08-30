@@ -12,7 +12,7 @@ import CampaignTable from "../CampaignTable";
 import { Badge, Tab, Tabs } from "react-bootstrap";
 import Input from "../Common/Input";
 import Dropdown from "../Common/Dropdown";
-import CampaignListView from "../Cards/campaignListView";
+import CampaignListView from "../Cards/campaignListview";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
