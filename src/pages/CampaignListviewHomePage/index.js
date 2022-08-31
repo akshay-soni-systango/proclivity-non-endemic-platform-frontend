@@ -1,10 +1,10 @@
 import React from "react";
-import CampaignHomeComponent from "../../components/CampaignHomeComponent";
+import HomePage from "../../components/Campaign/CampaignListView/HomePage";
 
-const CampaignHomePage = () =>  <CampaignHomeComponent />  
+const Listview = () =>  <HomePage />  
 
 
-export default CampaignHomePage;
+export default Listview;
 // import HomePageComponent from "../../components/HomePageComponent";
 // const HomePage=()=> <HomePageComponent />;
 // export default HomePage;

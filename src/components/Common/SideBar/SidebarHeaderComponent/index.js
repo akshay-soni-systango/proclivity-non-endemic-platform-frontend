@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import proclivityLogo from '../../../../assets/Icons/Logo.svg'; 
-import logoMark from '../../../../assets/Logomark.svg'; 
+import logoMark from '../../../../assets/Icons/Logomark.svg'; 
 import icon from '../../../../assets/Icons/Icon.svg'; 
 
 const SidebarHeader = () => {

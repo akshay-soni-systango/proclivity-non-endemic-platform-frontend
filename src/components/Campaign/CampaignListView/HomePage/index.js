@@ -1,23 +1,23 @@
 import { React, useState } from "react";
 import "./style.scss";
-import { ReactComponent as FeaturedIcon } from "../../assets/Icons/Featured-icon.svg";
-import Button from "../Common/Button";
-import downloadIcon from "../../assets/Icons/download-cloud.svg";
-import addIcon from "../../assets/Icons/plus.svg";
-import searchIcon from "../../assets/Icons/search.svg";
-import calendar from "../../assets/Icons/calendar.svg";
-import grid from "../../assets/Icons/grid.svg";
-import list from "../../assets/Icons/list.svg";
-import CampaignTable from "../Campaign/CampaignTable";
-import Tab from "../Common/Tab";
+import { ReactComponent as FeaturedIcon } from "../../../../assets/Icons/Featured-icon.svg";
+import Button from "../../../Common/Button";
+import downloadIcon from "../../../../assets/Icons/download-cloud.svg";
+import addIcon from "../../../../assets/Icons/plus.svg";
+import searchIcon from "../../../../assets/Icons/search.svg";
+import calendar from "../../../../assets/Icons/calendar.svg";
+import grid from "../../../../assets/Icons/grid.svg";
+import list from "../../../../assets/Icons/list.svg";
+import CampaignTable from "../../CampaignTable";
+import Tab from "../../../Common/Tab";
 import { Badge } from "react-bootstrap";
-import Input from "../Common/Input";
-import Dropdown from "../Common/Dropdown";
-import CampaignListView from "../Cards/campaignListview";
+import Input from "../../../Common/Input";
+import Dropdown from "../../../Common/Dropdown";
+import CampaignListView from "../../../Cards/campaignListview";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-const CampaignHomeComponent = () => {
+const HomePage = () => {
   const [startDate, setStartDate] = useState(new Date());
 
   const tabs = [
@@ -25,44 +25,44 @@ const CampaignHomeComponent = () => {
       title: 'Campaigns',
       key: 'Campaigns',
       content: <>
-      <div className="row">
-            <div className="col-md-8">
-              <h3>Active Live Campaign Metrics</h3>
-            </div>
-            <div className="col-md-4 d-flex align-items-center justify-content-end">
-              <Dropdown className="me-2" />
+        <div className="row">
+          <div className="col-md-8">
+            <h3>Active Live Campaign Metrics</h3>
+          </div>
+          <div className="col-md-4 d-flex align-items-center justify-content-end">
+            <Dropdown className="me-2" />
 
-              <div className="date-picker-wrapper">
-                <DatePicker
-                  selected={startDate}
-                  onChange={(date) => setStartDate(date)}
-                />
-                <img src={calendar} alt="calendar" className="calendar-img" />
-              </div>
-            </div>
-            <div className="col-md-4">
-              <CampaignListView
-                text="Budget"
-                amount="600,000.00"
-                percentage="100%"
+            <div className="date-picker-wrapper">
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
               />
-            </div>
-            <div className="col-md-4">
-              <CampaignListView
-                text="Budget"
-                amount="600,000.00"
-                percentage="100%"
-              />
-            </div>
-            <div className="col-md-4">
-              <CampaignListView
-                text="Budget"
-                amount="600,000.00"
-                percentage="100%"
-              />
+              <img src={calendar} alt="calendar" className="calendar-img" />
             </div>
           </div>
-        </>
+          <div className="col-md-4">
+            <CampaignListView
+              text="Budget"
+              amount="600,000.00"
+              percentage="100%"
+            />
+          </div>
+          <div className="col-md-4">
+            <CampaignListView
+              text="Total Spend"
+              amount="600,000.00"
+              percentage="100%"
+            />
+          </div>
+          <div className="col-md-4">
+            <CampaignListView
+              text="Projected Spend"
+              amount="600,000.00"
+              percentage="100%"
+            />
+          </div>
+        </div>
+      </>
     },
     {
       title: 'Ad Groups',
@@ -152,7 +152,7 @@ const CampaignHomeComponent = () => {
           <div className="switch-wrapper ms-auto d-flex align-items-center">
             <div className="switch-btn-wrapper me-2">
               <Button variant="secondary" className="me-2" src={grid} />
-              <Button  variant="secondary" src={list} />
+              <Button variant="secondary" src={list} />
             </div>
             <Button variant="secondary" text="Customize" />
           </div>
@@ -162,4 +162,4 @@ const CampaignHomeComponent = () => {
     </>
   );
 };
-export default CampaignHomeComponent;
+export default HomePage;
