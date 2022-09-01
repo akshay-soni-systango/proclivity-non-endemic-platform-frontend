@@ -1,0 +1,15 @@
+@import '../../../../global.scss';
+
+.form-wrapper{
+    display: flex;
+
+    .form-seach-bar{
+        position: relative;
+    }
+    .form-main{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }
+}
