@@ -1,6 +1,5 @@
 import React from "react";
 import Select from 'react-select';
-// import { DropdownButton } from "react-bootstrap";
 import './style.scss';
 
 const Dropdown = ({ ...props }) => {

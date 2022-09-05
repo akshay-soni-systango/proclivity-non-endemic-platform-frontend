@@ -11,6 +11,7 @@ import CampaignDetailCard from "../components/Cards/campaignDetail";
 import Listview from "../pages/CampaignListviewHomePage";
 import CampaignTable from "../components/Campaign/CampaignTable";
 import CampaignDetailPage from "../components/Campaign/CampaignDetail";
+import CampaignConfiguration from "../components/Campaign/CampaignConfiguration";
 
 // const HomePage = React.lazy(() => import(  /* webpackChunkName: "home-page" */ '../pages/HomePage'));
 
@@ -26,6 +27,7 @@ const Routes = () => {
             <Route path="/campaignlistview" element={<Listview />} />
             <Route path="/campaigndetail" element={<CampaignDetailPage/>} />
             <Route path="/campaigns" element={<CampaignTable/>} />
+            <Route path="/campaignsConfig" element={<CampaignConfiguration />} />
           </Switch>
         </Layout>
       </BrowserRouter>
