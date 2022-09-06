@@ -1,0 +1,17 @@
+@import "../../../global.scss";
+
+
+a:active {
+    background: #F9F9FB;
+    border-radius: 8px;
+
+}
+
+.pages-links {
+    text-decoration: none;
+    padding: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}

@@ -5,7 +5,7 @@ import "./style.scss";
 const Tab = ({tabs}) => {
   return (
     <Tabs>
-      {tabs.map(({key, title, content}) => <Tab eventKey={key || title} title={title} >{content}</Tab>)}
+      {tabs.map(({key, title, content}) => <Tab key={key || title} eventKey={key || title} title={title} >{content}</Tab>)}
     </Tabs>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useTable, useSortBy } from "react-table";
+import { useTable, useSortBy, usePagination } from "react-table";
 import "./table.scss";
 import arrowUp from "../../../assets/Icons/arrow-up.svg";
 import arrowDown from "../../../assets/Icons/arrow-down.svg";
@@ -13,9 +13,15 @@ const Table = ({ tableColumn, tableData }) => {
       columns,
       data,
     },
-    useSortBy
+    useSortBy,
+    usePagination
   );
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+  const { getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    page,
+    prepareRow,
+  } =
     tableInstance;
   return (
     <div className='table-wrapper'>
@@ -49,11 +55,11 @@ const Table = ({ tableColumn, tableData }) => {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row) => {
+          {page.map((row, ind) => {
             prepareRow(row);
             return (
               <>
-                <tr {...row.getRowProps()}>
+                <tr key={ind} {...row.getRowProps()}>
                   {row.cells.map((cell, index) => {
                     return (
                       <td {...cell.getCellProps()}>
