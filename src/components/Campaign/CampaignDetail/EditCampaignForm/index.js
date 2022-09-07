@@ -178,90 +178,108 @@ const CampaignForm = () => {
             </Form>
           </Formik>
         </Col>
-        <Col className="col-md-3 form-campaign-data">
-          <div className="campaign-details">
-            <h4 className="campaign-details-campaign-name">Campaign Name</h4>
-            <p className="campaign-details-tracking-code">
-              Tracking Code 567890
-            </p>
-            <div className="campaign-details-status">
-              <p className="status-heading"> Status</p>
-              <p className="btn btn-primary">Active</p>
-            </div>
-          </div>
-          <hr />
-          <div className="campaign-detail-names">
-            <div className="marketer-name">
-              <div className="heading-wrapper">
-                <h3 className="heading">Marketer</h3>
-                <img src={questionMark} alt="Loading" />
+        <Col>
+          <Card className="campaign-details p-20">
+            <div className="campaign-details-heading">
+              <h4 className="campaign-name">Campaign Name</h4>
+              <p className="tracking-code">Tracking Code 567890</p>
+              <div className="campaign-details-status">
+                <p className="status-heading"> Status</p>
+                <p className="btn btn-primary">Active</p>
               </div>
-              <text className="name">Marketer Name</text>
             </div>
-            <div className="advertiser-name">
-              <div className="heading-wrapper">
-                <h3 className="heading"> Advertiser</h3>
-                <img src={questionMark} alt="Loading" />
+            <hr />
+            <div className="campaign-detail-wrapper">
+              <div className="items-wrapper">
+                <div className="heading-wrapper">
+                  <h3 className="heading">Marketer</h3>
+                  <img src={questionMark} alt="Loading" />
+                </div>
+                <p className="name">Marketer Name</p>
               </div>
-              <text className="name">Advertiser Name</text>
-            </div>
-            <div className="category-name">
-              <div className="heading-wrapper">
-                <h3 className="heading">Category</h3>
-                <img src={questionMark} alt="Loading" />
+              <div className="items-wrapper">
+                <div className="heading-wrapper">
+                  <h3 className="heading">Advertiser</h3>
+                  <img src={questionMark} alt="Loading" />
+                </div>
+                <p className="name">Advertiser Name</p>
               </div>
-              <text className="name">Category Name</text>
-            </div>
-            <div className="type-name">
-              <div className="heading-wrapper">
-                <h3 className="heading">Campaign Type</h3>
-                <img src={questionMark} alt="Loading" />
+              <div className="items-wrapper">
+                <div className="heading-wrapper">
+                  <h3 className="heading">Category</h3>
+                  <img src={questionMark} alt="Loading" />
+                </div>
+                <p className="name">Category Name</p>
               </div>
-              <text className="name">Name Type</text>
-            </div>
-          </div>
-          <hr />
-          <div className="campaign-budget">
-            <div className="campaign-budget-amount">
-              <div className="heading-wrapper">
-                <h3 className="heading">Budget</h3>
-                <img src={questionMark} alt="Loading" />
+              <div className="items-wrapper">
+                <div className="heading-wrapper">
+                  <h3 className="heading">Campaign Type</h3>
+                  <img src={questionMark} alt="Loading" />
+                </div>
+                <p className="name">Name Type</p>
               </div>
-              <text className="amount">$5,000,000.00</text>
             </div>
-            <div className="campaign-budget-remaining">
-              <div className="heading-wrapper">
-                <h3 className="heading">Remaining</h3>
-                <img src={questionMark} alt="Loading" />
+            <hr />
+            <div className="campaign-detail-wrapper">
+              <div className="items-wrapper">
+                <div className="heading-wrapper">
+                  <h3 className="heading">Budget</h3>
+                  <img src={questionMark} alt="Loading" />
+                </div>
+                <p className="name">$5,000,000.00</p>
               </div>
-              <text className="budget-remaining-amount">$2,500,000.00</text>
-            </div>
-          </div>
-          <hr />
-          <div className="campaign-spend">
-            <div className="campaign-spend-amount">
-              <div className="heading-wrapper">
-                <h3 className="heading">Spend</h3>
-                <img src={questionMark} alt="Loading" />
+              <div className="items-wrapper sub-heading">
+                <div className="heading-wrapper">
+                  <h3 className="heading">Remaining</h3>
+                </div>
+                <p className="name">$2,500,000.00</p>
               </div>
-              <text className="amount">$2,500,000.00 (50%)</text>
             </div>
-            <div className="campaign-spend-projectedspend">
-              <div className="heading-wrapper">
-                <h3 className="heading">Projected Spend</h3>
-                <img src={questionMark} alt="Loading" />
+            <hr />
+            <div className="campaign-detail-wrapper">
+              <div className="items-wrapper">
+                <div className="heading-wrapper">
+                  <h3 className="heading">Spend</h3>
+                  <img src={questionMark} alt="Loading" />
+                </div>
+                <p className="name">$2,500,000.00 (50%)</p>
               </div>
-              <text className="projected-spend-amount">$4,999,900.25</text>
-            </div>
-            <div className="campaign-spend-projectedspend">
-              <div className="heading-wrapper">
-                <h3 className="heading">Deviation</h3>
-                <img src={questionMark} alt="Loading" />
+              <div className="items-wrapper sub-heading">
+                <div className="heading-wrapper">
+                  <h3 className="heading">Projected Spend</h3>
+                </div>
+                <p className="name">$4,999,900.25</p>
               </div>
-              <text className="projected-spend-amount">$100.00</text>
+              <div className="items-wrapper sub-heading">
+                <div className="heading-wrapper">
+                  <h3 className="heading">Deviation</h3>
+                </div>
+                <p className="name">$100.00</p>
+              </div>
             </div>
-          </div>
-          <hr />
+            <hr />
+            <div className="campaign-detail-wrapper">
+              <div className="items-wrapper">
+                <div className="heading-wrapper">
+                  <h3 className="heading">Days Left</h3>
+                  <img src={questionMark} alt="Loading" />
+                </div>
+                <p className="name">$2,500,000.00 (50%)</p>
+              </div>
+              <div className="items-wrapper sub-heading">
+                <div className="heading-wrapper">
+                  <h3 className="heading">Start Date</h3>
+                </div>
+                <p className="name">Jan 1, 2022</p>
+              </div>
+              <div className="items-wrapper sub-heading">
+                <div className="heading-wrapper">
+                  <h3 className="heading">End Date</h3>
+                </div>
+                <p className="name">Oct 27, 2022</p>
+              </div>
+            </div>
+          </Card>
         </Col>
       </Row>
     </>
