@@ -193,3 +193,36 @@
 
      }
  }
+
+
+// Edit form scss ==============
+
+.form-head {
+    border-bottom: 1px solid $primary-300;
+    margin-bottom: 48px;
+    h3{
+        font-size: 20px;
+        line-height: 30px;
+        color: $fonts-grey-900;
+        margin-bottom: 8px;
+    }
+    p{
+        font-size: 14px;
+        line-height: 20px;
+        color: $fonts-light;
+        margin-bottom: 24px;
+        font-weight: 400;
+    }
+
+}
+.form-wrapper {
+    padding: 0 24px;
+    .link-wrapper {
+        padding: 46px 0 33px;
+    }
+    .light-heading {
+        font-size: 16px;
+        line-height: 24px;
+        color: $fonts-light;
+    }
+}
