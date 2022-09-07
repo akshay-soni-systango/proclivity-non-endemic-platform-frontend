@@ -12,7 +12,7 @@ import Dropdown from "../../../Common/Dropdown";
 import { Link } from "react-router-dom";
 import Switch from "../../../Common/Switch";
 
-const CampaignForm = () => {
+const CampaignForm = (state) => {
   return (
     <>
       <Row className="form-wrapper">
@@ -35,7 +35,7 @@ const CampaignForm = () => {
                         This blog post has been published. Team members will be
                         able to edit this post and republish changes.
                       </p>
-                      <Switch id="adGroup" />
+                      <Switch id="adGroup"/>
                     </div>
                   </div>
                   <div className="form-wrapper">
@@ -65,7 +65,7 @@ const CampaignForm = () => {
                     <Input id="groupName" type="text" />
 
                     <label htmlFor="marketer">Device Type</label>
-                    <Dropdown className="farmikSelect" />
+                    <Dropdown preValue="static:" className="farmikSelect" />
 
                     <label htmlFor="marketer">Marketer</label>
                     <Dropdown className="farmikSelect" />
