@@ -12,16 +12,22 @@
         height: 20px;
         object-fit: contain;
     }
+    &-icon-right {
+        margin-left: 10px;
+    }
 }
 .btn-primary {
     color: $white;
     background-color: $primary-600;
     border-color: $primary-600; 
-    &:hover {
+    &:hover,
+    &:focus {
         color: $white;
         background-color: $primary-600;
         border-color: $white;
         opacity: 1; 
+        outline: none;
+        box-shadow: none;
     }
 }
 .btn-secondary {

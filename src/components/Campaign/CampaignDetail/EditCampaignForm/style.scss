@@ -242,11 +242,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .status-heading {
-            font-size: 14px;
-            line-height: 20px;
-            color: $fonts-grey-700;
-        }
     }
     .campaign-detail-wrapper {
         padding: 10px 0;
@@ -256,6 +251,7 @@
         align-items: flex-start;
         justify-content: space-between;
         margin-bottom: 8px;
+        width: 100%;
         .heading-wrapper {
             display: flex;
             align-items: flex-start;

@@ -6,6 +6,7 @@ import "./style.scss";
 import searchIcon from "../../../../assets/Icons/search.svg";
 import Button from "../../../Common/Button";
 import questionMark from "../../../../assets/Icons/questionMark.svg";
+import arrowDown from "../../../../assets/Icons/down-arrow-white.svg";
 import UploadInput from "../../../Common/Upload";
 import Dropdown from "../../../Common/Dropdown";
 import { Link } from "react-router-dom";
@@ -184,8 +185,13 @@ const CampaignForm = () => {
               <h4 className="campaign-name">Campaign Name</h4>
               <p className="tracking-code">Tracking Code 567890</p>
               <div className="campaign-details-status">
-                <p className="status-heading"> Status</p>
-                <p className="btn btn-primary">Active</p>
+              <div className="items-wrapper align-items-center">
+                <div className="heading-wrapper">
+                  <h3 className="heading">Status</h3>
+                  <img src={questionMark} alt="Loading" />
+                </div>
+                <Button text="Active" className="status-btn"  icon={arrowDown} />
+              </div>
               </div>
             </div>
             <hr />
