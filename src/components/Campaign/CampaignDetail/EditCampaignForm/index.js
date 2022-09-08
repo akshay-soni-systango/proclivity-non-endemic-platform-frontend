@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card, ProgressBar } from "react-bootstrap";
 import Input from "../../../Common/Input";
 import { Formik, Form, Field } from "formik";
 import "./style.scss";
@@ -7,6 +7,8 @@ import searchIcon from "../../../../assets/Icons/search.svg";
 import Button from "../../../Common/Button";
 import questionMark from "../../../../assets/Icons/questionMark.svg";
 import arrowDown from "../../../../assets/Icons/down-arrow-white.svg";
+import addFlight from "../../../../assets/Icons/add-file.svg";
+import editIcon from "../../../../assets/Icons/editIcon.svg";
 import UploadInput from "../../../Common/Upload";
 import Dropdown from "../../../Common/Dropdown";
 import { Link } from "react-router-dom";
@@ -18,7 +20,7 @@ const CampaignForm = (state) => {
       <Row className="form-wrapper">
         <Col>
           <Card>
-            <div className="p-20">
+            <div className="card-spacing">
               <Input placeholder="Search" icon={searchIcon} />
             </div>
           </Card>
@@ -27,15 +29,15 @@ const CampaignForm = (state) => {
           <Formik>
             <Form className="formik-wrapper">
               <Card>
-                <div className="p-20">
+                <div className="card-spacing">
                   <div className="form-head">
                     <h3>Ad Group</h3>
                     <div className="form-head-inner d-flex">
-                      <p>
+                      <p className="sub-title">
                         This blog post has been published. Team members will be
                         able to edit this post and republish changes.
                       </p>
-                      <Switch id="adGroup"/>
+                      <Switch id="adGroup" />
                     </div>
                   </div>
                   <div className="form-wrapper">
@@ -48,11 +50,11 @@ const CampaignForm = (state) => {
               </Card>
 
               <Card>
-                <div className="p-20">
+                <div className="card-spacing">
                   <div className="form-head">
                     <h3>Audience</h3>
                     <div className="form-head-inner">
-                      <p>
+                      <p className="sub-title">
                         It is a long established fact that a reader will be
                         distracted by the readable content of a page when
                         looking at its layout.
@@ -83,11 +85,11 @@ const CampaignForm = (state) => {
               </Card>
 
               <Card>
-                <div className="p-20">
+                <div className="card-spacing">
                   <div className="form-head">
                     <h3>Budgeting & Flighting</h3>
                     <div className="form-head-inner">
-                      <p>
+                      <p className="sub-title">
                         It is a long established fact that a reader will be
                         distracted by the readable content of a page when
                         looking at its layout.
@@ -127,14 +129,122 @@ const CampaignForm = (state) => {
                     <Input type="text" icon={searchIcon} value="1000" />
                   </div>
                 </div>
+                <div className="grey-card p-3">
+                  <div className="align-right">
+                    <Button
+                      variant="secondary"
+                      src={addFlight}
+                      text="Add Flight"
+                    />
+                  </div>
+                  <div className="form-head">
+                    <h3>Flight 1</h3>
+                    <div className="form-head-inner d-flex">
+                      <p className="sub-title">
+                        It is a long established fact that a reader will be
+                        distracted by the readable content of a page when
+                        looking at its layout.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="form-detail">
+                    <p className="light-heading">Budget Configuration</p>
+                    <p className="sub-title">
+                      It is a long established fact that a reader will be
+                      distracted by the readable content.
+                    </p>
+                    <div className="edit-form">
+                      <h1>$35,550.00</h1>
+                      <img src={editIcon} alt="loading..." />
+                    </div>
+
+                    <p className="light-heading">Pacing Configuration</p>
+                    <p className="sub-title">
+                      It is a long established fact that a reader will be
+                      distracted by the readable content.
+                    </p>
+                    <div className="edit-form">
+                      <h1>25%</h1>
+                      <img src={editIcon} alt="loading..." />
+                    </div>
+                    <ProgressBar min="0" now="30" max="100" />
+                    <div className="align-right mt-4">
+                      <Button
+                        variant="secondary"
+                        src={addFlight}
+                        text="Add Flight"
+                      />
+                    </div>
+
+                    <div className="link-wrapper w-100 text-end">
+                      <Link to="/" className="form-link">
+                        Build a custom audience condition
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                <div className="grey-card p-3">
+                  <div className="align-right">
+                    <Button
+                      variant="secondary"
+                      src={addFlight}
+                      text="Add Flight"
+                    />
+                  </div>
+                  <div className="form-head">
+                    <h3>Flight 2</h3>
+                    <div className="form-head-inner d-flex">
+                      <p className="sub-title">
+                        It is a long established fact that a reader will be
+                        distracted by the readable content of a page when
+                        looking at its layout.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="form-detail">
+                    <p className="light-heading">Budget Configuration</p>
+                    <p className="sub-title">
+                      It is a long established fact that a reader will be
+                      distracted by the readable content.
+                    </p>
+                    <div className="edit-form">
+                      <h1>$35,550.00</h1>
+                      <img src={editIcon} alt="loading..." />
+                    </div>
+
+                    <p className="light-heading">Pacing Configuration</p>
+                    <p className="sub-title">
+                      It is a long established fact that a reader will be
+                      distracted by the readable content.
+                    </p>
+                    <div className="edit-form">
+                      <h1>25%</h1>
+                      <img src={editIcon} alt="loading..." />
+                    </div>
+                    <ProgressBar min="0" now="30" max="100" />
+                    <div className="align-right mt-4">
+                      <Button
+                        variant="secondary"
+                        src={addFlight}
+                        text="Add Flight"
+                      />
+                    </div>
+
+                    <div className="link-wrapper w-100 text-end">
+                      <Link to="/" className="form-link">
+                        Build a custom audience condition
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </Card>
 
               <Card>
-                <div className="p-20">
+                <div className="card-spacing">
                   <div className="form-head">
                     <h3>Geography</h3>
                     <div className="form-head-inner">
-                      <p>
+                      <p className="sub-title">
                         It is a long established fact that a reader will be
                         distracted by the readable content of a page when
                         looking at its layout.
@@ -154,11 +264,11 @@ const CampaignForm = (state) => {
               </Card>
 
               <Card>
-                <div className="p-20">
+                <div className="card-spacing">
                   <div className="form-head">
                     <h3>Schedule</h3>
                     <div className="form-head-inner">
-                      <p>
+                      <p className="sub-title">
                         It is a long established fact that a reader will be
                         distracted by the readable content of a page when
                         looking at its layout.
@@ -180,18 +290,22 @@ const CampaignForm = (state) => {
           </Formik>
         </Col>
         <Col>
-          <Card className="campaign-details p-20">
+          <Card className="campaign-details card-spacing">
             <div className="campaign-details-heading">
               <h4 className="campaign-name">Campaign Name</h4>
               <p className="tracking-code">Tracking Code 567890</p>
               <div className="campaign-details-status">
-              <div className="items-wrapper align-items-center">
-                <div className="heading-wrapper">
-                  <h3 className="heading">Status</h3>
-                  <img src={questionMark} alt="Loading" />
+                <div className="items-wrapper align-items-center">
+                  <div className="heading-wrapper">
+                    <h3 className="heading">Status</h3>
+                    <img src={questionMark} alt="Loading" />
+                  </div>
+                  <Button
+                    text="Active"
+                    className="status-btn"
+                    icon={arrowDown}
+                  />
                 </div>
-                <Button text="Active" className="status-btn"  icon={arrowDown} />
-              </div>
               </div>
             </div>
             <hr />
