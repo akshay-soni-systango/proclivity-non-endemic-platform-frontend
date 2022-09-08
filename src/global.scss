@@ -4,8 +4,9 @@
 
 // color variables
 $primary: #404968;
-$primary-600: #4a5578;
 $primary-300: #B9C0D4;
+$primary-600: #4a5578;
+$primary-800: #30374F;
 $blue-600: #1570EF;
 $white: #ffffff;
 $bg-light: #f9f9fb;
@@ -21,6 +22,9 @@ $fonts-primary-500: #556187;
 $fonts-grey-700: #344054;
 $fonts-grey-900: #101828;
 $fonts-green: #027a48;
+
+// others
+$success-500: #12B76A;
 
 html {
   scroll-behavior: smooth;
@@ -48,8 +52,8 @@ html {
   outline: none !important;
 }
 
-.p-20 {
-  padding: 20px;
+.card-spacing {
+  padding: 20px 20px 40px 20px;
 }
 .form-link {
   font-weight: 400;

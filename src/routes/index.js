@@ -12,9 +12,9 @@ import Listview from "../pages/CampaignListviewHomePage";
 import CampaignTable from "../components/Campaign/CampaignTable";
 import CampaignForm from "../components/Campaign/CampaignDetail/EditCampaignForm";
 import CampaignDetail from "../pages/CampaignDetailPage";
-import CreateCampaign from "../components/Campaign/CampaignDetail/CampaignCreation";
+import CreateCampaign from "../components/Campaign/CampaignDetail/CampaignCreation-Completed";
 import CampaignCompletion from "../components/Campaign/CampaignDetail/CampaignCreation-Completed";
-// import Dropdown from "../components/Common/Dropdown/practiceDropdown";
+// import CampaignCompletion from "../components/Campaign/CampaignDetail/CampaignCreation-Completed";
 
 // const HomePage = React.lazy(() => import(  /* webpackChunkName: "home-page" */ '../pages/HomePage'));
 

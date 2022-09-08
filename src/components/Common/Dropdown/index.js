@@ -1,8 +1,8 @@
 import React from "react";
-import Select from 'react-select';
+import Select, { components } from 'react-select';
 import './style.scss';
 
-const Dropdown = ({ ...props }) => {
+const Dropdown = ({ preValue, ...props }) => {
     const options = [
         { value: 'chocolate', label: 'Chocolate' },
         { value: 'strawberry', label: 'Strawberry' },
@@ -28,12 +28,29 @@ const Dropdown = ({ ...props }) => {
           color: '#344054',
       }),
       }
+      const ValueContainer = ({ children, ...props }) => {
+        const { getValue, hasValue } = props;
+        const nbValues = getValue().length;
+        if (!hasValue) {
+          return (
+            <components.ValueContainer {...props}>
+              {children}
+            </components.ValueContainer>
+          );
+        }
+        return (
+          <components.ValueContainer {...props}>
+           <div className="static-value">{preValue} {children}</div>
+          </components.ValueContainer>
+        );
+      };
+      const componentList = { ValueContainer };
   return (
-    <div className={`select-wrapper ${props.className}`} >
+    <div className={`select-wrapper ${props.className}`}>
         <Select 
         options={options}  
-        styles={customStyles} 
-        menuIsOpen={false} 
+        styles={customStyles}
+        components={componentList}   
       />
     </div>
   );

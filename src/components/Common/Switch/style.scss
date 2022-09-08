@@ -3,7 +3,25 @@
 .switch {
     display: flex;
     align-items: center;
+    width: 80px;
+    height: 20px;
+    justify-content: flex-end;
     label {
-        margin: 0 !important;
+        margin: 0 0 0 10px !important;
+        height: 15px;
+    }
+    .form-check-input {
+        box-shadow: none;
+        outline: none;
+        // background-color: $primary-800;
+        // border-color: $primary-800; 
+        &:checked {
+            background-color: $success-500;
+            border-color: $success-500;
+        }
+        &:focus {
+            border-color: $primary-800;
+        }
+
     }
 }
