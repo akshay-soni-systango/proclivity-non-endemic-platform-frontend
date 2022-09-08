@@ -1,293 +1,195 @@
 @import '../../../../global.scss';
 
-// .form-wrapper {
-//     display: flex;
-
-//     .form-seach-bar {
-//         position: relative;
-//     }
-
-//     .form-main {
-//         display: flex;
-//         flex-direction: row;
-//         align-items: center;
-
-//     }
-// }
-
-// .campaign-details {
-//     font-style: normal;
-//     font-family: 'Heebo';
-//     .campaign-details-campaign-name {
-//         color: #101828;
-//         font-weight: 500;
-//         font-size: 16px;
-//         line-height: 24px;
-//     }
-//     .campaign-details-tracking-code {
-//         color: #667085;
-//         font-weight: 400;
-//         font-size: 14px;
-//         line-height: 20px;
-//     }
-//     .campaign-details-status {
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: center;
-//         .status-heading {
-//             font-weight: 500;
-//             font-size: 14px;
-//             line-height: 20px;
-//             color: #344054;
-//         }
-//     }
-// }
-
-// .campaign-detail-names{
-//     .heading-wrapper{
-//         display: flex;
-//         align-items: center;
-//         flex-direction: row;
-//         justify-content: space-between;
-
-//         .heading{
-//             font-family: 'Heebo';
-//             font-style: normal;
-//             font-weight: 500;
-//             font-size: 14px;
-//             line-height: 20px;
-//             margin-bottom: 0px;
-//             margin-right: 5px;
-//             color: #344054;
-//         }
-//     }
-    
-//     .marketer-name  {
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
-//     }
-//     .advertiser-name {
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
-//     }
-//     .category-name  {
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
-//     }
-//     .type-name  {
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
-//     }
-// }
-
-// .campaign-budget{
-//    .campaign-budget-amount{
-//       display: flex;
-//       align-items: center;
-//       justify-content: space-between;
-//        .heading-wrapper{
-//            display: flex;
-//            align-items: center;
-//            flex-direction: row;
-//            justify-content: space-between;
-        
-//            .heading{
-//               font-family: 'Heebo';
-//               font-style: normal;
-//               font-weight: 500;
-//               font-size: 14px;
-//               line-height: 20px;
-//               margin-bottom: 0px;
-//               margin-right: 5px;
-//               color: #344054;
-//             }
-//         }
-//     }
-//     .campaign-budget-remaining{
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
-
-//         .heading-wrapper{
-//             display: flex;
-//             align-items: center;
-//             flex-direction: row;
-//             justify-content: space-between;
-         
-//             .heading{
-//                 font-family: 'Heebo';
-//                 font-style: normal;
-//                 font-weight: 500;
-//                 font-size: 12px;
-//                 line-height: 18px;
-//                margin-bottom: 0px;
-//                margin-right: 5px;
-//                color: #667085;
-//             }
-//         }
-//         .budget-remaining-amount{
-//             font-family: 'Heebo';
-//             font-style: normal;
-//             font-weight: 400;
-//             font-size: 12px;
-//             line-height: 18px;
-//         }
-//     }
-// }
-// .campaign-spend{
-//     .campaign-spend-amount{
-//        display: flex;
-//        align-items: center;
-//        justify-content: space-between;
-//         .heading-wrapper{
-//             display: flex;
-//             align-items: center;
-//             flex-direction: row;
-//             justify-content: space-between;
-         
-//             .heading{
-//                font-family: 'Heebo';
-//                font-style: normal;
-//                font-weight: 500;
-//                font-size: 14px;
-//                line-height: 20px;
-//                margin-bottom: 0px;
-//                margin-right: 5px;
-//                color: #344054;
-//              }
-//         }
-//     }
-//     .campaign-spend-projectedspend{
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
- 
-//         .heading-wrapper{
-//              display: flex;
-//              align-items: center;
-//              flex-direction: row;
-//              justify-content: space-between;
-          
-//                 .heading{
-//                   font-family: 'Heebo';
-//                   font-style: normal;
-//                   font-weight: 500;
-//                   font-size: 12px;
-//                   line-height: 18px;
-//                   margin-bottom: 0px;
-//                   margin-right: 5px;
-//                   color: #667085;
-//                 }
-//         }
-//         .projected-spend-amount{
-//             font-family: 'Heebo';
-//             font-style: normal;
-//             font-weight: 400;
-//             font-size: 12px;
-//             line-height: 18px;
-//         }
-
-//      }
-//  }
-
-
-// Edit form scss ==============
-
-.form-head {
-    border-bottom: 1px solid $primary-300;
-    margin-bottom: 48px;
-    h3{
-        font-size: 20px;
-        line-height: 30px;
-        color: $fonts-grey-900;
-        margin-bottom: 8px;
-    }
-    p{
-        font-size: 14px;
-        line-height: 20px;
-        color: $fonts-light;
-        margin-bottom: 24px;
-        font-weight: 400;
-    }
-
-}
 .form-wrapper {
-    padding: 0 24px;
-    .link-wrapper {
-        padding: 46px 0 33px;
+    display: flex;
+
+    .form-seach-bar {
+        position: relative;
     }
-    .light-heading {
-        font-size: 16px;
-        line-height: 24px;
-        color: $fonts-light;
+
+    .form-main {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
     }
 }
+
 .campaign-details {
-    .campaign-name {
+    font-style: normal;
+    font-family: 'Heebo';
+    .campaign-details-campaign-name {
+        color: #101828;
+        font-weight: 500;
         font-size: 16px;
         line-height: 24px;
-        color: $fonts-grey-900;
     }
-    .tracking-code {
+    .campaign-details-tracking-code {
+        color: #667085;
         font-weight: 400;
         font-size: 14px;
         line-height: 20px;
-        color: $fonts-light;
     }
     .campaign-details-status {
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
-    .campaign-detail-wrapper {
-        padding: 10px 0;
-    }
-    .items-wrapper {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        margin-bottom: 8px;
-        width: 100%;
-        .heading-wrapper {
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            width: calc(40% - 5px);
-            margin-right: 5px;
-            h3 {
-                margin-bottom: 0;
-                font-size: 14px;
-                line-height: 20px;
-                color: $fonts-grey-700;
-                margin-right: 5px;
-            }
-        }
-        p {
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            color: $fonts-grey-700;
-            margin-bottom: 0;
-            text-align: right;
-            width: calc(64% - 5px);
-            margin-left: 5px;
-        }
-        &.sub-heading {
-            margin-bottom: 6px;
-            h3 {
-                font-size: 12px;
-                line-height: 18px;
-                color: $fonts-light;
-            }
-            p {
-                font-size: 12px;
-                line-height: 18px;
-                color: $fonts-light;
-            }
+        .status-heading {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: #344054;
         }
     }
 }
+
+.campaign-detail-names{
+    .heading-wrapper{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .heading{
+            font-family: 'Heebo';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 0px;
+            margin-right: 5px;
+            color: #344054;
+        }
+    }
+    
+    .marketer-name  {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .advertiser-name {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .category-name  {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .type-name  {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.campaign-budget{
+   .campaign-budget-amount{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+       .heading-wrapper{
+           display: flex;
+           align-items: center;
+           flex-direction: row;
+           justify-content: space-between;
+        
+           .heading{
+              font-family: 'Heebo';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 20px;
+              margin-bottom: 0px;
+              margin-right: 5px;
+              color: #344054;
+            }
+        }
+    }
+    .campaign-budget-remaining{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .heading-wrapper{
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+         
+            .heading{
+                font-family: 'Heebo';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 18px;
+               margin-bottom: 0px;
+               margin-right: 5px;
+               color: #667085;
+            }
+        }
+        .budget-remaining-amount{
+            font-family: 'Heebo';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+}
+.campaign-spend{
+    .campaign-spend-amount{
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+        .heading-wrapper{
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+         
+            .heading{
+               font-family: 'Heebo';
+               font-style: normal;
+               font-weight: 500;
+               font-size: 14px;
+               line-height: 20px;
+               margin-bottom: 0px;
+               margin-right: 5px;
+               color: #344054;
+             }
+        }
+    }
+    .campaign-spend-projectedspend{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+ 
+        .heading-wrapper{
+             display: flex;
+             align-items: center;
+             flex-direction: row;
+             justify-content: space-between;
+          
+                .heading{
+                  font-family: 'Heebo';
+                  font-style: normal;
+                  font-weight: 500;
+                  font-size: 12px;
+                  line-height: 18px;
+                  margin-bottom: 0px;
+                  margin-right: 5px;
+                  color: #667085;
+                }
+        }
+        .projected-spend-amount{
+            font-family: 'Heebo';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+        }
+
+     }
+ }

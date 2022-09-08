@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Card } from "react-bootstrap";
 import Input from "../../../Common/Input";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form} from "formik";
 import "./style.scss";
 import searchIcon from "../../../../assets/Icons/search.svg";
 import Button from "../../../Common/Button";
