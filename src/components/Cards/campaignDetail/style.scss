@@ -79,6 +79,7 @@
   .card-inner {
     display: flex;
     align-items: flex-end;
+    flex-wrap: wrap;
     .card-description {
       h3 {
         font-weight: 600;

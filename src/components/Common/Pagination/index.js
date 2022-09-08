@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.scss'
 
 const Pagination = ({ dataPerPage, totalData, paginate }) => {
@@ -13,9 +14,9 @@ const Pagination = ({ dataPerPage, totalData, paginate }) => {
                 {
                     pageNumbers.map(numbers => (
                         <li key={numbers} style={{ cursor: "pointer" }} className='page-item'>
-                            <a className='pages-links' onClick={() => paginate(numbers)}>
+                            <button className='pages-links' onClick={() => paginate(numbers)}>
                                 {numbers}
-                            </a>
+                            </button>
                         </li>
                     ))
                 }
