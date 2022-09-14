@@ -13,12 +13,13 @@ import UploadInput from "../../../Common/Upload";
 import Dropdown from "../../../Common/Dropdown";
 import { Link } from "react-router-dom";
 import Switch from "../../../Common/Switch";
+import Label from "../../../Common/Label";
 
 const CampaignForm = (state) => {
   return (
     <>
       <Row className="form-wrapper">
-        <Col>
+        <Col xs={3}>
           <Card>
             <div className="card-spacing">
               <Input placeholder="Search" icon={searchIcon} />
@@ -33,7 +34,7 @@ const CampaignForm = (state) => {
                   <div className="form-head">
                     <h3>Ad Group</h3>
                     <div className="form-head-inner d-flex">
-                      <p className="sub-title">
+                      <p className="sub-title pr-3">
                         This blog post has been published. Team members will be
                         able to edit this post and republish changes.
                       </p>
@@ -41,9 +42,9 @@ const CampaignForm = (state) => {
                     </div>
                   </div>
                   <div className="form-wrapper">
-                    <label htmlFor="groupName">Ad Group Name</label>
+                    <Label htmlFor="groupName" value="Campaign Name"></Label>
                     <Input id="groupName" type="text" />
-                    <label htmlFor="trackingCode">Tracking Code</label>
+                    <Label htmlFor="trackingCode" value="Tracking Code"></Label>
                     <Input id="trackingCode" type="text" />
                   </div>
                 </div>
@@ -63,17 +64,17 @@ const CampaignForm = (state) => {
                   </div>
                   <div className="form-wrapper">
                     <UploadInput />
-                    <label htmlFor="groupName">Ad Group Name</label>
+                    <Label htmlFor="groupName" value="Ad Group Name"></Label>
                     <Input id="groupName" type="text" />
 
-                    <label htmlFor="marketer">Device Type</label>
-                    <Dropdown preValue="static:" className="formikSelect" />
+                    <Label htmlFor="marketer" value="Device Type"></Label>
+                    <Dropdown preValue="static:" className="farmikSelect" />
 
-                    <label htmlFor="marketer">Marketer</label>
-                    <Dropdown className="formikSelect" />
+                    <Label htmlFor="marketer" value="Marketer"></Label>
+                    <Dropdown className="farmikSelect" />
 
-                    <label htmlFor="marketer">Marketer</label>
-                    <Dropdown className="formikSelect" />
+                    <Label htmlFor="marketer" value="Marketer"></Label>
+                    <Dropdown className="farmikSelect" />
 
                     <div className="link-wrapper w-100 text-end">
                       <Link to="/" className="form-link">
@@ -99,33 +100,33 @@ const CampaignForm = (state) => {
                   <div className="form-wrapper">
                     <p className="light-heading">Campaign Configurations</p>
 
-                    <label>Budget Type</label>
-                    <Input className="formikSelect" />
+                    <Label value="Budget Type"></Label>
+                    <Input className="farmikSelect" />
 
-                    <label>Budget Cap Type</label>
+                    <Label value="Budget Cap Type"></Label>
                     <Input type="text" icon={searchIcon} value="1000" />
 
                     <hr />
 
                     <p className="light-heading">CPM Configuration</p>
 
-                    <label>Total CPM</label>
+                    <Label value="Total CPM"></Label>
                     <Input type="text" icon={searchIcon} value="1000" />
 
-                    <label>Data CPM</label>
+                    <Label value="Data CPM"></Label>
                     <Input type="text" icon={searchIcon} value="1000" />
 
-                    <label>Spend CPM</label>
+                    <Label value="Spend CPM"></Label>
                     <Input type="text" icon={searchIcon} value="1000" />
 
                     <hr />
 
                     <p className="light-heading">Flighting Configuration</p>
 
-                    <label>External Code</label>
+                    <Label value="External Code"></Label>
                     <Input type="text" icon={searchIcon} value="1000" />
 
-                    <label>Budget</label>
+                    <Label value="Budget"></Label>
                     <Input type="text" icon={searchIcon} value="1000" />
                   </div>
                 </div>
@@ -289,7 +290,7 @@ const CampaignForm = (state) => {
             </Form>
           </Formik>
         </Col>
-        <Col>
+        <Col xs={3}>
           <Card className="campaign-details card-spacing">
             <div className="campaign-details-heading">
               <h4 className="campaign-name">Campaign Name</h4>

@@ -5,7 +5,7 @@ import './style.scss'
 
 const UploadInput = () => {
   return (
-      <div class="drag-area">
+      <div className="drag-area">
         <img src={uploadIcon} alt="Loading..." className="icon" />
         <button>Click to Upload<span>or drag and drop</span></button>
         <p className='sub-heading'>SVG, PNG, JPG or GIF (max. 800x400px)</p>
