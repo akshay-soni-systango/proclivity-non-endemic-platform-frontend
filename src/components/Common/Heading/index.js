@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './style.scss'
 
-const Heading = ({level, ...props}) => {
+const Heading = ({level, children, ...props}) => {
     const CustomTag = `h${level}`;
   return (
-    <CustomTag {...props} >Hello</CustomTag>
+    <CustomTag {...props} >{children}</CustomTag>
   )
 }
 Heading.defaultProps = {
