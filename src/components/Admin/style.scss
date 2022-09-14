@@ -1,0 +1,37 @@
+@import '../../global.scss';
+
+
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .title-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 50%;
+        .title-logo{
+            background: #EFF1F5;
+            border-radius: 12px;
+            padding: 14px;
+            gap: 10px;
+        }
+        .title{
+           color: $fonts-grey-500;
+           font-weight: 500;
+           font-size: 24px;
+           line-height: 32px;
+           width: 924px;
+           height: 32px;
+           margin: 0 0 0 20px;
+        }
+    }
+
+    .header-button{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 25%;
+    }
+}

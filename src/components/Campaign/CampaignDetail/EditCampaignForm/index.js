@@ -67,13 +67,13 @@ const CampaignForm = (state) => {
                     <Input id="groupName" type="text" />
 
                     <label htmlFor="marketer">Device Type</label>
-                    <Dropdown preValue="static:" className="farmikSelect" />
+                    <Dropdown preValue="static:" className="formikSelect" />
 
                     <label htmlFor="marketer">Marketer</label>
-                    <Dropdown className="farmikSelect" />
+                    <Dropdown className="formikSelect" />
 
                     <label htmlFor="marketer">Marketer</label>
-                    <Dropdown className="farmikSelect" />
+                    <Dropdown className="formikSelect" />
 
                     <div className="link-wrapper w-100 text-end">
                       <Link to="/" className="form-link">
@@ -100,7 +100,7 @@ const CampaignForm = (state) => {
                     <p className="light-heading">Campaign Configurations</p>
 
                     <label>Budget Type</label>
-                    <Input className="farmikSelect" />
+                    <Input className="formikSelect" />
 
                     <label>Budget Cap Type</label>
                     <Input type="text" icon={searchIcon} value="1000" />

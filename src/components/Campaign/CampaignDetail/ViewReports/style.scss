@@ -1,0 +1,41 @@
+@import '../../../../global.scss';
+
+.campaign-view-report-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .main-logo{
+            padding: 14px;
+            gap: 10px;
+            background: #EFF1F5;
+            border-radius: 12px;
+
+        }
+    }
+
+    .main-title-time-zone {
+        display: flex;
+        flex-direction: column;
+
+        .main-title {
+            font-size: 24px;
+            line-height: 32px;
+            color: $fonts-grey-900;
+            margin: 0 0 0 20px;
+        }
+
+        .main-time-zone {
+            margin: 0 0 0 20px;
+            font-size: 16px;
+            line-height: 24px;
+            color: $fonts-light;
+        }
+    }
+}

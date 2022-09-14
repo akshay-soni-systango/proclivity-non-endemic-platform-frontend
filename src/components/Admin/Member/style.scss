@@ -1,0 +1,24 @@
+@import '../../../global.scss';
+
+.card-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 18%;
+
+    h2{
+        font-size: 20px;
+        line-height: 30px;
+        color: $fonts-grey-500;
+    }
+
+    span{
+        color: $primary;
+        font-size: 12px;
+        line-height: 18px;
+        padding: 2px 8px;
+        background: #F9F9FB;
+        border-radius: 16px;
+
+    }
+}
