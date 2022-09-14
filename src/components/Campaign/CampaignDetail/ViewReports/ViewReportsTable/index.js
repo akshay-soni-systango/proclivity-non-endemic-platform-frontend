@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import Table from '../../Common/Table/userTable';
-import { COLUMNS } from './columns';
-import campaignData from '../../../util/CampaignData/CAMPAIGN_DATA.json';
-import Pagination from '../../Common/Pagination';
+import React, { useState } from 'react';
+import {COLUMNS} from './columns';
+import viewReportData from '../../../../../util/CampaignData/VIEW_REPORTS.json'
+import Table from '../../../../Common/Table/userTable';
+import Pagination from '../../../../Common/Pagination';
 
-const CampaignTable = () => {
-    const data = [...campaignData];
+const ViewReportTable = () => {
+  const data = [...viewReportData];
     const [currentPage, setCurrentPage] = useState(1);
     const [dataPerPage] = useState(10);
     const indexLast = currentPage * dataPerPage;
@@ -16,9 +16,9 @@ const CampaignTable = () => {
     }
 
     return <>
-        <Table tableColumn={COLUMNS} tableData={currentPost} isCampaignTable={true} />
+        <Table tableColumn={COLUMNS} tableData={currentPost} />
         <Pagination dataPerPage={dataPerPage} totalData={data.length} paginate={paginate} />
     </>
 }
 
-export default CampaignTable
+export default ViewReportTable

@@ -12,8 +12,9 @@ import Listview from "../pages/CampaignListviewHomePage";
 import CampaignTable from "../components/Campaign/CampaignTable";
 import CampaignForm from "../components/Campaign/CampaignDetail/EditCampaignForm";
 import CampaignDetail from "../pages/CampaignDetailPage";
-import CreateCampaign from "../components/Campaign/CampaignDetail/CampaignCreation-Completed";
-import CampaignCompletion from "../components/Campaign/CampaignDetail/CampaignCreation-Completed";
+import CreateCampaign from "../components/Campaign/CampaignDetail/CampaignCreation";
+import CampaignCompletion from "../components/Campaign/CampaignDetail/CampaignCreation";
+import CampaignViewReport from "../components/Campaign/CampaignDetail/ViewReports";
 // import CampaignCompletion from "../components/Campaign/CampaignDetail/CampaignCreation-Completed";
 
 // const HomePage = React.lazy(() => import(  /* webpackChunkName: "home-page" */ '../pages/HomePage'));
@@ -33,6 +34,7 @@ const Routes = () => {
             <Route path="/campaign/edit" element={<CampaignForm/>} />
             <Route path="/campaign/create" element={<CreateCampaign/>} />
             <Route path="/campaign/complete" element={<CampaignCompletion/>} />
+            <Route path="/campaign/viewreport" element={<CampaignViewReport/>} />
             {/* <Route path="/d" element={<Dropdown/>} /> */}
           </Switch>
         </Layout>

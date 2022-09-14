@@ -1,18 +1,17 @@
-import Charts from "../../Charts";
+import ViewReportGraph from "./charts";
+
 export const tabs = [
     {
-        title: 'Summary',
+        title: 'Tab 1',
         key: 'Summary',
         content: <>
-            <Charts />
+           <ViewReportGraph/>
         </>
     },
     {
-        title: 'Configuration',
-        key: 'Configuration',
-        content: <>
-        <h1>azeem</h1>
-        </>
+        title: '+ Add',
+        key: '+ Add',
+        content:'Configuration'
     },
     {
         title: 'Activity',
