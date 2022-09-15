@@ -1,4 +1,5 @@
 import MemberPage from "./Member";
+import AdminSidebar from "./Sidebar";
 
 export const tabs = [
     {
@@ -11,7 +12,9 @@ export const tabs = [
     {
         title: 'Teams',
         key: 'Teams',
-        content:'Teams'
+        content:<>
+        <AdminSidebar/>
+        </>
     },
     {
         title: 'Brands',

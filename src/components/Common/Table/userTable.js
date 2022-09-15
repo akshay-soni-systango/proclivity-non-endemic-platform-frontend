@@ -4,10 +4,14 @@ import "./table.scss";
 import arrowUp from "../../../assets/Icons/arrow-up.svg";
 import arrowDown from "../../../assets/Icons/arrow-down.svg";
 import avatar from "../../../assets/Icons/Avatar.svg";
+import { useDispatch } from 'react-redux';
+import { authenticateAdminTable } from "../../../Features/Admin/adminSlice";
+
 
 const Table = ({ tableColumn, tableData, ...rest }) => {
-  const { isCampaignTable } = { ...rest };
-  console.log(isCampaignTable , "weufgyweftguy");
+  const { isCampaignTable, isAdminTable } = { ...rest };
+  console.log(isAdminTable, "isAdminTable");
+  console.log(isCampaignTable, "isCampaignTable");
   const columns = useMemo(() => tableColumn, [tableColumn]);
   const data = useMemo(() => tableData, [tableData]);
   const tableInstance = useTable(
@@ -25,12 +29,19 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
     prepareRow,
   } =
     tableInstance;
+
+    const dispatch = useDispatch()
+
+    const handleClick =()=>{
+      console.log("handleClick called");
+      dispatch(authenticateAdminTable(true))
+    }
   return (
     <div className='table-wrapper'>
       <table {...getTableProps()}>
         <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
+          {headerGroups.map((headerGroup, index) => (
+            <tr key={index} {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
@@ -61,11 +72,10 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
             prepareRow(row);
             return (
               <>
-                <tr key={ind} {...row.getRowProps()}>
+                <tr key={ind} {...row.getRowProps()} onClick={isAdminTable ? handleClick : null}>
                   {row.cells.map((cell, index) => {
                     return (
-                      <td {...cell.getCellProps()}>
-
+                      <td key={index} {...cell.getCellProps()}>
                         {
                           isCampaignTable ?
                             (index === 0 ?

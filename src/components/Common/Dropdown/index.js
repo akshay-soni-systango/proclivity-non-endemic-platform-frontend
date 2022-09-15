@@ -29,8 +29,8 @@ const Dropdown = ({ preValue, ...props }) => {
     }),
   }
   const ValueContainer = ({ children, ...props }) => {
-    const { getValue, hasValue } = props;
-    const nbValues = getValue().length;
+    const {hasValue } = props;
+    // const nbValues = getValue().length;
     if (!hasValue) {
       return (
         <components.ValueContainer {...props}>
