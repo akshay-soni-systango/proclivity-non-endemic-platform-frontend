@@ -15,5 +15,4 @@ const adminSlice = createSlice({
 
 export const { authenticateAdminTable } = adminSlice.actions;
 export const getAdminTableCheck = (state) => state.adminTable.isAdminPage;
-
 export default adminSlice.reducer
