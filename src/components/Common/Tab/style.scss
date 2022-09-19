@@ -1,7 +1,7 @@
 @import "../../../global.scss";
 
 .nav-tabs {
-    margin: 25px 0 59px 0;
+    margin: 25px 0 48px 0;
   .nav-link {
     font-size: 14px;
     line-height: 20px;
@@ -14,6 +14,12 @@
       border: none;
       background: transparent;
       border-bottom: 2px solid $primary;
+      padding-bottom: 17px;
     }
   }
+  // .tab-content > .active {
+  //   font-size: 20px;
+  //   line-height: 30px;
+  //   color: $fonts-grey-900;
+  // }
 }

@@ -14,26 +14,27 @@ import Input from "../../../Common/Input";
 import Dropdown from "../../../Common/Dropdown";
 import "react-datepicker/dist/react-datepicker.css";
 import HomePageTab from "./tabs";
+import AdminHeader from "../../../Common/AdminHeader";
 
 const HomePage = () => {
 
+  const buttons = [
+    {
+      variant: 'secondary',
+      icon: downloadIcon,
+      text: 'Export'
+    },
+    {
+      variant: 'primary',
+      icon: addIcon,
+      text: 'Create a campaigns',
+    }
+  ]
+
+
   return (
     <>
-      <div className="campaign-header">
-        <div className="title-wrapper d-flex align-items-center">
-          <FeaturedIcon />
-          <h3 className="main-title">Campaigns</h3>
-        </div>
-        <div className="btn-wrapper">
-          <Button
-            className="me-2"
-            variant="secondary"
-            src={downloadIcon}
-            text="Export"
-          />
-          <Button className="ms-1" src={addIcon} text="Create a Campaign" />
-        </div>
-      </div>
+      <AdminHeader  buttons={buttons} title="Campaigns" mainIcon={<downloadIcon />} />
       {/* <Tab tabs={tabs} /> */}
       <HomePageTab/>
       <div className="table-header">

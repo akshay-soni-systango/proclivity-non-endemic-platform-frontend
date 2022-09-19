@@ -2,7 +2,7 @@ import React from "react";
 import Select, { components } from 'react-select';
 import './style.scss';
 
-const Dropdown = ({ preValue, ...props }) => {
+const Dropdown = ({ preValue, placeholderName, ...props }) => {
   const options = [
     { value: 'chocolate', label: 'Chocolate' },
     { value: 'strawberry', label: 'Strawberry' },
@@ -27,10 +27,17 @@ const Dropdown = ({ preValue, ...props }) => {
       zIndex: 1,
       color: '#344054',
     }),
+    dropdownIndicator: base => ({
+      ...base,
+      color: "#344054",
+    }),
+    singleValue: base => ({
+      color: '#344054',
+    })
   }
   const ValueContainer = ({ children, ...props }) => {
-    const { getValue, hasValue } = props;
-    const nbValues = getValue().length;
+    const { hasValue } = props;
+    // const nbValues = getValue().length;
     if (!hasValue) {
       return (
         <components.ValueContainer {...props}>
@@ -40,7 +47,7 @@ const Dropdown = ({ preValue, ...props }) => {
     }
     return (
       <components.ValueContainer {...props}>
-        <div className="static-value">{preValue} {children}</div>
+        <div className="static-value">{preValue}&nbsp; {children}</div>
       </components.ValueContainer>
     );
   };
@@ -51,6 +58,7 @@ const Dropdown = ({ preValue, ...props }) => {
         options={options}
         styles={customStyles}
         components={componentList}
+        placeholder={<div className="select-placeholder-text">{preValue} {placeholderName}</div>}
       />
     </div>
   );

@@ -1,0 +1,30 @@
+@import '../../../global.scss';
+
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .main-title {
+        font-size: 24px;
+        line-height: 32px;
+        color: $fonts-grey-900;
+        margin: 0 0 0 20px;
+    }
+    &-icon {
+        background: $primary-100;
+        border-radius: 12px;
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        padding: 14px;
+    }
+    .title-wrapper,
+    .btn-wrapper {
+        margin-bottom: 10px;
+    }
+}

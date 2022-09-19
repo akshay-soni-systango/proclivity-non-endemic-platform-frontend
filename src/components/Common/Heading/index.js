@@ -8,6 +8,6 @@ const Heading = ({level, children, ...props}) => {
   )
 }
 Heading.defaultProps = {
-    level : 3
+    // level : 3
 }
 export default Heading

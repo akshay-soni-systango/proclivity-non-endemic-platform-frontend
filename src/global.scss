@@ -4,6 +4,7 @@
 
 // color variables
 $primary: #404968;
+$primary-100: #EFF1F5;
 $primary-300: #B9C0D4;
 $primary-600: #4a5578;
 $primary-800: #30374F;
@@ -17,22 +18,25 @@ $bg-grey-200: #EAECF0;
 // fonts color
 $fonts-black: #111322;
 $fonts-light: #667085;
+$fonts-primary-400: #7D89B0;
 $fonts-primary-600: #dcdfea;
 $fonts-primary-500: #556187;
 $fonts-grey-700: #344054;
 $fonts-grey-900: #101828;
-$fonts-grey-500: #101828;
 $fonts-green: #027a48;
 
 // others
 $success-500: #12B76A;
+
+// fonts-family
+$main-font: "Heebo", sans-serif;
 
 html {
   scroll-behavior: smooth;
   body {
     height: 100%;
     margin: 0;
-    font-family: "Heebo", sans-serif;
+    font-family: $main-font;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-display: swap;
@@ -52,7 +56,18 @@ html {
 *:focus {
   outline: none !important;
 }
-
+p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: $fonts-grey-900;
+  .light-para {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: $fonts-light;
+  }
+}
 .card-spacing {
   padding: 20px 20px 40px 20px;
 }

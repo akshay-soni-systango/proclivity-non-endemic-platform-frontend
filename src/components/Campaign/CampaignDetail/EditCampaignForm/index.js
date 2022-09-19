@@ -42,7 +42,7 @@ const CampaignForm = (state) => {
                     </div>
                   </div>
                   <div className="form-wrapper">
-                    <Label htmlFor="groupName" value="Campaign Name"></Label>
+                    <Label htmlFor="groupName" value="Campaign Name" />
                     <Input id="groupName" type="text" />
                     <Label htmlFor="trackingCode" value="Tracking Code"></Label>
                     <Input id="trackingCode" type="text" />

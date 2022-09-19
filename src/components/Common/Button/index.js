@@ -5,10 +5,25 @@ import "./style.scss";
 
 const Button = ({ src, text, icon, ...props }) => {
   return (
-    <BootstrapButton {...props}>
-      {src && <img src={src} alt={text} className={`${!Boolean(text) && 'm-0'} btn-icon`} />}
+    <BootstrapButton {...props}
+    type='button'
+    >
+      
+      {src && (
+        <img
+          src={src}
+          alt={text}
+          className={`${!Boolean(text) && "m-0"} btn-icon`}
+        />
+      )}
       {text}
-      {icon && <img src={icon} alt={text} className={`${!Boolean(text) && 'm-0'} btn-icon-right`} />}
+      {icon && (
+        <img
+          src={icon}
+          alt={text}
+          className={`${!Boolean(text) && "m-0"} btn-icon-right`}
+        />
+      )}
     </BootstrapButton>
   );
 };
