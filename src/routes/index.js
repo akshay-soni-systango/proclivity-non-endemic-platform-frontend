@@ -8,13 +8,12 @@ import Layout from "../components/Common/LayoutComponent";
 import AudiencePage from "../pages/AudiencePage";
 import HomePage from "../pages/HomePage";
 import CampaignDetailCard from "../components/Cards/campaignDetail";
-import Listview from "../pages/CampaignListviewHomePage";
-import CampaignTable from "../components/Campaign/CampaignTable";
 import CampaignForm from "../components/Campaign/CampaignDetail/EditCampaignForm";
-import CampaignDetail from "../pages/CampaignDetailPage";
+import CampaignDetail from "../pages/Campaigns/Detail";
 import CampaignCompletion from "../components/Campaign/CampaignDetail/CampaignCreation";
 import AdminPage from "../pages/AdminPage";
 import CampaignViewReport from "../components/Campaign/CampaignDetail/ViewReports";
+import CampaignHomePage from "../pages/Campaigns/Overview";
 // const HomePage = React.lazy(() => import(  /* webpackChunkName: "home-page" */ '../pages/HomePage'));
 
 const Routes = () => {
@@ -27,8 +26,7 @@ const Routes = () => {
             <Route path="/audiences" element={<AudiencePage />} />
             <Route path="/admin" element={<AdminPage/>} />
             <Route path="/analytics" element={<CampaignDetailCard />} />
-            <Route path="/campaigns" element={<CampaignTable/>} />
-            <Route path="/campaign/listview" element={<Listview />} />
+            <Route path="/campaign/home" element={<CampaignHomePage />} />
             <Route path="/campaign/detail" element={<CampaignDetail/>} />
             <Route path="/campaign/edit" element={<CampaignForm/>} />
             <Route path="/campaign/complete" element={<CampaignCompletion/>} />

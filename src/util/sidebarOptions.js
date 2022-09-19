@@ -24,7 +24,7 @@ export const sidebarMenuOptions = [
     {
         title: 'Campaigns',
         icon: campaigns,
-        link: '/campaigns',
+        link: '/campaign/home',
     },
     {
         title: 'Analytics',
