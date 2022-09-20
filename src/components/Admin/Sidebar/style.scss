@@ -1,0 +1,17 @@
+.sidebar-member-details{
+    width: 400px;
+    height: 100vh;
+    background-color: pink;
+
+    .sidebar-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .siderbar-header-title{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+    }
+}
