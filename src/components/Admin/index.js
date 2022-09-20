@@ -11,7 +11,7 @@ import AdminSidebar from './Sidebar';
 import { getAdminTableCheck } from '../../Features/Admin/adminSlice';
 
 const AdminHomePage = () => {
-
+    
     const openAdminSideBar = useSelector(getAdminTableCheck);
     console.log(openAdminSideBar, "openAdminSideBar");
     return (
@@ -36,7 +36,6 @@ const AdminHomePage = () => {
             <div className={openAdminSideBar ? "open-side-bar" : "side-bar"}>
                 <AdminSidebar />
             </div>
-
         </div>
     )
 }

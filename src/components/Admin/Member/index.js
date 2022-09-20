@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import Dropdown from '../../Common/Dropdown';
-import AdminTable from '../AdminTable';
+import MemberTable from './MemberTable';
 import './style.scss';
 
 const MemberPage = () => {
@@ -21,7 +21,7 @@ const MemberPage = () => {
             <Dropdown/>
           </div>
           <div className='admin-table'>
-            <AdminTable/>
+            <MemberTable/>
           </div>
         </Card.Body>
       </Card>

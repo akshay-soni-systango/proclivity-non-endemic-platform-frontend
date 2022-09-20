@@ -13,8 +13,6 @@ import CampaignCompletion from "../components/Campaign/CampaignDetail/CampaignCr
 import AdminPage from "../pages/AdminPage";
 import CampaignViewReport from "../components/Campaign/CampaignDetail/ViewReports";
 import CampaignHomePage from "../pages/Campaigns/Overview";
-import Pagination from "../util/Pagination/Pagination";
-// const HomePage = React.lazy(() => import(  /* webpackChunkName: "home-page" */ '../pages/HomePage'));
 
 const Routes = () => {
   return (

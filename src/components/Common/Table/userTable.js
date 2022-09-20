@@ -9,6 +9,7 @@ import { authenticateAdminTable } from "../../../Features/Admin/adminSlice";
 
 
 const Table = ({ tableColumn, tableData, ...rest }) => {
+  
   const { isCampaignTable, isAdminTable } = { ...rest };
   const tableInstance = useTable(
     {
@@ -32,6 +33,7 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
   const handleClick = () => {
     dispatch(authenticateAdminTable(true))
   }
+
   return (
     <div className='table-wrapper'>
       <table {...getTableProps()}>
@@ -68,7 +70,7 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
             prepareRow(row);
             return (
               <>
-                <tr key={ind} {...row.getRowProps()} onClick={
+                <tr key={ind}  {...row.getRowProps()} onClick={
                   isAdminTable && handleClick
                 }
                 >
