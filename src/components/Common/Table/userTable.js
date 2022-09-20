@@ -10,10 +10,6 @@ import { authenticateAdminTable } from "../../../Features/Admin/adminSlice";
 
 const Table = ({ tableColumn, tableData, ...rest }) => {
   const { isCampaignTable, isAdminTable } = { ...rest };
-  // console.log(isAdminTable, "isAdminTable");
-  // console.log(isCampaignTable, "isCampaignTable");
-  // const columns = useMemo(() => tableColumn, [tableColumn]);
-  // const data = useMemo(() => tableData, [tableData]);
   const tableInstance = useTable(
     {
       columns: tableColumn,
@@ -30,12 +26,7 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
   } =
     tableInstance;
 
-    // const dispatch = useDispatch()
-
-    // const handleClick =()=>{
-    //   console.log("handleClick called");
-    //   dispatch(authenticateAdminTable(true))
-    // }
+  
   const dispatch = useDispatch()
 
   const handleClick = () => {
@@ -77,7 +68,6 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
             prepareRow(row);
             return (
               <>
-                {/* <tr key={ind} {...row.getRowProps()} onClick={isAdminTable ? handleClick : null}> */}
                 <tr key={ind} {...row.getRowProps()} onClick={
                   isAdminTable && handleClick
                 }
