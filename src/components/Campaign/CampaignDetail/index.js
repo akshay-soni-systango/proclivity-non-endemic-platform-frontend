@@ -1,15 +1,16 @@
 import React from "react";
+import "./style.scss";
+// import campaignData from '../../../util/CampaignData/CAMPAIGN_DATA.json';
+import { Link } from "react-router-dom";
 import Tab from "../../Common/Tab";
 import { tabs } from "./tabs";
 import { ReactComponent as FeaturedIcon } from "../../../assets/Icons/Featured-icon.svg";
 import editButton from "../../../assets/Icons/editButton.svg";
 import Button from "../../Common/Button";
-import "./style.scss";
 import grid from "../../../assets/Icons/grid.svg";
 import list from "../../../assets/Icons/list.svg";
 import add from "../../../assets/Icons/plus-dark.svg";
 import Dropdown from "../../Common/Dropdown";
-import { Link } from "react-router-dom";
 import CampaignDetailCard from "../../Cards/campaignDetail";
 
 const CampaignDetailPage = () => {
@@ -32,13 +33,12 @@ const CampaignDetailPage = () => {
     "December",
   ];
   const monthName = monthNames[month];
-  const cardList = [{}];
-  const cards = cardList.map(() =>  <>
-  <div className="col-md-4">
-    <CampaignDetailCard />
-  </div>
-</>);
-console.log({cardList})
+  // const cardList = [...campaignData];
+  // const cards = cardList.map(() => <>
+  //   <div className="col-md-4">
+  //     <CampaignDetailCard />
+  //   </div>
+  // </>);
   return (
     <>
       <div className="campaign-header">
@@ -77,9 +77,9 @@ console.log({cardList})
           </div>
         </div>
       </div>
-      <div className="row mt-5">
-        {cards}
-      </div>
+      <>
+        <CampaignDetailCard/>
+      </>
     </>
   );
 };

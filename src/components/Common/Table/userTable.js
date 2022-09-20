@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { useTable, useSortBy, usePagination } from "react-table";
 import "./table.scss";
 import arrowUp from "../../../assets/Icons/arrow-up.svg";
@@ -10,14 +10,14 @@ import { authenticateAdminTable } from "../../../Features/Admin/adminSlice";
 
 const Table = ({ tableColumn, tableData, ...rest }) => {
   const { isCampaignTable, isAdminTable } = { ...rest };
-  console.log(isAdminTable, "isAdminTable");
-  console.log(isCampaignTable, "isCampaignTable");
-  const columns = useMemo(() => tableColumn, [tableColumn]);
-  const data = useMemo(() => tableData, [tableData]);
+  // console.log(isAdminTable, "isAdminTable");
+  // console.log(isCampaignTable, "isCampaignTable");
+  // const columns = useMemo(() => tableColumn, [tableColumn]);
+  // const data = useMemo(() => tableData, [tableData]);
   const tableInstance = useTable(
     {
-      columns,
-      data,
+      columns: tableColumn,
+      data: tableData,
     },
     useSortBy,
     usePagination
@@ -30,12 +30,17 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
   } =
     tableInstance;
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
-    const handleClick =()=>{
-      console.log("handleClick called");
-      dispatch(authenticateAdminTable(true))
-    }
+    // const handleClick =()=>{
+    //   console.log("handleClick called");
+    //   dispatch(authenticateAdminTable(true))
+    // }
+  const dispatch = useDispatch()
+
+  const handleClick = () => {
+    dispatch(authenticateAdminTable(true))
+  }
   return (
     <div className='table-wrapper'>
       <table {...getTableProps()}>
@@ -72,7 +77,11 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
             prepareRow(row);
             return (
               <>
-                <tr key={ind} {...row.getRowProps()} onClick={isAdminTable ? handleClick : null}>
+                {/* <tr key={ind} {...row.getRowProps()} onClick={isAdminTable ? handleClick : null}> */}
+                <tr key={ind} {...row.getRowProps()} onClick={
+                  isAdminTable && handleClick
+                }
+                >
                   {row.cells.map((cell, index) => {
                     return (
                       <td key={index} {...cell.getCellProps()}>

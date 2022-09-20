@@ -1,13 +1,12 @@
+import React from 'react';
 import { useState } from "react";
 import CampaignListView from "../../../Cards/campaignListview";
 import DatePicker from "react-datepicker";
 import calendar from "../../../../assets/Icons/calendar.svg";
 import Dropdown from "../../../Common/Dropdown";
-
-import React from 'react'
 import Tab from "../../../Common/Tab";
 
-const HomePageTab = () => {
+const CampaignTabs = () => {
 
     const [startDate, setStartDate] = useState(new Date());
     const tabs = [
@@ -71,6 +70,6 @@ const HomePageTab = () => {
     )
 }
 
-export default HomePageTab
+export default CampaignTabs
 
 
