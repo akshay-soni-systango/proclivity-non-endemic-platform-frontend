@@ -14,6 +14,7 @@ import CampaignCompletion from "../components/Campaign/CampaignDetail/CampaignCr
 import AdminPage from "../pages/AdminPage";
 import CampaignViewReport from "../components/Campaign/CampaignDetail/ViewReports";
 import CampaignHomePage from "../pages/Campaigns/Overview";
+import Pagination from "../util/Pagination/Pagination";
 // const HomePage = React.lazy(() => import(  /* webpackChunkName: "home-page" */ '../pages/HomePage'));
 
 const Routes = () => {
@@ -31,6 +32,7 @@ const Routes = () => {
             <Route path="/campaign/edit" element={<CampaignForm/>} />
             <Route path="/campaign/complete" element={<CampaignCompletion/>} />
             <Route path="/campaign/report" element={<CampaignViewReport/>} />
+            <Route path="/paginate" element={<Pagination/>} />
           </Switch>
         </Layout>
       </BrowserRouter>
