@@ -12,9 +12,7 @@ export const tabs = [
     {
         title: 'Teams',
         key: 'Teams',
-        content:<>
-        <AdminSidebar/>
-        </>
+        content:'Teams'
     },
     {
         title: 'Brands',

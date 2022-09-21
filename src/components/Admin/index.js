@@ -1,5 +1,5 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { ReactComponent as AdminIcon } from '../../assets/Icons/admin.svg';
 import userIcon from '../../assets/Icons/userIconDark.svg';
 import Invite from '../../assets/Icons/plus.svg';
@@ -8,12 +8,31 @@ import './style.scss'
 import Tab from '../Common/Tab';
 import { tabs } from './tabs';
 import AdminSidebar from './Sidebar';
-import { getAdminTableCheck } from '../../Features/Admin/adminSlice';
+import { authenticateAdminTable, getAdminTableCheck } from '../../Features/Admin/adminSlice';
 
 const AdminHomePage = () => {
-    
+    const ref = useRef(null);
+    const dispatch = useDispatch();
+
     const openAdminSideBar = useSelector(getAdminTableCheck);
-    console.log(openAdminSideBar, "openAdminSideBar");
+    console.log(openAdminSideBar, "   OUR STATE TO TOGGLE");
+
+    const handleClose = () => {
+        console.log("HANDLE CLOSE CALLED");
+        dispatch(authenticateAdminTable(false))
+    }
+    const handleClickOutside = (event) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+            handleClose()
+        }
+    }
+    useEffect(() => {
+        document.addEventListener("click", handleClickOutside, true);
+        return () => {
+            document.removeEventListener("click", handleClickOutside, true)
+        }
+    }, [])
+
     return (
         <div className='admin-page'>
             <div className='header-wrapper'>
@@ -33,8 +52,8 @@ const AdminHomePage = () => {
             <div>
                 <Tab tabs={tabs} />
             </div>
-            <div className={openAdminSideBar ? "open-side-bar" : "side-bar"}>
-                <AdminSidebar />
+            <div ref={ref} className={`${openAdminSideBar ? "open-side-bar" : "close-side-bar"}`} onClick={handleClose}>
+                <AdminSidebar handleClose={handleClose} />
             </div>
         </div>
     )

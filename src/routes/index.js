@@ -28,7 +28,7 @@ const Routes = () => {
             <Route path="/campaign/edit" element={<CampaignForm/>} />
             <Route path="/campaign/complete" element={<CampaignCompletion/>} />
             <Route path="/campaign/report" element={<CampaignViewReport/>} />
-            <Route path="/paginate" element={<Pagination/>} />
+            {/* <Route path="/paginate" element={<Pagination/>} /> */}
           </Switch>
         </Layout>
     </>

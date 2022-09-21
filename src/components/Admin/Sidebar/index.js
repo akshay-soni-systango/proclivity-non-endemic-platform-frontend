@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { ReactComponent as Cross } from '../../../assets/Icons/cross.svg';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import './style.scss'
-import { authenticateAdminTable } from '../../../Features/Admin/adminSlice';
+// import { authenticateAdminTable } from '../../../Features/Admin/adminSlice';
 
-const AdminSidebar = () => {
+const AdminSidebar = ({handleClose}) => {
     // const sidebarRef = useRef()
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     // useEffect(() => {
     //     let handler = (e) => {
@@ -21,19 +21,19 @@ const AdminSidebar = () => {
     //     }
     // })
 
-    const handleClick = () => {
-        dispatch(authenticateAdminTable(false))
-    }
+    // const handleClick = () => {
+    //     console.log("called in sidebar");
+    //     dispatch(authenticateAdminTable(false))
+    // }
 
-    return (
-        <div>
+    return (      
             <div className='sidebar-member-details'>
                 <div className='sidebar-header'>
                     <div className='siderbar-header-title'>
                         <h3>Olivia Rhyea</h3>
                         <p>orhye@proclity.com</p>
                     </div>
-                    <Cross className='close-sidebar' onClick={handleClick} />
+                    <Cross className='close-sidebar' onClick={handleClose} />
                 </div>
                 <hr/>
                 <ul>
@@ -43,7 +43,6 @@ const AdminSidebar = () => {
                     <li>HOME</li>
                 </ul>
             </div>
-        </div>
     )
 }
 export default AdminSidebar

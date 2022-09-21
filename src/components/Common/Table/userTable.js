@@ -4,13 +4,34 @@ import "./table.scss";
 import arrowUp from "../../../assets/Icons/arrow-up.svg";
 import arrowDown from "../../../assets/Icons/arrow-down.svg";
 import avatar from "../../../assets/Icons/Avatar.svg";
-import { useDispatch } from 'react-redux';
-import { authenticateAdminTable } from "../../../Features/Admin/adminSlice";
+import { useDispatch, useSelector } from 'react-redux';
+import { authenticateAdminTable, getAdminTableCheck } from "../../../Features/Admin/adminSlice";
 
 
 const Table = ({ tableColumn, tableData, ...rest }) => {
   
   const { isCampaignTable, isAdminTable } = { ...rest };
+  const dispatch = useDispatch();  
+  // const sidebarRef = useRef();
+  
+  const openAdminSideBar = useSelector(getAdminTableCheck);
+  console.log(openAdminSideBar , "STATE IN TABLE");
+   
+  //  useEffect(() => {
+  //    let handler = (e) => {
+  //         console.log(sidebarRef.current.contains(e.target) , "ref")
+  //           if (!sidebarRef.current.contains(e.target)) {
+  //               dispatch(authenticateAdminTable(false))
+  //           }
+  //       }
+  //       document.addEventListener("mousedown", handler);
+
+        // return () => {
+        //     document.removeEventListener("mousedown", handler )
+        // }
+    // })
+
+
   const tableInstance = useTable(
     {
       columns: tableColumn,
@@ -26,11 +47,9 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
     prepareRow,
   } =
     tableInstance;
-
-  
-  const dispatch = useDispatch()
-
+    
   const handleClick = () => {
+    console.log("CALLED IN TABLE");
     dispatch(authenticateAdminTable(true))
   }
 
