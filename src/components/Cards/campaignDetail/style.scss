@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     width: 100%;
+    margin-bottom: 24px;
     .avatar {
       width: 32px;
       height: 32px;
@@ -13,31 +14,9 @@
     }
   }
 
-  .title {
-    font-size: 14px;
-    line-height: 20px;
-    color: $fonts-grey-700;
-    margin: 0;
-  }
-
-  .product-name {
-    font-size: 20px;
-    line-height: 30px;
-    color: $fonts-grey-900;
-    margin: 8px 0;
-  }
-
   .date-wrapper {
     display: flex;
     margin-bottom: 25px;
-
-    .sub-title {
-      font-size: 14px;
-      line-height: 20px;
-      color: $fonts-primary-500;
-      margin: 0;
-      margin-right: 8px;
-    }
 
     .active {
       margin: 0;
@@ -62,44 +41,13 @@
       }
     }
   }
-  .colum-title {
-    margin: 0;
-    font-size: 14px;
-    line-height: 20px;
-    color: $primary-600;
-  }
-
-  .colum-amount {
-    margin: 4px 0;
-    font-size: 18px;
-    line-height: 28px;
-    color: $fonts-grey-900;
-  }
 
   .card-inner {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
-    .card-description {
-      h3 {
-        font-weight: 600;
-        font-size: 30px;
-        line-height: 38px;
-        color: $fonts-grey-900;
-        margin-bottom: 16px;
-      }
-      p {
-        font-size: 14px;
-        line-height: 20px;
-        color: $fonts-light;
-        margin-bottom: 0;
-      }
-    }
   }
-
   .green-status {
-    font-size: 14px;
-    line-height: 20px;
     color: $fonts-green;
     margin-bottom: 0;
     svg {

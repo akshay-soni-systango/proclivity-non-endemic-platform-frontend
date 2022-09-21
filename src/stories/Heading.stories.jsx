@@ -33,16 +33,15 @@ H3.args = {
   children: "h3.table sidebar headings (20,30)",
 };
 
-export const lightTitle = Template.bind({});
-lightTitle.args = {
-  level: 3,
-  children: "h3.light-title",
-  className: "light-title  (16,24)"
-};
-
 export const H5 = Template.bind({});
 H5.args = {
   level: 5,
-  children: "h5.main-light-title (16,24)",
+  children: "h5.main-title (16,24)",
+};
+
+export const H5lightTitle = Template.bind({});
+H5lightTitle.args = {
+  level: 5,
+  children: "h5.light-title  (16,24)",
   className: "light-title"
 };

@@ -6,6 +6,7 @@ import campaignData from '../../../util/CampaignData/CAMPAIGN_DATA.json'
 import { ReactComponent as Menu } from "../../../assets/Icons/menu.svg";
 import { ReactComponent as ArrowUp } from "../../../assets/Icons/up-arrow.svg";
 import Pagination from "../../Common/Pagination";
+import Heading from "../../Common/Heading";
 
 const CampaignDetailCard = () => {
   const cardData = [...campaignData];
@@ -24,23 +25,21 @@ const CampaignDetailCard = () => {
         <Card.Body>
           <div className="card-top">
             <img className="avatar" src={Avatar} alt="Loading..." />
-            <p className="title">Pfizer Pulmonary</p>
+            <p className="mb-0">Pfizer Pulmonary</p>
             <div className="ms-auto">
               <Menu />
             </div>
           </div>
-          <h3 className="product-name">
-            {value.Name}
-          </h3>
+          <Heading level={3}> {value.Name}</Heading>
           <div className="date-wrapper">
-            <p className="sub-title">
+            <p className="light-para me-2 mb-0">
               20288 <span> • </span> April 30, 2022
             </p>
             <Badge bg="success">{value.Status}</Badge>
           </div>
           <div className="card-colum-wrapper">
             <div className="card-colum">
-              <p className="colum-title">Unique HCPs</p>
+              <p className="light-para">Unique HCPs</p>
               <h5 className="colum-amount">32,148</h5>
               <p className="green-status">
                 <ArrowUp />

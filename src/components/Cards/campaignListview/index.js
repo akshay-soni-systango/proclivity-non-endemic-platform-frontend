@@ -3,22 +3,22 @@ import { Card } from "react-bootstrap";
 import { ReactComponent as Menu } from "../../../assets/Icons/menu.svg";
 import { ReactComponent as ArrowUp } from "../../../assets/Icons/up-arrow.svg";
 import { ReactComponent as Chart } from "../../../assets/Icons/Chart.svg";
-import "./style.scss";
+import Heading from "../../Common/Heading";
 
 const CampaignListView = ({ text, amount, percentage }) => {
   return (
     <Card className="card-wrapper">
       <Card.Body>
         <div className="card-top px-2">
-          <p className="card-header-title">{text}</p>
+          <Heading level={5} className="mb-0">{text}</Heading>
           <div className="ms-auto">
             <Menu />
           </div>
         </div>
         <div className="card-inner px-2">
           <div className="card-description">
-            <h3>${amount}</h3>
-            <p>
+            <Heading level={1} className="mb-3">${amount}</Heading>
+            <p className="light-para mb-0">
               <span className="green-status me-2">
                 <ArrowUp />
                 {percentage}

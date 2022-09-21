@@ -61,10 +61,7 @@ p {
   font-size: 14px;
   line-height: 20px;
   color: $fonts-grey-900;
-  .light-para {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
+  &.light-para {
     color: $fonts-light;
   }
 }

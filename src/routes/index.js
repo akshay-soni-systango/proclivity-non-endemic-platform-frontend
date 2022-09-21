@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  BrowserRouter,
   Routes as Switch,
   Route,
 } from "react-router-dom";
@@ -20,7 +19,6 @@ import Pagination from "../util/Pagination/Pagination";
 const Routes = () => {
   return (
     <>
-      <BrowserRouter>
         <Layout>
           <Switch>
             <Route path="/home" element={<HomePage />} />
@@ -35,7 +33,6 @@ const Routes = () => {
             <Route path="/paginate" element={<Pagination/>} />
           </Switch>
         </Layout>
-      </BrowserRouter>
     </>
   );
 };
