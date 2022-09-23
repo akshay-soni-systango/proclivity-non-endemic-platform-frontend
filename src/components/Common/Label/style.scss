@@ -1,16 +1,18 @@
 @import  '../../../global.scss';
 label {
-    font-size: 14px;
+    font-size: 0.9em;
     line-height: 20px;
     color: $fonts-grey-700;
     margin-bottom: 6px;
-    margin-right: 5px;
 
-    .sub-label {
+    &.sub-label {
         font-weight: 500;
         font-size: 12px;
         line-height: 18px;
         color: $fonts-light;
     }
+     svg {
+        margin-left: 5px;
+     }
 }
 

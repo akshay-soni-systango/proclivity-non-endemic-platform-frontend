@@ -8,7 +8,7 @@ import {
 } from "../util/sidebarOptions";
 
 export default {
-  title: "Example/SidebarComponent",
+  title: "Component/SidebarComponent",
   component: SidebarComponent,
   argTypes: {
     backgroundColor: { control: "color" },

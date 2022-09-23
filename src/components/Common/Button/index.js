@@ -3,25 +3,24 @@ import React from "react";
 import { Button as BootstrapButton } from "react-bootstrap";
 import "./style.scss";
 
-const Button = ({ src, text, icon, ...props }) => {
+const Button = ({ text, Icon, iconClassName, iconProps, iconPosition, ...props }) => {
   return (
     <BootstrapButton {...props}
     type='button'
     >
       
-      {src && (
-        <img
-          src={src}
+      {iconPosition === 'left' && Icon && (
+        <Icon
           alt={text}
           className={`${!Boolean(text) && "m-0"} btn-icon`}
         />
       )}
       {text}
-      {icon && (
-        <img
-          src={icon}
+      {iconPosition === 'right' && Icon && (
+        <Icon
           alt={text}
-          className={`${!Boolean(text) && "m-0"} btn-icon-right`}
+          className={`${!Boolean(text) && "m-0"} btn-icon-right ${iconClassName}`}
+          {...iconProps}
         />
       )}
     </BootstrapButton>
@@ -30,5 +29,6 @@ const Button = ({ src, text, icon, ...props }) => {
 
 Button.defaultProps = {
   variant: "primary",
+  iconPosition: 'left', // 'right'
 };
 export default Button;

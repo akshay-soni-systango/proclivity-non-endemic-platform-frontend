@@ -1,32 +1,39 @@
 import React from "react";
 import AdminHeader from "../components/Common/AdminHeader";
-import downloadIcon from '../assets/Icons/download-cloud.svg';
-import addIcon from '../assets/Icons/plus.svg';
+import {ReactComponent as DownloadIcon} from '../assets/Icons/download-cloud.svg';
+import {ReactComponent as AddIcon} from '../assets/Icons/plus.svg';
 
 
 export default {
-  title: "Example/AdminHeader",
+  title: "Component/AdminHeader",
   component: AdminHeader,
   argTypes: {
-    backgroundColor: { control: "color" },
+    // backgroundColor: { control: "color" },
   },
 };
 
 const buttons = [
     {
       variant: 'secondary',
-      icon: downloadIcon,
-      text: 'Export'
+      Icon: DownloadIcon,
+      text: 'Export',
+      iconProps: {color: 'white'},
     },
     {
       variant: 'primary',
-      icon: addIcon,
+      Icon: AddIcon,
       text: 'Create a campaigns'
     }
   ]
 
-export const Header = () => (
-  <>
-   <AdminHeader  buttons={buttons} title="Campaigns" mainIcon={downloadIcon} subTitle="Weekly on Mondays at 5:00 AM EST" />
-  </>
+export const Header = ({...props}) => (
+   <AdminHeader {...props} />
 );
+Header.args = {
+
+  buttons,
+  title: "Campaigns",
+  MainIcon: DownloadIcon,
+  subTitle: "Weekly on Mondays at 5:00 AM EST",
+
+}

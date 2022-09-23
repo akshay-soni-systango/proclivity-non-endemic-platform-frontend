@@ -1,19 +1,39 @@
 import React from "react";
+import { iconListObj } from "../components/Common/Icons";
 import Input from "../components/Common/Input";
-import searchIcon from "../assets/Icons/search.svg";
-
 
 export default {
-  title: "Example/Input",
+  title: "Component/Input",
   component: Input,
   argTypes: {
-    backgroundColor: { control: "color" },
+    Icon: {
+      table: {
+        type: {
+          summary: "If need icon in input select icon",
+        },
+      },
+      control: {
+        type: "select",
+        options: {
+          "no icon": null,
+          ...iconListObj,
+        },
+      },
+    },
+    type: {
+      control: "select",
+      options: ["text", "number", "email", "password"],
+      table: {
+        type: {
+          summary: 'text type "text","number","email", "password"',
+        },
+      },
+    },
+    placeholder: { name: "string" },
   },
 };
 
-export const InputField = () => (
-    <>
-        <Input placeholder="Select" />
-        <Input placeholder="Search" icon={searchIcon} />
-    </>
-);
+export const InputField = ({ ...props }) => <Input {...props} />;
+InputField.arg = {
+  placeholder: "Search",
+};

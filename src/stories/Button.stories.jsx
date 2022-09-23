@@ -1,34 +1,114 @@
 import React from "react";
 import Button from "../components/Common/Button";
-import addFile from "../assets/Icons/add-file.svg";
-import add from "../assets/Icons/plus.svg";
-import addDark from "../assets/Icons/plus-dark.svg";
-
+import { Add } from "../assets/Icons";
+import { iconListObj } from "../components/Common/Icons";
 
 export default {
-  title: "Example/Button",
+  title: "Component/Button",
+  subtitle: "Component/Button",
+  subTitle: "Component/Button",
   component: Button,
   argTypes: {
-    backgroundColor: { control: "color" },
+    iconPosition: { 
+      control: "select", options: ["left", "right"],
+      table: {
+        type: {
+          summary: 'iconPosition is used to change the position of icon by default "left" or "right"',
+        },
+      },
+    },
+    variant: { 
+      control: "select", options: ["primary", "secondary"],
+      table: {
+        type: {
+          summary: 'There are a few variants in order to cover a variety of Button. "primary","secondary"',
+        },
+      },
+     },
+    Icon: {
+      table: {
+        type: {
+          summary: '"React.ReactNode" it should pass in the children',
+        },
+      },
+      control: {
+        type: "select",
+        options: {
+          "no icon": null,
+          ...iconListObj,
+        },
+      },
+    },
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: "Some component _markdown_",
+      },
+    },
   },
 };
 
-// const Template = (args) => <Button {...args} />;
+export const Default = ({ children, ...props }) => (
+  <Button {...props}>
+    {/* {Icon} */}
+    {children}
+  </Button>
+);
+Default.args = {
+  text: "Button",
+  variant: "primary",
+  iconPosition: "left",
+};
 
 export const Primary = () => (
   <>
-    <Button variant="primary" src={add} className="me-2"/>
-    <Button variant="primary"  text="Primary" className="me-2" />
-    <Button variant="primary" src={add} text="src with Button" className="me-2" />
-    <Button variant="primary" icon={add} text="Button with icon" />
+    <Button variant="primary" className="me-2" Icon={Add} />
+    <Button variant="primary" className="me-2" text="Primary" />
+    <Button
+      variant="primary"
+      className="me-2"
+      text="src with Button"
+      Icon={Add}
+    />
+    <Button
+      variant="primary"
+      iconPosition="right"
+      text="Button with Icon"
+      Icon={Add}
+    />
   </>
 );
+Primary.parameters = {
+  docs: {
+    description: {
+      story: 'All type of **Primary** button ',
+    },
+  },
+};
 
 export const Secondary = () => (
   <>
-    <Button variant="secondary" src={addFile} className="me-2" />
-    <Button variant="secondary"  text="Secondary" className="me-2" />
-    <Button variant="secondary" src={addFile} text="src with Button" className="me-2" />
-    <Button variant="secondary" icon={addDark} text="icon with Button" />
+    <Button variant="secondary" Icon={Add} className="me-2" />
+    <Button variant="secondary" text="Secondary" className="me-2" />
+    <Button
+      variant="secondary"
+      Icon={Add}
+      text="src with Button"
+      className="me-2"
+    />
+    <Button
+      variant="secondary"
+      iconPosition="right"
+      Icon={Add}
+      text="Icon with Button"
+    />
   </>
 );
+Secondary.parameters = {
+  docs: {
+    description: {
+      story: 'All type of **Secondary** button ',
+    },
+  },
+};

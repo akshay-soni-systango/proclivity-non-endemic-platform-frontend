@@ -3,7 +3,7 @@ import Tab from "../components/Common/Tab";
 
 
 export default {
-  title: "Example/Tab",
+  title: "Component/Tab",
   component: Tab,
   argTypes: {
     backgroundColor: { control: "color" },

@@ -3,10 +3,13 @@ import Dropdown from "../components/Common/Dropdown";
 
 
 export default {
-  title: "Example/Dropdown",
+  title: "Component/Dropdown",
   component: Dropdown,
   argTypes: {
     backgroundColor: { control: "color" },
+    preValue: {
+      
+    }
   },
 };
 
