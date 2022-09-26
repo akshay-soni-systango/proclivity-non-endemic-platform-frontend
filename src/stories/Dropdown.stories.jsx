@@ -14,5 +14,5 @@ export default {
 };
 
 export const PrimaryDropdown = () => (
-    <Dropdown preValue="Static:" placeholderName="Select" />
+    <Dropdown preValue="Static:" placeholderName="Select" options={[{value: 'chocolate', label: 'Chocolate'}]}/>
 );

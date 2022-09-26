@@ -2,12 +2,12 @@ import React from "react";
 import Select, { components } from 'react-select';
 import './style.scss';
 
-const Dropdown = ({ preValue, placeholderName, ...props }) => {
-  const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ]
+const Dropdown = ({ preValue, placeholderName, options, ...props }) => {
+  // const options = props.options || [
+  //   { value: 'chocolate', label: 'Chocolate' },
+  //   { value: 'strawberry', label: 'Strawberry' },
+  //   { value: 'vanilla', label: 'Vanilla' }
+  // ]
   const customStyles = {
     control: () => ({
       border: 'none',
@@ -59,11 +59,13 @@ const Dropdown = ({ preValue, placeholderName, ...props }) => {
         styles={customStyles}
         components={componentList}
         placeholder={<div className="select-placeholder-text">{preValue} {placeholderName}</div>}
+        {...props}
       />
     </div>
   );
 };
 Dropdown.defaultProps = {
   variant: "primary",
+  options: []
 };
 export default Dropdown;

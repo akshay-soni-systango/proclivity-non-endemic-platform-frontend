@@ -29,11 +29,10 @@ export default {
         },
       },
     },
-    placeholder: { name: "string" },
   },
 };
 
 export const InputField = ({ ...props }) => <Input {...props} />;
-InputField.arg = {
+InputField.args = {
   placeholder: "Search",
 };

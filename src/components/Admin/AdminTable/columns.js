@@ -1,9 +1,5 @@
 import more from '../../../assets/Icons/menu.svg';
-import brand1 from '../../../assets/Icons/brand-1.svg';
-import brand2 from '../../../assets/Icons/brand-2.svg';
-import brand3 from '../../../assets/Icons/brand-3.svg';
-import brand4 from '../../../assets/Icons/brand-4.svg';
-import brand5 from '../../../assets/Icons/brand-5.svg';
+import Brand from '../../../assets/Icons/brand.svg';
 
 export const COLUMNS = [
     {
@@ -15,11 +11,11 @@ export const COLUMNS = [
         accessor: 'Brands',
         Cell: () => (
             <>
-                <span><img src={brand1} alt='Loading...' /></span>
-                <span><img src={brand2} alt='Loading...' /></span>
-                <span><img src={brand3} alt='Loading...' /></span>
-                <span><img src={brand4} alt='Loading...' /></span>
-                <span><img src={brand5} alt='Loading...' /></span>
+                <span><Brand /></span>
+                <span><Brand /></span>
+                <span><Brand /></span>
+                <span><Brand /></span>
+                <span><Brand /></span>
 
             </>
         )
