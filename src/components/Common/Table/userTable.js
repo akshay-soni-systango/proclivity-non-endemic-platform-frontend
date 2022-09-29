@@ -14,7 +14,7 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
   const { isCampaignTable, isAdminTable } = { ...rest };
   const dispatch = useDispatch();
   const Name = [];
-  console.log(Name , "Array of names");
+  console.log(Name, "Array of names");
 
 
   console.log(tableData, "tableDAta ");
@@ -109,7 +109,7 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
                 >
                   {row.cells.map((cell, index) => {
                     const name = cell?.row.values.Name
-                    console.log(name , "name of cell");
+                    console.log(name, "name of cell");
                     Name.push(name)
                     // const sliced = Name?.map((slice)=> slice)
                     return (
@@ -134,7 +134,13 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
                             isAdminTable &&
                             (
                               index === 0 ?
-                                <div>DAta </div>
+                                <div className="d-flex align-items-center">
+                                  <div className="img-round me-3">S.A</div>
+                                  <div>
+                                    <p className="m-0">{name}</p>
+                                    <p className="m-0">e mail</p>
+                                  </div>
+                                </div>
                                 :
                                 cell.render("Cell")
                             )
