@@ -4,45 +4,101 @@ import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs";
 
 <ColorPalette>
   <ColorItem
-    title="white"
-    subtitle="White with Some of the greys"
+    title="white with grey"
+    subtitle="using color ($grey-(number))"
     colors={{
-      White: "#FFFFFF",
-      Light: "#f9f9fb",
-      grey100: "#f2f4f7",
-      grey200: "#EAECF0",
+      grey300: '#bbbbbb',
+      grey200: '#EAECF0',
+      grey100: '#f2f4f7',
+      grey50: '#f9f9fb',
+      white: '#FFFFFF',
     }}
   />
   <ColorItem
     title="primary"
-    subtitle="NobilityBlue"
+     subtitle="using color ($primary-(number))"
     colors={{
-      primary800: "#30374F",
-      primary: "#404968",
-      primary600: "#4a5578",
-      primary300: "#B9C0D4",
-      primary100: "#EFF1F5",
+      primary800: '#30374F',
+      primary: '#404968',
+      primary600: '#4a5578',
+      primary300: '#B9C0D4',
+      primary200: '#dcdfea',
+      primary100: '#EFF1F5',
+      primary25: '#FCFCFD',
     }}
   />
   <ColorItem
     title="blue"
-    subtitle="Ocean"
-    colors={{  blue700: "#175CD3",blue: "#1570EF", blue50: "#EFF8FF" }}
+    subtitle="using color ($blue-(number))"
+    colors={{  
+      blue600: '#1570EF', 
+      blue50: '#EFF8FF',
+      }}
   />
   <ColorItem
     title="success"
-    subtitle="Green"
+    subtitle="using color ($success-(number))"
     colors={{
-      green500: '#12B76A',     
-      lightGreen: '#ecfdf3',
+      success500: '#12B76A',    
+      success100: '#ecfdf3',
     }}
   />
   <ColorItem
     title="danger"
-    subtitle="Green"
+    subtitle="using color ($danger-(number))"
     colors={{
-      bgRed: '#FFEFEF',     
-      fontsDanger: '#D31717',
+      danger: '#D92D20',
+      danger100: '#FFEFEF',     
     }}
   />
+</ColorPalette>
+<h1>Color palette for fonts</h1>
+<ColorPalette>
+  <ColorItem
+    title="black shades for fonts"
+    subtitle="using color ($fonts-(name))"
+    colors={{
+      black: '#111322',
+      light: '#667085',     
+    }}
+  />
+  <ColorItem
+    title="primary shades for fonts"
+    subtitle="using color ($fonts-primary-(number))"
+    colors={{
+      primary500: '#556187',   
+      primary400: '#7D89B0',
+      primary200: '#dcdfea',   
+    }}
+  />
+  <ColorItem
+    title="grey shades for fonts"
+    subtitle="using color ($fonts-grey-(number))"
+    colors={{
+      grey900: '#101828',   
+      grey700: '#344054',   
+    }}
+  />
+  <ColorItem
+    title="grey shades for fonts"
+    subtitle="using color ($fonts-success-(number))"
+    colors={{
+      success: '#027a48',   
+    }}
+  />
+  <ColorItem
+    title="grey shades for fonts"
+    subtitle="using color ($fonts-blue-(number))"
+    colors={{
+      blue700: '#175CD3',   
+    }}
+  />
+  <ColorItem
+    title="grey shades for fonts"
+    subtitle="using color ($fonts-danger-(number))"
+    colors={{
+      danger: '#D31717',  
+    }}
+  />
+
 </ColorPalette>

@@ -6,7 +6,6 @@ import { iconListObj } from "../components/Common/Icons";
 export default {
   title: "Component/Badge",
   component: Badge,
-  // subcomponents: { Add },
   subtitle: "Set the most appropriate variant of the component for your use.",
   parameters: {
     docs: {
@@ -58,7 +57,6 @@ export const BadgeElement = ({ children, Icon, ...props }) => (
   </Badge>
 );
 BadgeElement.args = {
-  // Icon: Add,
   children: "active",
   bg: "secondary",
 };

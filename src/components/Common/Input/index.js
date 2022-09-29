@@ -1,12 +1,15 @@
 import React from "react";
-
+import classNames from 'classnames';
 import "./style.scss";
 
-const Input = ({ Icon, ...props }) => {
+const Input = ({ Icon, error, ...props }) => {
   return (
-    <div className="input-container mb-2">
-      <input className={!Boolean(Icon) ? "no-img" : "has-img"}  {...props} />
+    <div className={classNames("input-container", {
+      'has-error': error
+    })}>
+      <input className={!Boolean(Icon) ? "no-img" : "has-img"}  {...props} required />      
       {Icon && <Icon className="input-img"/>}
+      <div className="error-msg">{error}</div>
     </div>
   );
 };

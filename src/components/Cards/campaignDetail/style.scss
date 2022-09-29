@@ -20,9 +20,9 @@
 
     .active {
       margin: 0;
-      background: $bg-light-green;
+      background: $success-100;
       border-radius: 16px;
-      color: $fonts-green;
+      color: $fonts-success;
       font-size: 12px;
       line-height: 18px;
       padding: 2px 8px;
@@ -48,7 +48,7 @@
     flex-wrap: wrap;
   }
   .green-status {
-    color: $fonts-green;
+    color: $fonts-success;
     margin-bottom: 0;
     svg {
       margin-right: 4px;

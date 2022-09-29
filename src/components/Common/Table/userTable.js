@@ -81,6 +81,7 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
                               <div className='d-flex align-items-center'>
                                 <span className='img-wrapper'>
                                   <img src={avatar} alt={avatar} />
+                                  {console.log(cell.value)}
                                 </span>
                                 <div className='campaign-name' >
                                   <p className='title'>{cell.render("Cell")}</p>

@@ -12,6 +12,7 @@ import {
     ChevronDown,
     Cross,
     QuestionMark,
+    Notification,
   } from "../../../assets/Icons";
 
 export const iconListObj = {
@@ -28,6 +29,7 @@ export const iconListObj = {
         ChevronDown: ChevronDown,
         Cross: Cross,
         QuestionMark: QuestionMark,
+        Notification: Notification,
     };
 
 export const iconList = Object.keys(iconListObj).map(key => ({

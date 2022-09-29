@@ -1,25 +1,57 @@
 @import "../../../global.scss";
 
-.nav-tabs {
-    margin: 25px 0 48px 0;
-  .nav-link {
-    font-size: 14px;
-    line-height: 20px;
-    color: $fonts-light;
-    border: none;
-    &.active,
-    &:hover,
-    &:focus {
-      color: $primary;
+.nav {
+    .nav-link {
       border: none;
-      background: transparent;
-      border-bottom: 2px solid $primary;
-      padding-bottom: 17px;
+      color: $fonts-light;
+      border: none;
+      background-color: transparent;
+      &.active,
+      &:hover,
+      &:focus {
+        color: $primary;
+        border: none;
+      }
+    }
+  &-tabs {
+    margin: 25px 0 48px 0;
+    .nav-link {
+      &.active,
+      &:hover,
+      &:focus {
+        color: $primary;
+        border: none;
+        background: transparent;
+        border-bottom: 2px solid $primary;
+        padding-bottom: 17px;
+      }
     }
   }
-  // .tab-content > .active {
-  //   font-size: 20px;
-  //   line-height: 30px;
-  //   color: $fonts-grey-900;
-  // }
+  &-button {
+    button {
+      padding: 8px 12px;
+    }
+    .nav-item {
+      margin-right: 5px;
+      margin-bottom: 12px;;
+    }
+    .nav-link {
+      &.active,
+      &:hover,
+      &:focus {
+        border: none;
+        background: $primary-100;
+        border-radius: 6px;
+      }
+    }
+  }
+}
+
+.tab-card {
+  .tab-content {
+    padding: 24px;
+    background: $primary-25;
+    border: 1px solid $fonts-primary-200;
+    border-radius: 12px;
+  }
 }

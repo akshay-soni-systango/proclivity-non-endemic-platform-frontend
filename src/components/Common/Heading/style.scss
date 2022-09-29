@@ -1,23 +1,29 @@
 @import '../../../global.scss';
 h1 {
-    font-size: 1.9em;
-    line-height: 38px;
+    font-size: 1.875em;
+    line-height: 1.448; 
     color: $fonts-black;
 }
+
 h2 {
     font-weight: 500;
-    font-size: 1.5em;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 1.334;
     color: $fonts-grey-900;
 }
 h3 {
-    font-size: 1.3em;
-    line-height: 30px;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: $fonts-grey-900;
+}
+h4 {
+    font-size: 1.125rem;
+    line-height: 1.6;
     color: $fonts-grey-900;
 }
 h5 {
-    font-size: 1em;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5;
     color: $fonts-grey-900;
     font-weight: 500;
 }

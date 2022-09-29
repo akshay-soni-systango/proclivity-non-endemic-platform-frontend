@@ -4,7 +4,7 @@ import { Button as BootstrapButton } from "react-bootstrap";
 import "./style.scss";
 import PropTypes from 'prop-types'
 
-const Button = ({ text, Icon, iconClassName, iconProps, iconPosition, ...props }) => {
+const Button = ({ text, Icon, iconClassName, iconProps, iconPosition, children, ...props }) => {
   return (
     <BootstrapButton
     type='button' {...props}
@@ -16,7 +16,7 @@ const Button = ({ text, Icon, iconClassName, iconProps, iconPosition, ...props }
           className={`${!Boolean(text) && "m-0"} btn-icon`}
         />
       )}
-      {text}
+      {text}{children}
       {iconPosition === 'right' && Icon && (
         <Icon
           alt={text}

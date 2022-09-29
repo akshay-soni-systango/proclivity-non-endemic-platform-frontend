@@ -14,7 +14,7 @@ export { ReactComponent as Chart } from "./Chart.svg";
 export { ReactComponent as ChevronDown } from "./chevron-down.svg";
 export { ReactComponent as Cross } from "./cross.svg";
 export { ReactComponent as QuestionMark } from "./questionMark.svg";
-// export { ReactComponent as Add } from "./plus.svg";
+export { ReactComponent as Notification } from "./Notification.svg";
 // export { ReactComponent as Add } from "./plus.svg";
 // export { ReactComponent as Add } from "./plus.svg";
 // export { ReactComponent as Add } from "./plus.svg";

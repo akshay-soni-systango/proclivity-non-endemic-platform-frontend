@@ -21,7 +21,7 @@ table {
   tbody {
     tr {
       &:nth-child(even) {
-        background-color: $bg-light;
+        background-color: $grey-50;
       }
       &:first-child {
         border-radius: 8px 8px 0 0;
@@ -84,7 +84,7 @@ table {
   }
   th {
     padding: 13px 16px;
-    background-color: $bg-light;
+    background-color: $grey-50;
     color: $fonts-light;
     font-size: 12px;
     line-height: 18px;

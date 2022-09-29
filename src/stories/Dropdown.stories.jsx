@@ -1,18 +1,40 @@
 import React from "react";
 import Dropdown from "../components/Common/Dropdown";
 
-
 export default {
   title: "Component/Dropdown",
   component: Dropdown,
-  argTypes: {
-    backgroundColor: { control: "color" },
+  argTypes: { 
+    hasPreValue: { 
+      // type: "Boolean",
+      control: 'boolean',
+    } ,
     preValue: {
-      
-    }
+      control: {
+        type: 'text',
+      },
+      if: {
+        arg: 'hasPreValue'
+      }
+    },
+    
   },
 };
 
-export const PrimaryDropdown = () => (
-    <Dropdown preValue="Static:" placeholderName="Select" options={[{value: 'chocolate', label: 'Chocolate'}]}/>
+const options = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' }
+]
+
+export const PrimaryDropdown = ({...props}) => (
+  <Dropdown  
+    {...props}     
+  />
 );
+PrimaryDropdown.args = {
+  hasPreValue: false,
+  preValue: 'Static:',
+  placeholderName: "Select",
+  options,
+};

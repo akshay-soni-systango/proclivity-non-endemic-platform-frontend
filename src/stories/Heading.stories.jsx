@@ -9,7 +9,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: "Heading for Font size 30px, line height 38px use h2 tag.",
+        component: "Heading for Font size 30px, line height 38px use h1 tag.",
       },
     },
   },
@@ -70,12 +70,24 @@ H5.parameters = {
     },
   },
 };
+export const H4 = Template.bind({});
+H4.args = {
+  level: 4,
+  children: "Main title",
+};
+H4.parameters = {
+  docs: {
+    description: {
+      story: 'Heading for Font size 18px, line height 28px use h4 tag.',
+    },
+  },
+};
 
 export const H5lightTitle = Template.bind({});
 H5lightTitle.args = {
   level: 5,
-  children: "light-title",
-  className: "Light title"
+  children: "Light title",
+  className: "light-title"
 };
 H5lightTitle.parameters = {
   docs: {

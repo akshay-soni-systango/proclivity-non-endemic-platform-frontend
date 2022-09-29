@@ -7,9 +7,6 @@ import {ReactComponent as AddIcon} from '../assets/Icons/plus.svg';
 export default {
   title: "Component/AdminHeader",
   component: AdminHeader,
-  argTypes: {
-    // backgroundColor: { control: "color" },
-  },
 };
 
 const buttons = [

@@ -37,3 +37,8 @@ const tabs = [
 export const TabElement = () => (
     <Tab tabs={tabs} />
 );
+export const TabElement2 = () => (
+  <div className="tab-card">
+    <Tab variant="button" tabs={tabs} />
+  </div>
+);

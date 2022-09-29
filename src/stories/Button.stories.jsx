@@ -51,7 +51,6 @@ export default {
 
 export const Default = ({ children, ...props }) => (
   <Button {...props}>
-    {/* {Icon} */}
     {children}
   </Button>
 );

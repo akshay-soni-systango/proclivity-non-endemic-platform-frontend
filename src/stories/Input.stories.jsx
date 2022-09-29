@@ -32,7 +32,12 @@ export default {
   },
 };
 
-export const InputField = ({ ...props }) => <Input {...props} />;
+export const InputField = ({ ...props }) => 
+<>
+<Input {...props} /><Input {...props} />
+</>
+;
 InputField.args = {
   placeholder: "Search",
+  error: ''
 };
