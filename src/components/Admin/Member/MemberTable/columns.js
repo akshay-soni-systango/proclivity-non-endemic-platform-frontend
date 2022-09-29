@@ -1,10 +1,4 @@
 import more from '../../../../assets/Icons/menu.svg';
-import brand1 from '../../../../assets/Icons/brand-1.svg';
-import brand2 from '../../../../assets/Icons/brand-2.svg';
-import brand3 from '../../../../assets/Icons/brand-3.svg';
-import brand4 from '../../../../assets/Icons/brand-4.svg';
-import brand5 from '../../../../assets/Icons/brand-5.svg';
-import data from '../../../../util/CampaignData/ADMIN_MEMBER.json'
 import UserName from './name';
 
 // const dataArray = [...data];
