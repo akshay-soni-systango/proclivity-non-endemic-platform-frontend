@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { ReactComponent as Cross } from '../../../assets/Icons/cross.svg';
 // import { useDispatch } from 'react-redux';
 import './style.scss'

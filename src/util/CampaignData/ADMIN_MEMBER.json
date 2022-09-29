@@ -1,44 +1,306 @@
 [
     {
-        "Name" : "Lana Steyer",
-        "Brands" : "pfixer",
-        "Role" : "Super Admin",
-        "Last Active":"1hr ago"
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1 hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Active"
     },
     {
-        "Name" : "Lana Steyer",
-        "Brands" : "pfixer",
-        "Role" : "Super Admin",
-        "Last Active":"1hr ago"
+        "Name": "Demi Wilkenson",
+        "Email": "demi@gmail.com",
+        "Role": "Creative",
+        "Last Active": "2 hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Active"
     },
     {
-        "Name" : "Lana Steyer",
-        "Brands" : "pfixer",
-        "Role" : "Super Admin",
-        "Last Active":"1hr ago"
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Admin",
+        "Last Active": "yesterday",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Active"
     },
     {
-        "Name" : "Lana Steyer",
-        "Brands" : "pfixer",
-        "Role" : "Super Admin",
-        "Last Active":"1hr ago"
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1 hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Active"
     },
     {
-        "Name" : "Lana Steyer",
-        "Brands" : "pfixer",
-        "Role" : "Super Admin",
-        "Last Active":"1hr ago"
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Analyst",
+        "Last Active": "1 hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Active"
     },
     {
-        "Name" : "Lana Steyer",
-        "Brands" : "pfixer",
-        "Role" : "Super Admin",
-        "Last Active":"1hr ago"
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "2 hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Active"
     },
     {
-        "Name" : "Lana Steyer",
-        "Brands" : "pfixer",
-        "Role" : "Super Admin",
-        "Last Active":"1hr ago"
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Creative",
+        "Last Active": "yesterday",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Active"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "May 11, 2022",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Active"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1 hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Active"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "May 11, 2022",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Active"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1 hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Active"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Analyst",
+        "Last Active": "1 hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Active"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1 hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Active"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Analyst",
+        "Last Active": "1 hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Active"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1 hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Active"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Admin",
+        "Last Active": "1 hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Creative",
+        "Last Active": "2 hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Analyst",
+        "Last Active": "1hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "May 11, 2022",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "May 11, 2022",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "May 11, 2022",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "May 11, 2022",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "May 11, 2022",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "May 11, 2022",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "May 11, 2022",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
+    },
+    {
+        "Name": "Lana Steyer",
+        "Email": "lana@gmail.com",
+        "Role": "Super Admin",
+        "Last Active": "1hr ago",
+        "Create Date": "May 11, 2022",
+        "Member Status": "Inactive"
     }
 ]

@@ -1,30 +1,34 @@
 import more from '../../../../assets/Icons/menu.svg';
-import brand1 from '../../../../assets/Icons/brand-1.svg';
-import brand2 from '../../../../assets/Icons/brand-2.svg';
-import brand3 from '../../../../assets/Icons/brand-3.svg';
-import brand4 from '../../../../assets/Icons/brand-4.svg';
-import brand5 from '../../../../assets/Icons/brand-5.svg';
-
-
-
+import team1 from '../../../../assets/Icons/team1.svg';
+import team2 from '../../../../assets/Icons/team2.svg';
+import team3 from '../../../../assets/Icons/team3.svg';
+import team4 from '../../../../assets/Icons/team4.svg';
+import team5 from '../../../../assets/Icons/team5.svg';
+import user from '../../../../assets/Icons/userIconDark.svg';
 
 
 export const COLUMNS = [
     {
-        Header: 'Name',
-        accessor: 'Name'
-    },
-    {
-        Header: 'Brands',
-        accessor: 'Brands',
+        Header: 'Team Name',
+        accessor: 'Team Name',
         Cell: () => (
             <>
-                <span><img src={brand1} alt='Loading...' /></span>
-                <span><img src={brand2} alt='Loading...' /></span>
-                <span><img src={brand3} alt='Loading...' /></span>
-                <span><img src={brand4} alt='Loading...' /></span>
-                <span><img src={brand5} alt='Loading...' /></span>
-
+                <img src={user} alt='...Loading' />
+                <span>Team Name</span>
+            </>
+        )
+    },
+    {
+        Header: 'Role',
+        accessor: 'Role',
+        Cell: () => (
+            <>
+                <span><img src={team1} alt='Loading...' /></span>
+                <span><img src={team2} alt='Loading...' /></span>
+                <span><img src={team3} alt='Loading...' /></span>
+                <span><img src={team4} alt='Loading...' /></span>
+                <span><img src={team5} alt='Loading...' /></span>
+                <span><img src={user} alt='Loading...' /></span>
             </>
         )
     },

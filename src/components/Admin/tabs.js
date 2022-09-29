@@ -1,5 +1,5 @@
 import MemberPage from "./Member";
-import AdminSidebar from "./Sidebar";
+import TeamsPage from "./Teams";
 
 export const tabs = [
     {
@@ -12,41 +12,13 @@ export const tabs = [
     {
         title: 'Teams',
         key: 'Teams',
-        content:'Teams'
+        content:<>
+        <TeamsPage/>
+        </>
     },
     {
-        title: 'Brands',
-        key: 'Brands',
-        content: 'Brands'
-    },
-    {
-        title: 'Brand Safety',
-        key: 'Brand Safety',
-        content: 'Brand Safety'
-    },
-    {
-        title: 'Locations',
-        key: 'Locations',
-        content: 'Locations'
-    },
-    {
-        title: 'Integrations',
-        key: 'Integrations',
-        content: 'Integrations'
-    },
-    {
-        title: 'Security',
-        key: 'Security',
-        content: 'Security'
-    },
-    {
-        title: 'Account',
-        key: 'Account',
-        content: 'Account'
-    },
-    {
-        title: 'Biling ',
-        key: 'Biling ',
-        content: 'Biling '
+        title: 'Advertisers',
+        key: 'Advertisers',
+        content: 'Advertisers'
     }
 ]

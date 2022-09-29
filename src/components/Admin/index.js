@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ReactComponent as AdminIcon } from '../../assets/Icons/admin.svg';
 import userIcon from '../../assets/Icons/userIconDark.svg';
@@ -15,23 +15,25 @@ const AdminHomePage = () => {
     const dispatch = useDispatch();
 
     const openAdminSideBar = useSelector(getAdminTableCheck);
-    console.log(openAdminSideBar, "   OUR STATE TO TOGGLE");
+    // console.log(openAdminSideBar, "   OUR STATE TO TOGGLE");
 
     const handleClose = () => {
-        console.log("HANDLE CLOSE CALLED");
+        // console.log("HANDLE CLOSE CALLED");
         dispatch(authenticateAdminTable(false))
     }
-    const handleClickOutside = (event) => {
-        if (ref.current && !ref.current.contains(event.target)) {
-            handleClose()
-        }
-    }
+  
     useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (ref.current && !ref.current.contains(event.target)) {
+                handleClose()
+            }
+        }
+
         document.addEventListener("click", handleClickOutside, true);
         return () => {
             document.removeEventListener("click", handleClickOutside, true)
         }
-    }, [])
+    }, [handleClose])
 
     return (
         <div className='admin-page'>
@@ -59,4 +61,4 @@ const AdminHomePage = () => {
     )
 }
 
-export default AdminHomePage
+export default AdminHomePage;

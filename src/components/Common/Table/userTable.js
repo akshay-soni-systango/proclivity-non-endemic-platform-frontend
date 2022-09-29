@@ -1,22 +1,31 @@
 import React from "react";
-import { useTable, useSortBy, usePagination } from "react-table";
 import "./table.scss";
-import arrowUp from "../../../assets/Icons/arrow-up.svg";
 import arrowDown from "../../../assets/Icons/arrow-down.svg";
+import arrowUp from "../../../assets/Icons/arrow-up.svg";
 import avatar from "../../../assets/Icons/Avatar.svg";
-import { useDispatch, useSelector } from 'react-redux';
-import { authenticateAdminTable, getAdminTableCheck } from "../../../Features/Admin/adminSlice";
+import { useTable, useSortBy, usePagination } from "react-table";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { authenticateAdminTable } from "../../../Features/Admin/adminSlice";
 
 
 const Table = ({ tableColumn, tableData, ...rest }) => {
-  
+  const navigate = useNavigate()
   const { isCampaignTable, isAdminTable } = { ...rest };
-  const dispatch = useDispatch();  
+  const dispatch = useDispatch();
+  const Name = [];
+  console.log(Name , "Array of names");
+
+
+  console.log(tableData, "tableDAta ");
+
+
+
   // const sidebarRef = useRef();
-  
-  const openAdminSideBar = useSelector(getAdminTableCheck);
-  console.log(openAdminSideBar , "STATE IN TABLE");
-   
+
+  // const openAdminSideBar = useSelector(getAdminTableCheck);
+  // console.log(openAdminSideBar , "STATE IN TABLE");
+
   //  useEffect(() => {
   //    let handler = (e) => {
   //         console.log(sidebarRef.current.contains(e.target) , "ref")
@@ -26,10 +35,10 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
   //       }
   //       document.addEventListener("mousedown", handler);
 
-        // return () => {
-        //     document.removeEventListener("mousedown", handler )
-        // }
-    // })
+  // return () => {
+  //     document.removeEventListener("mousedown", handler )
+  // }
+  // })
 
 
   const tableInstance = useTable(
@@ -47,12 +56,17 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
     prepareRow,
   } =
     tableInstance;
-    
+  console.log("headerGroups => ", headerGroups);
+  console.log("page => ", page);
+
   const handleClick = () => {
-    console.log("CALLED IN TABLE");
+    // console.log("CALLED IN TABLE");
     dispatch(authenticateAdminTable(true))
   }
 
+  const gotoCampaignDetail = () => {
+    navigate(`/detail`)
+  }
   return (
     <div className='table-wrapper'>
       <table {...getTableProps()}>
@@ -90,10 +104,14 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
             return (
               <>
                 <tr key={ind}  {...row.getRowProps()} onClick={
-                  isAdminTable && handleClick
+                  isAdminTable ? handleClick : isCampaignTable ? gotoCampaignDetail : null
                 }
                 >
                   {row.cells.map((cell, index) => {
+                    const name = cell?.row.values.Name
+                    console.log(name , "name of cell");
+                    Name.push(name)
+                    // const sliced = Name?.map((slice)=> slice)
                     return (
                       <td key={index} {...cell.getCellProps()}>
                         {
@@ -113,7 +131,13 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
                               cell.render("Cell")
                             )
                             :
-                            cell.render("Cell")
+                            isAdminTable &&
+                            (
+                              index === 0 ?
+                                <div>DAta </div>
+                                :
+                                cell.render("Cell")
+                            )
                         }
                       </td>
                     );
