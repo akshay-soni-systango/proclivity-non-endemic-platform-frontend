@@ -38,12 +38,12 @@ export default {
     },
     bg: {
       control: "select",
-      options: ["primary", "secondary", "danger"],
+      options: ["primary", "secondary", "danger", "light"],
       description:
         "appearance is used to change the background to show the condition",
       table: {
         type: {
-          summary: "secondary, danger, success",
+          summary: "secondary, danger, success, light",
         },
       },
     },

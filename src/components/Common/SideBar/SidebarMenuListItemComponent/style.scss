@@ -1,8 +1,8 @@
 @import '../../../../global.scss';
 
 .list-wrapper {
-    // margin: 8px 16px;
     list-style-type: none;
+    margin-bottom: 8px;
     a {
         color: $fonts-primary-200;
         text-decoration: none; 
@@ -12,15 +12,30 @@
         align-items: center;
         justify-content: flex-start;
         background: transparent;
-        padding: 12px 14px;
+        padding: 12px;
         border-radius: 8px;
-        &:hover {
+        --svgDefaultColor: $fonts-primary-200;
+        svg {
+            min-width: 24px;
+            height: 24px;
+            path {
+                stroke: $fonts-primary-200;
+            }
+        }
+        &:hover,
+        &.active {
             color: $white;
             background: $primary-600;
+            svg {
+                path {
+                    stroke: $white;
+                }
+            }
         }
         span {
-            margin-left: 15px;
-            display: none;
+            margin-left: 14px;
+            opacity: 0;
+            transition: display 0s, opacity 0.5s linear;
         }
     }
 }

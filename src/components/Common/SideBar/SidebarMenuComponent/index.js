@@ -3,9 +3,9 @@ import SidebarMenuListItem from "../SidebarMenuListItemComponent";
 import './style.scss';
 
 const SidebarMenuList = ({ list }) => {
-    const listData = ({ title, icon, link }) => {
+    const listData = ({ title, Icon, link }) => {
         return (
-            <SidebarMenuListItem title={title} icon={icon} link={link} key={title} />          
+            <SidebarMenuListItem title={title} Icon={Icon} link={link} key={title} />          
         )
     }
     const listItems = list.map(listData);

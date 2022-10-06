@@ -18,9 +18,19 @@
     .logo-header {
         display: flex;
         align-items: center;
-        justify-content: space-between;
         margin: 24px 0;
-        padding: 14px 10px;
+        height: 50px;
+        padding-left: 50px;
+        position: relative;
+        svg.logo-icon{
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all .3s;
+        }
+        .logo-text{
+            margin-left: -16px;
+        }
         .without-hover {
             display: block;
         }
@@ -28,18 +38,34 @@
         .sidebar-icon {
             display: none;
         }
+        .logo-wrapper {
+            display: flex; 
+            align-items: center;
+            justify-content: center;           
+        }
+        .icon-right {
+            padding: 0 20px;
+        }
     }
     &:hover {
-        width: 240px;
+        width: 264px;
         span {
-            display: block;
+            opacity: 1;
         }
         .logo-header {
-            margin: 32px 0;
+            svg.logo-icon{
+                width: 28px;
+                height: 28px;
+                left: 10px;
+                top: 10px;
+            }
             .without-hover {
                 display: none;
             }
-            .on-hover,
+            .on-hover {
+                display: block;
+                padding: 0 12px;
+            }
             .sidebar-icon {
                 display: block;
             }

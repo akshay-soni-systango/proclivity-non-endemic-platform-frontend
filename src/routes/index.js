@@ -13,6 +13,7 @@ import CampaignCompletion from "../components/Campaign/CampaignDetail/CampaignCr
 import AdminPage from "../pages/AdminPage";
 import CampaignViewReport from "../components/Campaign/CampaignDetail/ViewReports";
 import CampaignHomePage from "../pages/Campaigns/Overview";
+import Login from "../components/Login";
 
 const Routes = () => {
   return (
@@ -28,6 +29,7 @@ const Routes = () => {
             <Route path="/campaign/edit" element={<CampaignForm/>} />
             <Route path="/campaign/complete" element={<CampaignCompletion/>} />
             <Route path="/campaign/report" element={<CampaignViewReport/>} />
+            <Route path="/login" element={<Login/>} />
             {/* <Route path="/paginate" element={<Pagination/>} /> */}
           </Switch>
         </Layout>

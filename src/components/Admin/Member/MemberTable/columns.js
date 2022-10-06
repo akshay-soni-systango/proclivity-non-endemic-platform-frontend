@@ -1,3 +1,4 @@
+import { Badge } from 'react-bootstrap';
 import more from '../../../../assets/Icons/menu.svg';
 import UserName from './name';
 
@@ -29,7 +30,14 @@ export const COLUMNS = [
     },
     {
         Header: 'Member Status',
-        accessor: 'Member Status'
+        accessor: 'Member Status',
+        Cell: ({value}) => {
+            let bg = 'primary'
+            if (value.toLowerCase() === 'inactive'){
+                bg = 'danger'
+            }
+            return <Badge bg={bg} >{value}</Badge>
+        }
     },
     {
         Header: '',

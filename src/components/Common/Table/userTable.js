@@ -4,42 +4,17 @@ import arrowDown from "../../../assets/Icons/arrow-down.svg";
 import arrowUp from "../../../assets/Icons/arrow-up.svg";
 import avatar from "../../../assets/Icons/Avatar.svg";
 import { useTable, useSortBy, usePagination } from "react-table";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from 'react-redux';
-import { authenticateAdminTable } from "../../../Features/Admin/adminSlice";
+// import { useNavigate } from "react-router-dom";
 
 
 const Table = ({ tableColumn, tableData, ...rest }) => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const { isCampaignTable, isAdminTable } = { ...rest };
-  const dispatch = useDispatch();
   const Name = [];
   console.log(Name, "Array of names");
 
 
   console.log(tableData, "tableDAta ");
-
-
-
-  // const sidebarRef = useRef();
-
-  // const openAdminSideBar = useSelector(getAdminTableCheck);
-  // console.log(openAdminSideBar , "STATE IN TABLE");
-
-  //  useEffect(() => {
-  //    let handler = (e) => {
-  //         console.log(sidebarRef.current.contains(e.target) , "ref")
-  //           if (!sidebarRef.current.contains(e.target)) {
-  //               dispatch(authenticateAdminTable(false))
-  //           }
-  //       }
-  //       document.addEventListener("mousedown", handler);
-
-  // return () => {
-  //     document.removeEventListener("mousedown", handler )
-  // }
-  // })
-
 
   const tableInstance = useTable(
     {
@@ -59,14 +34,9 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
   console.log("headerGroups => ", headerGroups);
   console.log("page => ", page);
 
-  const handleClick = () => {
-    // console.log("CALLED IN TABLE");
-    dispatch(authenticateAdminTable(true))
-  }
-
-  const gotoCampaignDetail = () => {
-    navigate(`/detail`)
-  }
+  // const gotoCampaignDetail = () => {
+  //   navigate(`/detail`)
+  // }
   return (
     <div className='table-wrapper'>
       <table {...getTableProps()}>
@@ -103,10 +73,7 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
             prepareRow(row);
             return (
               <>
-                <tr key={ind}  {...row.getRowProps()} onClick={
-                  isAdminTable ? handleClick : isCampaignTable ? gotoCampaignDetail : null
-                }
-                >
+                <tr key={ind}  {...row.getRowProps()} >
                   {row.cells.map((cell, index) => {
                     const name = cell?.row.values.Name
                     console.log(name, "name of cell");
@@ -135,10 +102,10 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
                             (
                               index === 0 ?
                                 <div className="d-flex align-items-center">
-                                  <div className="img-round me-3">S.A</div>
+                                  <div className="img-round avatar-text me-3">S.A</div>
                                   <div>
                                     <p className="m-0">{name}</p>
-                                    <p className="m-0">e mail</p>
+                                    <p className="light-para fw-normal m-0">e mail</p>
                                   </div>
                                 </div>
                                 :

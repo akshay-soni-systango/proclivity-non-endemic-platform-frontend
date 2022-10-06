@@ -20,12 +20,17 @@ const Dropdown = ({ preValue, placeholderName, options, ...props }) => {
     option: (styles, { isFocused, isSelected }) => ({
       ...styles,
       background: isFocused
-        ? '#F2F4F7'
+        ? 'transparent'
         : isSelected
-          ? '#F2F4F7'
-          : undefined,
+          ? 'transparent'
+          : 'transparent',
       zIndex: 1,
-      color: '#344054',
+      color: isSelected 
+      ? '#2970FF'
+      : '#344054',
+      fontWeight: isSelected 
+      ? '500'
+      : 'normal',
     }),
     dropdownIndicator: base => ({
       ...base,
@@ -60,6 +65,7 @@ const Dropdown = ({ preValue, placeholderName, options, ...props }) => {
         components={componentList}
         placeholder={<div className="select-placeholder-text">{preValue} {placeholderName}</div>}
         {...props}
+        // menuIsOpen={true}
       />
     </div>
   );

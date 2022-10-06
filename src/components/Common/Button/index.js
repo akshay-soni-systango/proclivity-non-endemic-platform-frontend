@@ -4,10 +4,11 @@ import { Button as BootstrapButton } from "react-bootstrap";
 import "./style.scss";
 import PropTypes from 'prop-types'
 
-const Button = ({ text, Icon, iconClassName, iconProps, iconPosition, children, ...props }) => {
+const Button = ({ text, Icon, iconClassName, iconProps, iconPosition, children, onClick, ...props }) => {
   return (
     <BootstrapButton
     type='button' {...props}
+    onClick={onClick}
     >
       
       {iconPosition === 'left' && Icon && (

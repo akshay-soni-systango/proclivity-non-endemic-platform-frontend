@@ -1,11 +1,11 @@
-import home from '../assets/Icons/home.svg';
-import audiences from '../assets/Icons/users.svg'; 
-import campaigns from '../assets/Icons/3-layers.svg'; 
-import analytics from '../assets/Icons/bar-chart.svg'; 
-import library from '../assets/Icons/book.svg'; 
-import admin from '../assets/Icons/settings.svg'; 
-import help from '../assets/Icons/help-circle.svg'; 
-import notifications from '../assets/Icons/bell.svg'; 
+import {Home} from '../assets/Icons';
+import {User} from '../assets/Icons';
+import {Stack} from '../assets/Icons';
+import {BarChart} from '../assets/Icons';
+import {Book} from '../assets/Icons';
+import {Admin} from '../assets/Icons';
+import {Help} from '../assets/Icons';
+import {Bell} from '../assets/Icons';
 
 
 
@@ -13,44 +13,44 @@ import notifications from '../assets/Icons/bell.svg';
 export const sidebarMenuOptions = [
     {
         title: 'Home',
-        icon: home,
+        Icon: Home,
         link: '/home',
     },
     {
         title: 'Audiences',
-        icon: audiences,
+        Icon: User,
         link: '/audiences',
     },
     {
         title: 'Campaigns',
-        icon: campaigns,
+        Icon: Stack,
         link: '/campaign/home',
     },
     {
         title: 'Analytics',
-        icon: analytics,
+        Icon: BarChart,
         link: '/analytics',
     },
     {
         title: 'Library',
-        icon: library,
+        Icon: Book,
         link: '/library',
     },
     {
         title: 'Admin',
-        icon: admin,
+        Icon: Admin,
         link: '/admin',
     },
 ]
 export const sidebarFooterOptions = [
     {
         title: 'Help',
-        icon: help,
+        Icon: Help,
         link: '/help',
     },
     {
         title: 'Notifications',
-        icon: notifications,
+        Icon: Bell,
         link: '/notifications',
     },
 ]

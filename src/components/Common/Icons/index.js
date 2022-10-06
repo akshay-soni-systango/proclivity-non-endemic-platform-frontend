@@ -13,6 +13,8 @@ import {
     Cross,
     QuestionMark,
     Notification,
+    Search,
+    Export,
   } from "../../../assets/Icons";
 
 export const iconListObj = {
@@ -30,6 +32,8 @@ export const iconListObj = {
         Cross: Cross,
         QuestionMark: QuestionMark,
         Notification: Notification,
+        Search:Search,
+        Export,
     };
 
 export const iconList = Object.keys(iconListObj).map(key => ({

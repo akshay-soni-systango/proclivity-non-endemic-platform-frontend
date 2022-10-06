@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import './style.scss';
 
-const SidebarMenuListItem = ({icon, link, title }) => {
+const SidebarMenuListItem = ({Icon, link, title }) => {
+const {pathname} = useLocation();
   return (
     <li className="list-wrapper">
-      <Link to={link}>
-        {icon && <img src={icon} alt="Loading..." />}
+      <Link to={link} className={pathname === link && "active"}>
+        {Icon && <Icon />}
         <span>{title} </span>
       </Link>
     </li>

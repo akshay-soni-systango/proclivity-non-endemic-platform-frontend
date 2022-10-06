@@ -37,6 +37,7 @@ $fonts-grey-900: #101828;
 $fonts-grey-700: #344054;
 $fonts-success: #027a48;
 $fonts-blue-700: #175CD3;
+$fonts-blue-600: #2970FF;
 $fonts-danger: #D31717;
 
 
@@ -75,6 +76,7 @@ p {
   font-size: 14px;
   line-height: 20px;
   color: $fonts-grey-900;
+  font-family: $main-font;
   &.light-para {
     color: $fonts-light;
   }
@@ -138,6 +140,10 @@ path{
   &.bg-danger {
       background: $danger-100 !important;
       color: $fonts-danger;
+  }
+  &.bg-light {
+      background: $grey-50 !important;
+      color: $primary;
   }
 }
 
