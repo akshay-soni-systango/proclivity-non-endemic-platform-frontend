@@ -20,7 +20,7 @@ export { ReactComponent as User } from "./users.svg";
 export { ReactComponent as Help } from "./help-circle.svg";
 export { ReactComponent as Search } from "./search.svg";
 export { ReactComponent as Export } from "./export.svg";
-// export { ReactComponent as Usename } from "./plus.svg";
+export { ReactComponent as Close } from "./x.svg";
 // export { ReactComponent as Add } from "./plus.svg";
 // export { ReactComponent as Add } from "./plus.svg";
 // export { ReactComponent as Add } from "./plus.svg";

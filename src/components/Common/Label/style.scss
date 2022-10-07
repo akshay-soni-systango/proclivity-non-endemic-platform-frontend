@@ -1,18 +1,20 @@
-@import  '../../../global.scss';
+@import "../../../global.scss";
 label {
-    font-size: 0.9em;
-    line-height: 20px;
-    color: $fonts-grey-700;
-    margin-bottom: 6px;
+  font-size: 0.9em;
+  line-height: 20px;
+  color: $fonts-grey-700;
+  margin-bottom: 6px;
 
-    &.sub-label {
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 18px;
-        color: $fonts-light;
-    }
-     svg {
-        margin-left: 5px;
-     }
+  &.sub-label {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $fonts-light;
+  }
+  svg {
+    margin-left: 5px;
+  }
+  .required {
+    color: red;
+  }
 }
-

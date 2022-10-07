@@ -58,18 +58,6 @@ H3.parameters = {
   },
 };
 
-export const H5 = Template.bind({});
-H5.args = {
-  level: 5,
-  children: "Main title",
-};
-H5.parameters = {
-  docs: {
-    description: {
-      story: 'Heading for Font size 16px, line height 24px use h5 tag.',
-    },
-  },
-};
 export const H4 = Template.bind({});
 H4.args = {
   level: 4,
@@ -79,6 +67,19 @@ H4.parameters = {
   docs: {
     description: {
       story: 'Heading for Font size 18px, line height 28px use h4 tag.',
+    },
+  },
+};
+
+export const H5 = Template.bind({});
+H5.args = {
+  level: 5,
+  children: "Main title",
+};
+H5.parameters = {
+  docs: {
+    description: {
+      story: 'Heading for Font size 16px, line height 24px use h5 tag.',
     },
   },
 };
@@ -93,6 +94,33 @@ H5lightTitle.parameters = {
   docs: {
     description: {
       story: 'Heading for Font size 16px, line height 24px use h5 tag with using className ".light-title" for Light color fonts .',
+    },
+  },
+};
+
+export const H6 = Template.bind({});
+H6.args = {
+  level: 6,
+  children: "Main title",
+};
+H6.parameters = {
+  docs: {
+    description: {
+      story: 'Heading for Font size 13px, line height 20px use H6 tag.',
+    },
+  },
+};
+
+export const H6lightTitle = Template.bind({});
+H6lightTitle.args = {
+  level: 6,
+  children: "Light title",
+  className: "light-title"
+};
+H6lightTitle.parameters = {
+  docs: {
+    description: {
+      story: 'Heading for Font size 13px, line height 240px use H6 tag with using className ".light-title" for Light color fonts .',
     },
   },
 };

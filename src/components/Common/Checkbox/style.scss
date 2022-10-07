@@ -4,7 +4,30 @@ $background-color_1: transparent;
 
 .form-group {
 	display: block;
-	margin-bottom: 15px;
+	margin-bottom: 0;
+	label {
+		position: relative;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		margin-bottom: 0;
+		&:before {
+			content: '';
+			-webkit-appearance: none;
+			background-color: $background-color_1;
+			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05);
+			padding: 7px;
+			display: inline-block;
+			position: relative;
+			vertical-align: middle;
+			cursor: pointer;
+			margin-right: 8px;
+            background: $white;
+            border: 1px solid $grey-500;
+            border-radius: 4px;
+		}
+	}
+
 	input {
 		padding: 0;
 		height: initial;
@@ -19,36 +42,22 @@ $background-color_1: transparent;
 						content: '';
 						display: block;
 						position: absolute;
-						top: 2px;
-						left: 9px;
-						width: 6px;
-						height: 14px;
-						border: solid #0079bf;
+						top: 4px;
+						left: 6px;
+						width: 5px;
+						height: 10px;
+						border: solid $fonts-blue-600;
 						border-width: 0 2px 2px 0;
 						transform: rotate(45deg);
 					}
+					&:before {
+						content: '';
+						background-color: $blue-50;
+						border: 1px solid $fonts-blue-600;
+					}
+
 				}
 			}
-		}
-	}
-	label {
-		position: relative;
-		cursor: pointer;
-		&:before {
-			content: '';
-			-webkit-appearance: none;
-			background-color: $background-color_1;
-			border: 2px solid #0079bf;
-			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-			padding: 10px;
-			display: inline-block;
-			position: relative;
-			vertical-align: middle;
-			cursor: pointer;
-			margin-right: 5px;
-            background: #EFF4FF;
-            border: 1px solid #2970FF;
-            border-radius: 4px;
 		}
 	}
 }

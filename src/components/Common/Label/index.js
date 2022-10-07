@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.scss';
 
-const Label = ({value, Icon, ...props }) => {
+const Label = ({value, Icon, showStar, ...props }) => {
   return (
-    <label {...props}>{value}
+    <label {...props}>{value} {showStar && <span className='required'>*</span>}
     {Icon && <Icon />}
     </label>
   )

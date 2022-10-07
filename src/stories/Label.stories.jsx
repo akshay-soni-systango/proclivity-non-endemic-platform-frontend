@@ -30,6 +30,7 @@ export const LabelText = ({children, ...props}) => (
 LabelText.args = {
   value: "LabelName",
   htmlFor: "groupName",
+  showStar: true
 };
 
 export const SubLabel = ({children, ...props}) => (
