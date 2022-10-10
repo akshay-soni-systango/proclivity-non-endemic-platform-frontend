@@ -1,8 +1,8 @@
 import React from 'react';
+import './style.scss';
 import { Card } from 'react-bootstrap';
 import Dropdown from '../../Common/Dropdown';
 import AdminTable from '../AdminTable';
-import './style.scss';
 
 const MemberPage = () => {
   return (

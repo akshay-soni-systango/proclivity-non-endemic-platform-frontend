@@ -1,20 +1,18 @@
 import MemberPage from "./Member";
-import AdminSidebar from "./Sidebar";
 
 export const tabs = [
     {
         title: 'Members',
         key: 'Members',
         content: <>
-        <MemberPage/>
+            <MemberPage />
         </>
     },
     {
         title: 'Teams',
         key: 'Teams',
-        content:<>
-        <AdminSidebar/>
-        </>
+        content: 'Teams'
+
     },
     {
         title: 'Brands',

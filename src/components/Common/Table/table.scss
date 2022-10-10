@@ -46,6 +46,16 @@ table {
         }
       }
       cursor: pointer;
+      .table-modal{
+        width: 80px;
+        height: 70px;
+        display: none;
+      }
+      .open{
+        width: 80px;
+        height: 70px;
+        display: block;
+      }
     }
   }
   td {

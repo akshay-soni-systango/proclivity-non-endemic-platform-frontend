@@ -1,36 +1,29 @@
-import more from '../../../assets/Icons/menu.svg';
-import Brand from '../../../assets/Icons/brand.svg';
+import DropdownMenu from './dropdown';
 
 export const COLUMNS = [
     {
         Header: 'Name',
-        accessor: 'Name'
-    },
-    {
-        Header: 'Brands',
-        accessor: 'Brands',
-        Cell: () => (
-            <>
-                <span><Brand /></span>
-                <span><Brand /></span>
-                <span><Brand /></span>
-                <span><Brand /></span>
-                <span><Brand /></span>
-
-            </>
-        )
+        accessor: 'name'
     },
     {
         Header: 'Role',
-        accessor: 'Role'
+        accessor: 'role'
     },
     {
         Header: 'Last Active',
-        accessor: 'Last Active'
+        accessor: 'lastActive'
+    },
+    {
+        Header: 'Create Date',
+        accessor: 'createDate'
+    },
+    {
+        Header: 'Member Status',
+        accessor: 'memberStatus'
     },
     {
         Header: '',
-        accessor: 'Menu',
-        Cell: () => <img src={more} alt='Loading...' />
+        accessor: 'menu',
+        Cell: ({ row }) => <DropdownMenu row={row}/>
     }
 ]

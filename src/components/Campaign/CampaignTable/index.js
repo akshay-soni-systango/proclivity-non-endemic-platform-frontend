@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Table from '../../Common/Table/userTable';
+import Table from '../../Common/Table/adminTable';
 import { COLUMNS } from './columns';
 import campaignData from '../../../util/CampaignData/CAMPAIGN_DATA.json';
 import Pagination from '../../Common/Pagination';
@@ -17,7 +17,7 @@ const CampaignTable = () => {
 
     return <>
         <Table tableColumn={COLUMNS} tableData={currentPost} isCampaignTable={true} />
-        <Pagination dataPerPage={dataPerPage} totalData={data.length} paginate={paginate} />
+        {/* <Pagination dataPerPage={dataPerPage} totalData={data.length} paginate={paginate} /> */}
     </>
 }   
 

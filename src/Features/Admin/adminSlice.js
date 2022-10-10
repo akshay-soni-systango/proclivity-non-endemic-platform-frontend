@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    isAdminPage: false
+    openModal: false
 }
 const adminSlice = createSlice({
     name: 'adminData',
     initialState,
     reducers: {
-        authenticateAdminTable: (state, { payload }) => {
-            state.isAdminPage = payload
+        openAdminTableModal: (state, { payload }) => {
+            state.openModal = payload
         }
     }
 })
 
-export const { authenticateAdminTable } = adminSlice.actions;
-export const getAdminTableCheck = (state) => state.adminTable.isAdminPage;
+export const { openAdminTableModal } = adminSlice.actions;
+export const toggleModal = (state) => state.adminTable.openModal;
 export default adminSlice.reducer

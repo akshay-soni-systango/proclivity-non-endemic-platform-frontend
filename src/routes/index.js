@@ -1,9 +1,6 @@
 import React from "react";
-import {
-  Routes as Switch,
-  Route,
-} from "react-router-dom";
-import Layout from "../components/Common/LayoutComponent";
+import { Switch, Route } from "react-router-dom";
+// import Layout from "../components/Common/LayoutComponent";
 import AudiencePage from "../pages/AudiencePage";
 import HomePage from "../pages/HomePage";
 import CampaignDetailCard from "../components/Cards/campaignDetail";
@@ -13,26 +10,30 @@ import CampaignCompletion from "../components/Campaign/CampaignDetail/CampaignCr
 import AdminPage from "../pages/AdminPage";
 import CampaignViewReport from "../components/Campaign/CampaignDetail/ViewReports";
 import CampaignHomePage from "../pages/Campaigns/Overview";
-import Pagination from "../util/Pagination/Pagination";
+import EditMember from "../components/Admin/EditMember";
+import PageNotFound from "../pages/PageNotFound";
+import PublicRoute from "./ProtectedRouting/PublicRoute";
+import PrivateRoute from "./ProtectedRouting/PrivateRoute";
+import LoginPage from "../pages/Login";
 // const HomePage = React.lazy(() => import(  /* webpackChunkName: "home-page" */ '../pages/HomePage'));
 
 const Routes = () => {
   return (
     <>
-        <Layout>
-          <Switch>
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/audiences" element={<AudiencePage />} />
-            <Route path="/admin" element={<AdminPage/>} />
-            <Route path="/analytics" element={<CampaignDetailCard />} />
-            <Route path="/campaign/home" element={<CampaignHomePage />} />
-            <Route path="/campaign/detail" element={<CampaignDetail/>} />
-            <Route path="/campaign/edit" element={<CampaignForm/>} />
-            <Route path="/campaign/complete" element={<CampaignCompletion/>} />
-            <Route path="/campaign/report" element={<CampaignViewReport/>} />
-            <Route path="/paginate" element={<Pagination/>} />
-          </Switch>
-        </Layout>
+      <Switch>
+        <Route path='/' exact component={LoginPage} />
+        <PrivateRoute path="/home" component={HomePage} />
+        <PrivateRoute path="/edit" component={EditMember} />
+        <PrivateRoute path="/audiences" component={AudiencePage} />
+        <PrivateRoute path="/admin" component={AdminPage} />
+        <PrivateRoute path="/analytics" component={CampaignDetailCard} />
+        <PrivateRoute path="/campaign/home" component={CampaignHomePage} />
+        <PrivateRoute path="/campaign/detail" component={CampaignDetail} />
+        <PrivateRoute path="/campaign/edit" component={CampaignForm} />
+        <PrivateRoute path="/campaign/complete" component={CampaignCompletion} />
+        <PrivateRoute path="/campaign/report" component={CampaignViewReport} />
+        <PrivateRoute component={PageNotFound} />
+      </Switch>
     </>
   );
 };
