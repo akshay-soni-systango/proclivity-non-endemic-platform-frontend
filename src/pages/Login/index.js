@@ -1,10 +1,10 @@
-// import axios from 'axios';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const LoginPage = () => {
   const history = useHistory();
-  // const [user, setUser] = useState("");
+  const [user, setUser] = useState("");
   // console.log(user, "State");
 
   const initialValues = { email: "", password: "" };
@@ -12,22 +12,20 @@ const LoginPage = () => {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setSubmit] = useState(false)
 
-  // const fetchUser = () => {
-  //   fetch('https://c07b-117-199-45-212.in.ngrok.io/users/', {
-  //     method: 'GET'
-  //   })
-  //     .then(response => response.json())
-  //     .then(res => console.log(res))
-  //     .catch(err => console.log(err, "ERROR"))
-
-  //   // setUser(response)
-  // }
+  const fetchUser = async() => {
+    const response = await axios.get('https://c478-59-91-139-193.in.ngrok.io/users/')
+    console.log(response, "response");
+        
+      setUser(response.data)
+  }
+  console.log(user , "state of res");
   useEffect(() => {
+    fetchUser();
+
     console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       console.log(formValues, 'formValues');
     }
-    // fetchUser()
   }, [formErrors, formValues, isSubmit])
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,7 +37,7 @@ const LoginPage = () => {
     console.log(formErrors);
     const errors = {}
     // const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-    let   regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+    let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
     console.log(regex);
 
     if (!values.email) {
@@ -50,7 +48,7 @@ const LoginPage = () => {
 
     if (!values.password) {
       errors.password = "password is required ..!"
-    } else if (values.password.length < 4 ) {
+    } else if (values.password.length < 4) {
       errors.password = 'password must be more than 4 characters ..!'
     } else if (values.password > 10) {
       errors.password = 'password must not be greater than 10 characters ..!'
