@@ -65,7 +65,8 @@ const Table = ({ tableData, tableColumn }) => {
                     >
                       {row.cells.map((cell, index) => {
                         const name = cell.row.values.name;
-                        const nameInitials = name.split(" ").map((name) => name[0]).join(".");
+                        const nameInitials = name?.split(" ").map((name) => name[0]).join(".");
+                        console.log("====", name,nameInitials );
                         return (
                           <td key={index} {...cell.getCellProps()} >
                             {

@@ -4,10 +4,10 @@ import adminData from '../../../../util/CampaignData/ADMIN_MEMBER.json'
 import Table from '../../../Common/Table/adminTable';
 
 const MemberTable = () => {
-  const data = [...adminData];
+  const data = [...adminData.members];
   return (
     <>
-      <Table tableColumn={COLUMNS} tableData={data} isAdminTable={true} />
+      <Table tableColumn={COLUMNS} tableData={data} />
     </>
   )
 }

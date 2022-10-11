@@ -9,28 +9,28 @@ import UserName from './name';
 export const COLUMNS = [
     {
         Header: 'Name',
-        accessor: 'Name',
-        Cell: () => {
-            return <>
-                <UserName />
-            </>
-        }
+        accessor: 'name',
+        // Cell: () => {
+        //     return <>
+        //         <UserName />
+        //     </>
+        // }
     },
     {
         Header: 'Role',
-        accessor: 'Role',
+        accessor: 'role',
     },
     {
         Header: 'Last Active',
-        accessor: 'Last Active'
+        accessor: 'lastActive'
     },
     {
         Header: 'Create Date',
-        accessor: 'Create Date'
+        accessor: 'createDate'
     },
     {
         Header: 'Member Status',
-        accessor: 'Member Status',
+        accessor: 'memberStatus',
         Cell: ({value}) => {
             let bg = 'primary'
             if (value.toLowerCase() === 'inactive'){
@@ -41,7 +41,7 @@ export const COLUMNS = [
     },
     {
         Header: '',
-        accessor: 'Menu',
+        accessor: 'menu',
         Cell: () => <img src={more} alt='Loading...' />
     }
 ]

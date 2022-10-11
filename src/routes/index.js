@@ -12,7 +12,6 @@ import CampaignViewReport from "../components/Campaign/CampaignDetail/ViewReport
 import CampaignHomePage from "../pages/Campaigns/Overview";
 import EditMember from "../components/Admin/EditMember";
 import PageNotFound from "../pages/PageNotFound";
-import PublicRoute from "./ProtectedRouting/PublicRoute";
 import PrivateRoute from "./ProtectedRouting/PrivateRoute";
 import LoginPage from "../pages/Login";
 // const HomePage = React.lazy(() => import(  /* webpackChunkName: "home-page" */ '../pages/HomePage'));
