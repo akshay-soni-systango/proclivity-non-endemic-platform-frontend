@@ -2,7 +2,7 @@
 import {COLUMNS} from '../components/Campaign/CampaignTable/columns';
 // import viewReportData from '../../../../../util/CampaignData/VIEW_REPORTS.json'
 // import Pagination from "../components/Common/Pagination";
-import Table from "../components/Common/Table/userTable";
+import Table from "../components/Common/Table/adminTable";
 
 
 export default {

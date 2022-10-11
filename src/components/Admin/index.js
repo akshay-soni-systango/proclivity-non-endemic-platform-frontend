@@ -6,10 +6,14 @@ import Tab from "../Common/Tab";
 import { tabs } from "./tabs";
 import AdminHeader from "../Common/AdminHeader";
 import { createMember } from "../../Features/Admin/adminSlice";
+import { useHistory } from "react-router-dom";
 
-const AdminHomePage = ({ title, MainIcon }) => {  
+const AdminHomePage = ({ title, MainIcon }) => { 
+    const history = useHistory() 
     const dispatch = useDispatch();
     const handleClick = () => {
+        localStorage.clear()
+        history.push('/')
         dispatch(createMember(true));
     }
     

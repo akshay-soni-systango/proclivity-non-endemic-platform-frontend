@@ -1,5 +1,5 @@
 import React from 'react';
-import Table from '../../../Common/Table/userTable';
+import Table from '../../../Common/Table/adminTable';
 import { COLUMNS } from './columns';
 import teamData from '../../../../util/CampaignData/ADMIN_TEAMS.json'
 

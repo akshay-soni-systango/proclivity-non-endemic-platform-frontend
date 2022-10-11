@@ -33,12 +33,6 @@ const CampaignDetailPage = () => {
     "December",
   ];
   const monthName = monthNames[month];
-  // const cardList = [...campaignData];
-  // const cards = cardList.map(() => <>
-  //   <div className="col-md-4">
-  //     <CampaignDetailCard />
-  //   </div>
-  // </>);
   return (
     <>
       <div className="campaign-header">

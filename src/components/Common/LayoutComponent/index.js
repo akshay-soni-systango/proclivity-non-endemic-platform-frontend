@@ -5,8 +5,6 @@ import './style.scss'
 
 
 const Layout = ({ children }) => {
-
-
     return (
         <div className='wrapper'>
             <SidebarComponent />

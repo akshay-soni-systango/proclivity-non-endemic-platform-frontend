@@ -6,7 +6,7 @@ export const tabs = [
         title: 'Members',
         key: 'Members',
         content: <>
-        <MemberPage/>
+            <MemberPage />
         </>
     },
     {

@@ -55,6 +55,16 @@ table {
         &:first-child {
           padding-left: 24px;
         }
+      cursor: pointer;
+      .table-modal{
+        width: 80px;
+        height: 70px;
+        display: none;
+      }
+      .open{
+        width: 80px;
+        height: 70px;
+        display: block;
       }
     }
   }
@@ -108,6 +118,7 @@ table {
       border-radius: 0 0 0 8px;
     }
   }
+}
 }
 
 

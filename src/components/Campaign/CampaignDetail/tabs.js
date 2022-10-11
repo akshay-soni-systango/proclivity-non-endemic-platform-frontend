@@ -11,7 +11,7 @@ export const tabs = [
         title: 'Configuration',
         key: 'Configuration',
         content: <>
-        <h1>azeem</h1>
+        <h1>COnfiguration                                   </h1>
         </>
     },
     {
