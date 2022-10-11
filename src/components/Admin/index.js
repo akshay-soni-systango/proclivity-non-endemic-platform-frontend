@@ -11,7 +11,6 @@ const AdminHomePage = ({ title, MainIcon }) => {
     const dispatch = useDispatch();
     const handleClick = () => {
         dispatch(createMember(true));
-        console.log("ok");
     }
     
     const buttons = [

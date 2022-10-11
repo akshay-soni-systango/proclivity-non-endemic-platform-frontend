@@ -4,8 +4,21 @@ import arrowDown from "../../../assets/Icons/arrow-down.svg";
 import arrowUp from "../../../assets/Icons/arrow-up.svg";
 import avatar from "../../../assets/Icons/Avatar.svg";
 import { useTable, useSortBy, usePagination } from "react-table";
+// import Color from "color";
 // import { useNavigate } from "react-router-dom";
 
+var stringToColour = function(str) {
+  var hash = 0;
+  for (var i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  var colour = '#';
+  for (var i = 0; i < 3; i++) {
+    var value = (hash >> (i * 8)) & 0xFF;
+    colour += ('00' + value.toString(16)).substr(-2);
+  }
+  return colour;
+}
 
 const Table = ({ tableColumn, tableData, ...rest }) => {
   // const navigate = useNavigate()
@@ -102,7 +115,10 @@ const Table = ({ tableColumn, tableData, ...rest }) => {
                             (
                               index === 0 ?
                                 <div className="d-flex align-items-center">
-                                  <div className="img-round avatar-text me-3">S.A</div>
+                                  <div className="img-round avatar-text me-3" style={{
+                                    // backgroundColor:Color(stringToColour(name)).lighten(.1), 
+                                    // color:Color(stringToColour(name)).isLight() ? "Black" : "White"
+                                  }}>S.A</div>
                                   <div>
                                     <p className="m-0">{name}</p>
                                     <p className="light-para fw-normal m-0">e mail</p>
