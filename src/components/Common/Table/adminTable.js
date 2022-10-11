@@ -16,11 +16,14 @@ const Table = ({ tableData, tableColumn }) => {
   );
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, } = tableInstance;
   console.log(rows, " rows mapped ");
+
   const [tableRows, setTableRows] = useState([])
   console.log(tableRows.length, "state length");
+
   useEffect(() => {
     setTableRows([...rows])
   }, [rows])
+
   return (
     <div className='table-wrapper'>
       <table {...getTableProps()}>
@@ -54,7 +57,7 @@ const Table = ({ tableData, tableColumn }) => {
         </thead>
         {
           tableRows.length === 0 ?
-            <h1 style={{textAlign : "center", marginLeft : "40px"}}>Loading...</h1>
+            <h1 style={{ textAlign: "center", marginLeft: "40px" }}>Loading...</h1>
             :
             <tbody {...getTableBodyProps()}>
               {tableRows.map((row, index) => {

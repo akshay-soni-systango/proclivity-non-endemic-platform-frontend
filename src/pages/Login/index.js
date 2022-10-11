@@ -12,13 +12,20 @@ const LoginPage = () => {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setSubmit] = useState(false)
 
-  const fetchUser = async() => {
-    const response = await axios.get('https://c478-59-91-139-193.in.ngrok.io/users/')
+  const fetchUser = async () => {
+    const response = await axios.get('https://afd1-117-212-237-221.in.ngrok.io/users/',
+      { headers: { 'ngrok-skip-browser-warning': 'abc' } }
+
+    )
     console.log(response, "response");
-        
-      setUser(response.data)
+
+    setUser(response.data)
   }
-  console.log(user , "state of res");
+
+
+
+
+  console.log(user, "state of res");
   useEffect(() => {
     fetchUser();
 
