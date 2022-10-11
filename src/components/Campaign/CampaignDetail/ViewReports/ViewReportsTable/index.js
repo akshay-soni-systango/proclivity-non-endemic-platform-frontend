@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {COLUMNS} from './columns';
 import viewReportData from '../../../../../util/CampaignData/VIEW_REPORTS.json'
-import Table from '../../../../Common/Table/userTable';
+import Table from '../../../../Common/Table/adminTable';
 import Pagination from '../../../../Common/Pagination';
 
 const ViewReportTable = () => {

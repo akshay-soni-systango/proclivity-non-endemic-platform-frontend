@@ -5,6 +5,7 @@ import arrowUp from "../../../assets/Icons/arrow-up.svg";
 import arrowDown from "../../../assets/Icons/arrow-down.svg";
 
 const Table = ({ tableData, tableColumn }) => {
+  // console.log(tableData , "Data in table");
   const tableInstance = useTable(
     {
       columns: tableColumn,
@@ -80,8 +81,7 @@ const Table = ({ tableData, tableColumn }) => {
                   </>
                 );
               })}
-            </tbody>
-        }
+            </tbody>}
       </table>
     </div>
   );

@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 import "./style.scss";
 import { ReactComponent as FeaturedIcon } from "../../../../assets/Icons/Featured-icon.svg";
 import Button from "../../../Common/Button";
@@ -7,25 +7,26 @@ import addIcon from "../../../../assets/Icons/plus.svg";
 import searchIcon from "../../../../assets/Icons/search.svg";
 import grid from "../../../../assets/Icons/grid.svg";
 import list from "../../../../assets/Icons/list.svg";
-import CampaignTable from "../../CampaignTable";
+// import CampaignTable from "../../CampaignTable";
 import { Badge } from "react-bootstrap";
 import Input from "../../../Common/Input";
 import Dropdown from "../../../Common/Dropdown/";
 import "react-datepicker/dist/react-datepicker.css";
-import CampaignDetailCard from "../../../Cards/campaignDetail";
+// import CampaignDetailCard from "../../../Cards/campaignDetail";
 import CampaignTabs from "./tabs";
 
 const HomePage = () => {
 
-  const [isGridView, setGridView] = useState(false)
+  // const [isGridView, setGridView] = useState(false)
 
   const handleView = (view) => {
-    if (view === "grid") {
-      setGridView(true)
-    }
-    else {
-      setGridView(false)
-    }
+    // if (view === "grid") {
+    //   setGridView(true)
+    // }
+    // else {
+    //   setGridView(false)
+    // }
+
   }
 
   return (
@@ -64,7 +65,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      {isGridView ? <CampaignDetailCard /> : <CampaignTable />}
+      {/* {isGridView ? <CampaignDetailCard /> : <CampaignTable />} */}
 
     </>
   );
