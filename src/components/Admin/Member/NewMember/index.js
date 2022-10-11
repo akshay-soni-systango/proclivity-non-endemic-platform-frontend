@@ -14,7 +14,7 @@ import "./style.scss";
 import CreationCard from "../../../Common/CreationCard";
 import * as Yup from "yup";
 import BasicForm from "./basicForm";
-import {data} from './data';
+import { data } from "./data";
 
 const NewMember = () => {
   const schema = Yup.object().shape({
@@ -70,7 +70,7 @@ const NewMember = () => {
       initialValues={{ email: "", firstName: "", lastName: "" }}
       validationSchema={schema}
       onSubmit={(values, { setSubmitting }) => {
-        console.log("==",values);
+        console.log("==", values);
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));
           setSubmitting(false);
