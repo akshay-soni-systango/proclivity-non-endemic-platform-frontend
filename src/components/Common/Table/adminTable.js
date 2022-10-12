@@ -15,10 +15,10 @@ const Table = ({ tableData, tableColumn }) => {
     usePagination
   );
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, } = tableInstance;
-  console.log(rows, " rows mapped ");
+  // console.log(rows, " rows mapped ");
 
   const [tableRows, setTableRows] = useState([])
-  console.log(tableRows.length, "state length");
+  // console.log(tableRows.length, "state length");
 
   useEffect(() => {
     setTableRows([...rows])
@@ -69,7 +69,7 @@ const Table = ({ tableData, tableColumn }) => {
                       {row.cells.map((cell, index) => {
                         const name = cell.row.values.name;
                         const nameInitials = name?.split(" ").map((name) => name[0]).join(".");
-                        console.log("====", name,nameInitials );
+                        // console.log("====", name,nameInitials );
                         return (
                           <td key={index} {...cell.getCellProps()} >
                             {

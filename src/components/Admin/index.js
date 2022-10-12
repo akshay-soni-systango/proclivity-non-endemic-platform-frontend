@@ -12,8 +12,8 @@ const AdminHomePage = ({ title, MainIcon }) => {
     const history = useHistory() 
     const dispatch = useDispatch();
     const handleClick = () => {
-        localStorage.clear()
-        history.push('/')
+        // localStorage.clear()
+        history.push('/member/create')
         dispatch(createMember(true));
     }
     

@@ -1,4 +1,5 @@
 import DropdownMenu from './dropdown';
+import { Badge } from 'react-bootstrap';
 
 export const COLUMNS = [
     {
@@ -19,7 +20,14 @@ export const COLUMNS = [
     },
     {
         Header: 'Member Status',
-        accessor: 'memberStatus'
+        accessor: 'memberStatus',
+        Cell: ({value}) => {
+            let bg = 'primary'
+            if (value.toLowerCase() === 'inactive'){
+                bg = 'danger'
+            }
+            return <Badge bg={bg} >{value}</Badge>
+        }
     },
     {
         Header: '',

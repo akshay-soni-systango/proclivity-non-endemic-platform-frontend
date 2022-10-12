@@ -3,13 +3,13 @@ import { Badge, Card } from "react-bootstrap";
 import Input from "../../Common/Input";
 import Dropdown from "../../Common/Dropdown";
 import Heading from "../../Common/Heading";
-import MemberTable from "./MemberTable";
 import {Export, Search} from "../../../assets/Icons"
 import "./style.scss";
 import { useSelector } from "react-redux";
 import Button from "../../Common/Button";
 import NewMember from "./NewMember";
 import { getToggleCreateMember } from "../../../Features/Admin/adminSlice";
+import AdminTable from "../AdminTable";
 
 const MemberPage = () => {
   const gotoMemberPage = useSelector(getToggleCreateMember);
@@ -56,7 +56,7 @@ const MemberPage = () => {
             </div>
           </div>
           <div className="admin-table">
-            <MemberTable />
+            <AdminTable />
           </div>
         </Card.Body>
       </Card>

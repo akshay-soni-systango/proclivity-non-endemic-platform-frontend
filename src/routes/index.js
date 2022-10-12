@@ -1,6 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
-// import Layout from "../components/Common/LayoutComponent";
+import { Switch } from "react-router-dom";
 import AudiencePage from "../pages/AudiencePage";
 import HomePage from "../pages/HomePage";
 import CampaignDetailCard from "../components/Cards/campaignDetail";
@@ -14,14 +13,17 @@ import EditMember from "../components/Admin/EditMember";
 import PageNotFound from "../pages/PageNotFound";
 import PrivateRoute from "./ProtectedRouting/PrivateRoute";
 import LoginPage from "../pages/Login";
+import PublicRoute from "./ProtectedRouting/PublicRoute";
+import NewMember from "../components/Admin/Member/NewMember";
 // const HomePage = React.lazy(() => import(  /* webpackChunkName: "home-page" */ '../pages/HomePage'));
 
 const Routes = () => {
   return (
     <>
       <Switch>
-        <Route path='/' exact component={LoginPage} />
+        <PublicRoute path='/' exact component={LoginPage} />
         <PrivateRoute path="/home" component={HomePage} />
+        <PrivateRoute path="/member/create" component={NewMember}/>
         <PrivateRoute path="/edit" component={EditMember} />
         <PrivateRoute path="/audiences" component={AudiencePage} />
         <PrivateRoute path="/admin" component={AdminPage} />
