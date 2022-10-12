@@ -87,7 +87,7 @@ const LoginPage = () => {
       <Row>
         <Col lg={6} md={6} sm={12} className="d-none d-md-flex bg-image">
           <div className="login-image">
-            {/* <img src={LoginImage} alt="Login"/> */}
+            <img src={LoginImage} alt="Login"/>
           </div>
         </Col>
         <Col lg={6} md={6} sm={12}>
