@@ -88,9 +88,9 @@ const LoginPage = () => {
   return (
     <div className="login-wrapper">
       <img className="login-logo" src={Logo} />
-      <Row>
+      <Row className="w-100">
         <Col lg={6} md={6} sm={12} className="d-none d-md-flex bg-image">
-          <div className="login-image  d-flex align-items-center justify-content-center">
+          <div className="login-image d-flex align-items-center justify-content-center w-100">
             <img className="img-fluid" src={LoginImage} alt="Login"/>
           </div>
         </Col>
@@ -109,6 +109,7 @@ const LoginPage = () => {
                         type="email"
                         value={formValues.email}
                         onChange={handleChange}
+                        placeholder="Enter your email address"
                       />
                       <p style={{ color: "red" }}>{formErrors.email}</p>
                       <div id="emailHelp" className="form-text">
@@ -122,6 +123,7 @@ const LoginPage = () => {
                         type="password"
                         value={formValues.password}
                         onChange={handleChange}
+                        placeholder="Enter your password"
                       />
                       <p style={{ color: "red" }}>{formErrors.password}</p>
                     </div>
