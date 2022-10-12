@@ -2,9 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import LoginImage from "../../assets/images/login.png";
 import Logo from "../../assets/Icons/Logo.svg";
 import Heading from "../../components/Common/Heading";
-import './style.scss'
+import './style.scss';
+import Label from '../../components/Common/Label';
+import Input from '../../components/Common/Input';
+import Button from "../../components/Common/Button";
 
 const LoginPage = () => {
   const history = useHistory();
@@ -86,8 +90,8 @@ const LoginPage = () => {
       <img className="login-logo" src={Logo} />
       <Row>
         <Col lg={6} md={6} sm={12} className="d-none d-md-flex bg-image">
-          <div className="login-image">
-            <img src={LoginImage} alt="Login"/>
+          <div className="login-image  d-flex align-items-center justify-content-center">
+            <img className="img-fluid" src={LoginImage} alt="Login"/>
           </div>
         </Col>
         <Col lg={6} md={6} sm={12}>
@@ -99,11 +103,10 @@ const LoginPage = () => {
                   <Heading level={1}>Login</Heading>
                   <form onSubmit={handleSubmit}>
                     <div className="mb-3">
-                      <label className="form-label">Email address</label>
-                      <input
+                      <Label className="form-label">Email address</Label>
+                      <Input
                         name="email"
                         type="email"
-                        className="form-control"
                         value={formValues.email}
                         onChange={handleChange}
                       />
@@ -113,19 +116,18 @@ const LoginPage = () => {
                       </div>
                     </div>
                     <div className="mb-3">
-                      <label className="form-label">Password</label>
-                      <input
+                      <Label className="form-label">Password</Label>
+                      <Input
                         name="password"
                         type="password"
-                        className="form-control"
                         value={formValues.password}
                         onChange={handleChange}
                       />
                       <p style={{ color: "red" }}>{formErrors.password}</p>
                     </div>
-                    <button type="submit" className="btn btn-primary">
+                    <Button type="submit" className="px-5">
                       Submit
-                    </button>
+                    </Button>
                   </form>
                 </div>
               </div>
