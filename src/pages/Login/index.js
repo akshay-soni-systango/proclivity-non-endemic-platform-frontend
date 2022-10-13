@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import './style.scss';
-import { Col, Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import LoginImage from "../../assets/images/login.png";
 import { Row, Col, Form } from "react-bootstrap";
@@ -10,7 +9,6 @@ import Button from "../../components/Common/Button";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Icons/Logo.svg";
 import { useFormik } from "formik";
-import { useHistory } from "react-router-dom";
 import "./style.scss";
 import Heading from "../../components/Common/Heading";
 
