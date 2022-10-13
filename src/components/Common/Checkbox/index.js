@@ -2,7 +2,6 @@ import React from "react";
 import './style.scss';
 
 const Checkbox = ({text, id, ...props}) => {
-    console.log(props);
   return (
     <div class="checkbox-wrapper">
       <div class="form-group">

@@ -1,0 +1,31 @@
+@import "../../global.scss";
+
+.login-wrapper {
+  width: 100%;
+  .login,
+  .bg-image {
+    min-height: 100vh;
+  }
+
+  .login-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  .bg-image {
+    background-color: $primary;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .login-wrapper .login {
+    background: $primary;
+    h1,
+    h2,
+    label {
+      color: $white;
+    }
+  }
+}

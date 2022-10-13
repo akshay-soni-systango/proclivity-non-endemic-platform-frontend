@@ -1,43 +1,28 @@
 import React from "react";
-import './style.scss';
-import { useHistory } from "react-router-dom";
 import LoginImage from "../../assets/images/login.png";
 import { Row, Col, Form } from "react-bootstrap";
 import Label from "../../components/Common/Label";
 import Input from "../../components/Common/Input";
 import Button from "../../components/Common/Button";
-import { Link } from "react-router-dom";
 import Logo from "../../assets/Icons/Logo.svg";
 import { useFormik } from "formik";
+import { useHistory } from "react-router-dom";
 import "./style.scss";
-import Heading from "../../components/Common/Heading";
 
-const LoginPage = () => {
+const ResetPassword = () => {
   const history = useHistory();
 
   const initialValues = {
-    email: "",
     password: "",
+    confirmPassword: "",
   };
 
-  const onSubmit = ({ email, password }) => {
-    if (email !== "" && password !== "") {
-      localStorage.setItem("userEmail", email);
-      localStorage.setItem("userPassword", password);
-      history.push("/admin");
-    }
+  const onSubmit = (values) => {
+    history.push("/home");
   };
 
   const validate = (values) => {
     const errors = {};
-    let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
-    console.log(regex);
-
-    if (!values.email) {
-      errors.email = "email field cannot be empty";
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-      errors.email = "Invalid email address";
-    }
 
     if (!values.password) {
       errors.password = "password field cannot be empty";
@@ -47,6 +32,16 @@ const LoginPage = () => {
       )
     ) {
       errors.password = "Invalid password";
+    }
+
+    if (!values.confirmPassword) {
+      errors.confirmPassword = "confirm password field cannot be empty";
+    } else if (
+      !/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/i.test(
+        values.confirmPassword
+      )
+    ) {
+      errors.confirmPassword = "Invalid confirm password";
     }
 
     return errors;
@@ -63,7 +58,7 @@ const LoginPage = () => {
     <>
       <div className="login-wrapper">
         <img className="login-logo" src={Logo} alt="Logo" />
-        <Row className="w-100">
+        <Row>
           <Col lg={6} md={6} sm={12} className="d-none d-md-flex bg-image">
             <div className="login-image d-flex align-items-center justify-content-center w-100">
               <img src={LoginImage} alt="Login" className="img-fluid" />
@@ -75,24 +70,12 @@ const LoginPage = () => {
                 <div className="row">
                   <div className="col-lg-10 col-xl-7 mx-auto">
                     <Form onSubmit={handleSubmit}>
-                      <Heading level={1}>Login</Heading>
-                      <div>
-                        <Label value="Email"></Label>
-                        <Input
-                          placeholder="Please enter email"
-                          value={values.email}
-                          id="email"
-                          name="email"
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          error={errors.email && touched.email && errors.email}
-                        />
-                      </div>
+                      <h2 className="main-title mb-4">Reset Password</h2>
                       <div>
                         <Label value="Password"></Label>
                         <Input
                           type="password"
-                          placeholder="Please enter password (Test@123)"
+                          placeholder="Please enter password"
                           value={values.password}
                           id="password"
                           name="password"
@@ -105,12 +88,24 @@ const LoginPage = () => {
                           }
                         />
                       </div>
-                      <div className="mb-4">
-                        <Link to="/forgot-password">Forgot password ?</Link>
+                      <div className="mt-6">
+                        <Label value="Confirm Password"></Label>
+                        <Input
+                          type="password"
+                          placeholder="Please enter confirm password"
+                          value={values.confirmPassword}
+                          id="confirmPassword"
+                          name="confirmPassword"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          error={
+                            errors.confirmPassword &&
+                            touched.confirmPassword &&
+                            errors.confirmPassword
+                          }
+                        />
                       </div>
-                      <Button type="submit" className="px-5">
-                        Login
-                      </Button>
+                      <Button type="submit" className="px-5">Reset Password</Button>
                     </Form>
                   </div>
                 </div>
@@ -123,4 +118,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default ResetPassword;

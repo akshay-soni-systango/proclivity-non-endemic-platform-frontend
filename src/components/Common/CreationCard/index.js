@@ -15,7 +15,6 @@ const CreationCard = ({
   checkList,
   fieldName,
 }) => {
-  console.log("------", checkList);
   const { values } = useFormikContext();  
   return (
     <div className="card-wrapper">

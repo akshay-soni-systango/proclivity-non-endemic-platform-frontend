@@ -3,6 +3,7 @@
     padding: 0;
     .table-header {
         padding: 25px 24px 0 25px;
+        margin-bottom: 12px;
     }
     .card-title{
         display: flex;
@@ -13,5 +14,10 @@
 
 .search-filter-sort{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    .input-container {
+        min-width: 25%;
+        width: auto;
+    }
 }

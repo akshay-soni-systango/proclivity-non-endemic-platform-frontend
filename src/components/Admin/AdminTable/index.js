@@ -3,13 +3,19 @@ import {COLUMNS} from './columns';
 import adminData from '../../../util/CampaignData/ADMIN_MEMBER.json'
 import Table from '../../Common/Table/adminTable';
 
-const AdminTable = () => {
+const AdminTable = ({statusFilter}) => {  
 
   const memberArray = adminData.members;
-  console.log(memberArray, "memberArray");
+  const filterData = memberArray.filter((val) => {
+    if (statusFilter === "All") {
+      return val;
+    } else if (val.memberStatus === statusFilter) {
+      return val;
+    }
+  });
     return (   
        <>
-        <Table tableColumn={COLUMNS} tableData={memberArray} />
+        <Table tableColumn={COLUMNS} tableData={filterData} />
     </>
   )
 }

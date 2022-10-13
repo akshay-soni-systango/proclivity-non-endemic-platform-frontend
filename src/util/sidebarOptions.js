@@ -53,4 +53,7 @@ export const sidebarFooterOptions = [
         Icon: Bell,
         link: '/notifications',
     },
+    {
+        title: 'LogOut'
+    }
 ]

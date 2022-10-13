@@ -4,7 +4,6 @@ import Heading from '../Heading';
 import './style.scss'
 
 const AdminHeader = ({buttons, title, MainIcon, subTitle}) => {
-  console.log("========", buttons);
   return (
     <div className="admin-header">
         <div className="title-wrapper d-flex align-items-center">
@@ -15,7 +14,7 @@ const AdminHeader = ({buttons, title, MainIcon, subTitle}) => {
           </div>
         </div>
         <div className="btn-wrapper text-end">
-          {buttons.map(({...props}) => <Button className="ms-3" {...props} />)}
+          {buttons.map(({...props}, key) => <Button className="ms-3" key={key} {...props} />)}
         </div>
       </div> 
   )
