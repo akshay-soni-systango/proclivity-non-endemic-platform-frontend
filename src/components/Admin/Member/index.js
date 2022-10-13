@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.scss";
+import { CSVLink } from 'react-csv';
 import { Badge, Card } from "react-bootstrap";
 import Input from "../../Common/Input";
 import Dropdown from "../../Common/Dropdown";
@@ -8,54 +9,38 @@ import { Export, Search } from "../../../assets/Icons"
 import { useSelector, useDispatch } from "react-redux";
 import Button from "../../Common/Button";
 import NewMember from "./NewMember";
-import { getMemberListState, getSearchState, getToggleCreateMember, searchMember, toggleSearch } from "../../../Features/Admin/adminSlice";
+import { checkSearch, getMemberListState, getSearchState, getToggleCreateMember, searchMember, toggleSearch } from "../../../Features/Admin/adminSlice";
 import AdminTable from "../AdminTable";
 
 const MemberPage = () => {
-  const dispatch = useDispatch()
+
+  const dispatch = useDispatch();
+  const searchState = useSelector(getSearchState);
+  const headers = [
+    { label: 'Name', key: 'name' },
+    { label: 'Role', key: 'role' },
+    { label: 'Last Active', key: 'lastActive' },
+    { label: 'Create Date', key: 'createDate' },
+    { label: 'Member Status', key: 'memberStatus' }
+  ]
+  
+  const isSearch = useSelector(checkSearch);
   const gotoMemberPage = useSelector(getToggleCreateMember);
   const memberListState = useSelector(getMemberListState);
-  const memberArray = memberListState.members;
-  // const searchState = useSelector(getSearchState);
-  // const [search, setSearch] = useState("");
-  console.log(memberListState, "state in input ");
-  // console.log(searchState, " search ++++++++++++");
+  const membersList = memberListState.members;
+
   const handleChange = (e) => {
     const targetValue = e.target.value
-    console.log(targetValue, "target");
-
+    
     if (targetValue !== "") {
-
       dispatch(toggleSearch(true));
-
-      const filter = memberArray.filter((value) => value.name.toLowerCase().includes(targetValue.toLowerCase()))
+      const filter = membersList.filter((value) => value.name.toLowerCase().includes(targetValue.toLowerCase()))
       dispatch(searchMember(filter))
-          // console.log(value , "VALUE TO BE SEARCHED")
-
-        // else if (value.name.toLowerCase() === targetValue.toLowerCase()) {
-        //   return value
-
-        // }
-        // return value
-        // )
-
-      //   if (value.memberStatus.toLowerCase() === e.target.value.toLowerCase()) {
-      //      dispatch(searchMember(filter))
-
-      //   }
-      // 
     }
     else {
       dispatch(toggleSearch(false));
       dispatch(searchMember([]))
     }
-    //  value.memberStatus.toLowerCase().includes(e.target.value.toLowerCase()))
-    //  dispatch(searchMember(filter))
-
-
-
-
-
   }
 
   const showOptions = [
@@ -96,7 +81,9 @@ const MemberPage = () => {
               <Dropdown className="me-2" preValue="Show: " options={showOptions} />
               <Dropdown preValue="Sort: " />
               <div className="ms-auto" >
-                <Button text="Export member list" Icon={Export} variant="secondary" />
+                <CSVLink data={isSearch ? searchState : membersList} headers={headers}>
+                  <Button text="Export member list" Icon={Export} variant="secondary" />
+                </CSVLink>
               </div>
             </div>
           </div>

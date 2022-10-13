@@ -15,10 +15,10 @@ const Table = ({ tableColumn }) => {
   // console.log(memberArray, "memberListState in TABLE");
 
   const searchState = useSelector(getSearchState);
-  console.log(searchState, "searchState in TABLE");
+  // console.log(searchState, "searchState in TABLE");
 
   const isSearch = useSelector(checkSearch);
-  console.log(isSearch, "isSearch in TABLE");
+  // console.log(isSearch, "isSearch in TABLE");
 
 
   // const tableData = memberArray == undefined ? adminData.members : memberArray;
@@ -26,8 +26,9 @@ const Table = ({ tableColumn }) => {
   const tableData = (isSearch === false) ?
 
     memberArray === undefined ?
-
-      adminData.members : memberArray
+      adminData.members
+      :
+      memberArray
     :
     searchState.length !== 0 ?
       searchState
@@ -44,6 +45,7 @@ const Table = ({ tableColumn }) => {
     usePagination
   );
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, } = tableInstance;
+  console.log(rows, "ROWS FROM TABLE INSTANCE");
 
   useEffect(() => {
     dispatch(getMemberList())
@@ -85,27 +87,28 @@ const Table = ({ tableColumn }) => {
           //   <h1 style={{ textAlign: "center", marginLeft: "40px" }}>Loading...</h1>
           //   :
           <tbody {...getTableBodyProps()}>
+
             {rows.map((row, index) => {
-              prepareRow(row);
-              return (
-                <>
-                  <tr key={index} className='TABLE_ROW' {...row.getRowProps()}
-                  >
-                    {row.cells.map((cell, index) => {
-                      const name = cell.row.values.name;
-                      const nameInitials = name?.split(" ").map((name) => name[0]).join(".");
-                      return (
-                        <td key={index} {...cell.getCellProps()} >
-                          {
-                            index === 0 ? nameInitials : cell.render("Cell")
-                          }
-                        </td>
-                      );
-                    })}
-                  </tr>
-                </>
-              );
-            })}
+                  prepareRow(row);
+                  return (
+                    <>
+                      <tr key={index} className='TABLE_ROW' {...row.getRowProps()}
+                      >
+                        {row.cells.map((cell, index) => {
+                          const name = cell.row.values.name;
+                          const nameInitials = name?.split(" ").map((name) => name[0]).join(".");
+                          return (
+                            <td key={index} {...cell.getCellProps()} >
+                              {
+                                index === 0 ? nameInitials : cell.render("Cell")
+                              }
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    </>
+                  );
+                })}
           </tbody>}
       </table>
     </div>

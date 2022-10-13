@@ -9,8 +9,7 @@ const Button = ({ text, Icon, iconClassName, iconProps, iconPosition, children, 
     <BootstrapButton
     type='button' {...props}
     onClick={onClick}
-    >
-      
+    >      
       {iconPosition === 'left' && Icon && (
         <Icon
           alt={text}
