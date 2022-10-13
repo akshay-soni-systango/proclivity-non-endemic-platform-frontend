@@ -11,9 +11,8 @@ import Input from '../../components/Common/Input';
 import Button from "../../components/Common/Button";
 
 const LoginPage = () => {
+  
   const history = useHistory();
-  // const [user, setUser] = useState("");
-  // console.log(user, "State");
 
   const initialValues = { email: "", password: "" };
   const [formValues, setFormValues] = useState(initialValues);
@@ -30,7 +29,7 @@ const LoginPage = () => {
   //   setUser(response.data);
   // };
   // console.log(user, "state of res");
-  
+
   useEffect(() => {
     // fetchUser();
     console.log(formErrors);

@@ -10,7 +10,9 @@ import { useSelector, useDispatch } from "react-redux";
 import Button from "../../Common/Button";
 import NewMember from "./NewMember";
 import { checkSearch, getMemberListState, getSearchState, getToggleCreateMember, searchMember, toggleSearch } from "../../../Features/Admin/adminSlice";
-import AdminTable from "../AdminTable";
+// import AdminTable from "../AdminTable";
+import { COLUMNS } from '../AdminTable/columns'
+import Table from "../../Common/Table/adminTable";
 
 const MemberPage = () => {
 
@@ -23,7 +25,15 @@ const MemberPage = () => {
     { label: 'Create Date', key: 'createDate' },
     { label: 'Member Status', key: 'memberStatus' }
   ]
-  
+
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0');
+  var yyyy = today.getFullYear();
+  var currentDate = `${dd}/${mm}/${yyyy}`;
+  const csvFileName = `member-list-${currentDate}.csv`
+  console.log(currentDate,"currentDate");
+
   const isSearch = useSelector(checkSearch);
   const gotoMemberPage = useSelector(getToggleCreateMember);
   const memberListState = useSelector(getMemberListState);
@@ -31,7 +41,7 @@ const MemberPage = () => {
 
   const handleChange = (e) => {
     const targetValue = e.target.value
-    
+
     if (targetValue !== "") {
       dispatch(toggleSearch(true));
       const filter = membersList.filter((value) => value.name.toLowerCase().includes(targetValue.toLowerCase()))
@@ -81,14 +91,14 @@ const MemberPage = () => {
               <Dropdown className="me-2" preValue="Show: " options={showOptions} />
               <Dropdown preValue="Sort: " />
               <div className="ms-auto" >
-                <CSVLink data={isSearch ? searchState : membersList} headers={headers}>
+                <CSVLink data={isSearch ? searchState : membersList} headers={headers} filename={csvFileName}>
                   <Button text="Export member list" Icon={Export} variant="secondary" />
                 </CSVLink>
               </div>
             </div>
           </div>
           <div className="admin-table">
-            <AdminTable />
+            <Table tableColumn={COLUMNS}  />
           </div>
         </Card.Body>
       </Card>
