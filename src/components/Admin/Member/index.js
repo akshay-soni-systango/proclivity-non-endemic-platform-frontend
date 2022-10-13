@@ -14,10 +14,10 @@ import AdminTable from "../AdminTable";
 const MemberPage = (props) => {
   const gotoMemberPage = useSelector(getToggleCreateMember);
 
-  const [status, setStatus] = useState("All");
+  const [statusFilter, setStatusFilter] = useState("All");
   const onFilterValueChanged = event => {
     console.log("setStatus", event);
-    setStatus(event.value);
+    setStatusFilter(event.value);
   };
   
   const showOptions = [
@@ -55,14 +55,14 @@ const MemberPage = (props) => {
                 className="mb-2 mb-md-0 me-2"
               />
               <Dropdown className="mb-2 mb-md-0 me-2" preValue="Show: " options={showOptions} defaultValue={{label: "All", value: "All"}} onChange={(e) => onFilterValueChanged(e)}  />
-              <Dropdown className="mb-2 mb-md-0 me-2" preValue="Sort: "  defaultValue={{label: "Most Recent", value: "Most Recent"}} />
+              {/* <Dropdown className="mb-2 mb-md-0 me-2" preValue="Sort: "  defaultValue={{label: "Most Recent", value: "Most Recent"}} /> */}
               <div className="ms-0 ms-xl-auto mt-2 mt-xl-0">
                 <Button text="Export member list" Icon={Export} variant="secondary"  />
               </div>
             </div>
           </div>
           <div className="admin-table">
-            <AdminTable status={status} />
+            <AdminTable statusFilter={statusFilter} />
           </div>
         </Card.Body>
       </Card>

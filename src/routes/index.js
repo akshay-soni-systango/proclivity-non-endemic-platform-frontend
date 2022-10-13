@@ -13,14 +13,17 @@ import CampaignHomePage from "../pages/Campaigns/Overview";
 import EditMember from "../components/Admin/EditMember";
 import PageNotFound from "../pages/PageNotFound";
 import PrivateRoute from "./ProtectedRouting/PrivateRoute";
+import PublicRoute from "./ProtectedRouting/PublicRoute";
 import LoginPage from "../pages/Login";
+import ForgotPassword from "../pages/Login/forgotPassword";
 // const HomePage = React.lazy(() => import(  /* webpackChunkName: "home-page" */ '../pages/HomePage'));
 
 const Routes = () => {
   return (
     <>
       <Switch>
-        <Route path='/' exact component={LoginPage} />
+        <PublicRoute path='/' exact component={LoginPage} />
+        <PublicRoute path='/forgot-password' component={ForgotPassword} />
         <PrivateRoute path="/home" component={HomePage} />
         <PrivateRoute path="/edit" component={EditMember} />
         <PrivateRoute path="/audiences" component={AudiencePage} />

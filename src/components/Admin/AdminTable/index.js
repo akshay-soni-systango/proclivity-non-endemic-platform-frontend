@@ -3,14 +3,14 @@ import {COLUMNS} from './columns';
 import adminData from '../../../util/CampaignData/ADMIN_MEMBER.json'
 import Table from '../../Common/Table/adminTable';
 
-const AdminTable = ({status}) => {  
+const AdminTable = ({statusFilter}) => {  
 
   const memberArray = adminData.members;
   const filterData = memberArray.filter((val) => {
-    if (status === "All") {
+    if (statusFilter === "All") {
       return val;
-    } else if (val.memberStatus === status) {
-      console.log("valll", val, status);
+    } else if (val.memberStatus === statusFilter) {
+      console.log("valll", val, statusFilter);
       return val;
     }
   });
