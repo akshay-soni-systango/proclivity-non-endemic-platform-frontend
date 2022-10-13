@@ -1,23 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.scss";
 import { CSVLink } from 'react-csv';
 import { Badge, Card } from "react-bootstrap";
-import Input from "../../Common/Input";
 import Dropdown from "../../Common/Dropdown";
 import Heading from "../../Common/Heading";
-import { Export, Search } from "../../../assets/Icons"
-import { useSelector, useDispatch } from "react-redux";
+import { Export } from "../../../assets/Icons"
+import { useSelector } from "react-redux";
 import Button from "../../Common/Button";
 import NewMember from "./NewMember";
-import { checkSearch, getMemberListState, getSearchState, getToggleCreateMember, searchMember, toggleSearch } from "../../../Features/Admin/adminSlice";
-// import AdminTable from "../AdminTable";
-import { COLUMNS } from '../AdminTable/columns'
+import { getMemberListState, getSearchState, getToggleCreateMember } from "../../../Features/Admin/adminSlice";
+import Search from "../../Common/Search";
+import { globalSearch } from '../../../util/searchUtils';
+import { COLUMNS } from './MemberTable/columns'
 import Table from "../../Common/Table/adminTable";
 
 const MemberPage = () => {
 
-  const dispatch = useDispatch();
   const searchState = useSelector(getSearchState);
+  const memberListState = useSelector(getMemberListState);
+  const membersList = memberListState.members;
+  const gotoMemberPage = useSelector(getToggleCreateMember);
+
+
+
+  const [filterMembers, setFilterMembers] = useState([...membersList]);
+  // const [isSearch, setSearch] = useState(false)
+  const [searchedValue, setSearchedValue] = useState("");
+
+  // console.log(filterMembers, "filterMembers STATE");
+
+
+  const [statusFilter, setStatusFilter] = useState("All");
+  const onFilterValueChanged = event => {
+    console.log("setStatus", event);
+    setStatusFilter(event.value);
+  };
+
+  // const memberArray = [...membersList];
+  // const filterData = memberArray.filter((val) => {
+  //   if (statusFilter === "All") {
+  //     return val;
+  //   } else if (val.memberStatus === statusFilter) {
+  //     return val;
+  //   }
+  // });
+
+
   const headers = [
     { label: 'Name', key: 'name' },
     { label: 'Role', key: 'role' },
@@ -31,27 +59,22 @@ const MemberPage = () => {
   var mm = String(today.getMonth() + 1).padStart(2, '0');
   var yyyy = today.getFullYear();
   var currentDate = `${dd}/${mm}/${yyyy}`;
-  const csvFileName = `member-list-${currentDate}.csv`
-  console.log(currentDate,"currentDate");
+  const csvFileName = `member-list-${currentDate}.csv`;
 
-  const isSearch = useSelector(checkSearch);
-  const gotoMemberPage = useSelector(getToggleCreateMember);
-  const memberListState = useSelector(getMemberListState);
-  const membersList = memberListState.members;
 
-  const handleChange = (e) => {
-    const targetValue = e.target.value
+  // const handleChange = (e) => {
+  //   const targetValue = e.target.value
 
-    if (targetValue !== "") {
-      dispatch(toggleSearch(true));
-      const filter = membersList.filter((value) => value.name.toLowerCase().includes(targetValue.toLowerCase()))
-      dispatch(searchMember(filter))
-    }
-    else {
-      dispatch(toggleSearch(false));
-      dispatch(searchMember([]))
-    }
-  }
+  //   if (targetValue !== "") {
+  //     dispatch(toggleSearch(true));
+  //     const filter = membersList.filter((value) => value.name.toLowerCase().includes(targetValue.toLowerCase()))
+  //     dispatch(searchMember(filter))
+  //   }
+  //   else {
+  //     dispatch(toggleSearch(false));
+  //     dispatch(searchMember([]))
+  //   }
+  // }
 
   const showOptions = [
     {
@@ -67,6 +90,23 @@ const MemberPage = () => {
       value: 'Deactivated',
     },
   ]
+
+  const searchOnChange = (e) => {
+    const { value } = e.target;
+    setSearchedValue(value);
+    // if(value==="" && filterAppied==="All"){
+    if (value === "") {
+      setFilterMembers([...membersList])
+      // setSearch(false)
+    } else {
+      // setSearch(true)
+      const tableData = filterMembers.length > 0 ? filterMembers : membersList
+      const result = globalSearch(value, ['name', 'memberStatus', 'role'], tableData);
+      setFilterMembers(result)
+      console.log(result, "RESULT OF SEARCH ");
+    }
+  }
+
   return (
     <div>
       {gotoMemberPage ? <NewMember /> : <Card>
@@ -82,23 +122,21 @@ const MemberPage = () => {
               </Badge>
             </div>
             <div className="search-filter-sort align-items-start">
-              <Input
-                onChange={handleChange}
-                Icon={Search}
-                error=""
-                className="mb-0 me-2"
-              />
-              <Dropdown className="me-2" preValue="Show: " options={showOptions} />
-              <Dropdown preValue="Sort: " />
+              <Search handleChange={searchOnChange} value={searchedValue} />
+
+              <Dropdown className="me-2" preValue="Show: " options={showOptions} defaultValue={{label: "All", value: "All"}} />
+
+              <Dropdown preValue="Sort: "/>
+
               <div className="ms-auto" >
-                <CSVLink data={isSearch ? searchState : membersList} headers={headers} filename={csvFileName}>
+                <CSVLink data={filterMembers} headers={headers} filename={csvFileName}>
                   <Button text="Export member list" Icon={Export} variant="secondary" />
                 </CSVLink>
               </div>
             </div>
           </div>
           <div className="admin-table">
-            <Table tableColumn={COLUMNS}  />
+            <Table tableColumn={COLUMNS} tableData={filterMembers} />
           </div>
         </Card.Body>
       </Card>

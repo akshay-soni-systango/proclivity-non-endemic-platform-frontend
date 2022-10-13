@@ -2,11 +2,11 @@ import React from 'react';
 import './style.scss';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import { ReactComponent as Menu } from '../../../assets/Icons/menu.svg';
-import { ReactComponent as Edit } from '../../../assets/Icons/editMember.svg';
-import { ReactComponent as Deactivate } from '../../../assets/Icons/deactivate.svg';
-import { ReactComponent as Permission } from '../../../assets/Icons/viewPermission.svg';
-import { ReactComponent as UserAccess } from '../../../assets/Icons/viewUserAccess.svg';
+import { ReactComponent as Menu } from '../../../../assets/Icons/menu.svg';
+import { ReactComponent as Edit } from '../../../../assets/Icons/editMember.svg';
+import { ReactComponent as Deactivate } from '../../../../assets/Icons/deactivate.svg';
+import { ReactComponent as Permission } from '../../../../assets/Icons/viewPermission.svg';
+import { ReactComponent as UserAccess } from '../../../../assets/Icons/viewUserAccess.svg';
 import { useHistory } from 'react-router-dom';
 
 const DropdownMenu = ({row}) => {
