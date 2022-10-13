@@ -7,7 +7,10 @@ const Input = ({ Icon, error, className, ...props }) => {
     <div className={classNames("input-container", className, {
       'has-error': error,
     })}>
-      <input className={`form-control ${!Boolean(Icon) ? "no-img" : "has-img"}`}  {...props} />      
+      <input className={classNames("form-control",{
+        "has-img" : Boolean(Icon),
+        "no-img" : !Boolean(Icon)
+      })}  {...props} />      
       {Icon && <Icon className="input-img"/>}
       <div className="error-msg">{error}</div>
     </div>

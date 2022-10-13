@@ -10,18 +10,18 @@ import { ReactComponent as UserAccess } from '../../../assets/Icons/viewUserAcce
 import { useHistory } from 'react-router-dom';
 
 const DropdownMenu = ({row}) => {
+    const status = row.values.memberStatus;
     const history = useHistory()
     const handleClick = (e,row) =>{
-       console.log(row)
        history.push('/edit')
     }
     return (
         <div>
             <DropdownButton id="dropdown-basic-button" className='view-more-btn' title={<Menu />}>
-                <Dropdown.Item onClick={(e)=>handleClick(e,row)}><span>{<Edit />}</span><span>Edit</span></Dropdown.Item>
-                <Dropdown.Item ><span>{<Deactivate />}</span><span>Deactivate</span></Dropdown.Item>
-                <Dropdown.Item ><span>{<Permission />}</span><span>View Permission History</span></Dropdown.Item>
-                <Dropdown.Item ><span>{<UserAccess />}</span><span>View User Access Logs</span></Dropdown.Item>
+                <Dropdown.Item onClick={(e)=>handleClick(e,row)}><p><span>{<Edit />}</span>Edit</p></Dropdown.Item>
+                <Dropdown.Item ><p> {status === 'Active'? <><span>{<Deactivate />}</span>Inactive </> : <><span>{<Deactivate />}</span>Active </> }</p></Dropdown.Item>
+                <Dropdown.Item ><p><span>{<Permission />}</span>View Permission History</p></Dropdown.Item>
+                <Dropdown.Item ><p><span>{<UserAccess />}</span>View User Access Logs</p></Dropdown.Item>
             </DropdownButton>
         </div>
     )

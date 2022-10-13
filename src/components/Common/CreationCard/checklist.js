@@ -7,7 +7,6 @@ const Checklist = ({
     checkList,
     fieldName,
 }) => {
-    // console.log("++++++++", checkList);
   return (
     <div className="card-body col-part">
       {checkList?.map((item) => {
