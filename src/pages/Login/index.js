@@ -20,8 +20,6 @@ const LoginPage = () => {
   };
 
   const onSubmit = ({ email, password }) => {
-    // console.log("values", values);
-    // navigate("/home");
     if (email !== "" && password !== "") {
       localStorage.setItem("userEmail", email);
       localStorage.setItem("userPassword", password);

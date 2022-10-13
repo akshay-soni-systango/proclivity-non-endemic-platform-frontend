@@ -18,7 +18,6 @@ const ResetPassword = () => {
   };
 
   const onSubmit = (values) => {
-    console.log("values", values);
     history.push("/home");
   };
 

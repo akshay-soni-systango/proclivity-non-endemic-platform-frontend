@@ -18,7 +18,6 @@ const ForgotPassword = () => {
   };
 
   const onSubmit = (values) => {
-    console.log("values", values);
     history.push("/reset-password");
   };
 

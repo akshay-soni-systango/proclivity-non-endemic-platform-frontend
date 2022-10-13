@@ -10,7 +10,6 @@ const AdminTable = ({statusFilter}) => {
     if (statusFilter === "All") {
       return val;
     } else if (val.memberStatus === statusFilter) {
-      console.log("valll", val, statusFilter);
       return val;
     }
   });

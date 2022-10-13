@@ -20,7 +20,6 @@ const MemberPage = (props) => {
 
   const [statusFilter, setStatusFilter] = useState("All");
   const onFilterValueChanged = event => {
-    console.log("setStatus", event);
     setStatusFilter(event.value);
   };
   
@@ -73,8 +72,8 @@ const MemberPage = (props) => {
               {/* <div className="ms-0 ms-xl-auto mt-2 mt-xl-0"> */}
                 <Search handleChange={searchOnChange} value={searchedValue}/>
                 <Dropdown className="mb-2 mb-md-0 me-2" preValue="Show: " options={showOptions} defaultValue={{label: "All", value: "All"}} onChange={(e) => onFilterValueChanged(e)}  />
-                <Dropdown className="mb-2 mb-md-0 me-2" preValue="Sort: "  defaultValue={{label: "Most Recent", value: "Most Recent"}} />
-              <div className="ms-auto" >
+                {/* <Dropdown className="mb-2 mb-md-0 me-2" preValue="Sort: "  defaultValue={{label: "Most Recent", value: "Most Recent"}} /> */}
+              <div className="ms-auto">
                 <Button text="Export member list" Icon={Export} variant="secondary"  />
               </div>
             </div>
