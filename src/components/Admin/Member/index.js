@@ -1,17 +1,21 @@
 import React, {useState} from "react";
 import { Badge, Card } from "react-bootstrap";
-import Input from "../../Common/Input";
 import Dropdown from "../../Common/Dropdown";
 import Heading from "../../Common/Heading";
-import {Export, Search} from "../../../assets/Icons"
+import {Export} from "../../../assets/Icons"
 import "./style.scss";
 import { useSelector } from "react-redux";
 import Button from "../../Common/Button";
 import NewMember from "./NewMember";
 import { getToggleCreateMember } from "../../../Features/Admin/adminSlice";
 import AdminTable from "../AdminTable";
-
+import Search from "../../Common/Search";
+import { globalSearch } from '../../../util/searchUtils';
+import adminData from '../../../util/CampaignData/ADMIN_MEMBER.json'
+ 
+  
 const MemberPage = (props) => {
+  const [searchedValue, setSearchedValue]=useState("");
   const gotoMemberPage = useSelector(getToggleCreateMember);
 
   const [statusFilter, setStatusFilter] = useState("All");
@@ -34,6 +38,18 @@ const MemberPage = (props) => {
       value: 'Inactive',
     },
   ]
+
+  const searchOnChange=(e)=>{
+    const { value }=e.target;
+    setSearchedValue(value);
+    // if(value==="" && filterAppied==="All"){
+    if(value===""){
+      // set redux state 
+    }else{
+      const result=globalSearch(value,['name','memberStatus','role'],adminData?.members);
+    }
+  }
+  
   return (
     <div>
       {gotoMemberPage ? <NewMember /> : <Card className="mb-0">
@@ -49,14 +65,16 @@ const MemberPage = (props) => {
               </Badge>
             </div>
             <div className="search-filter-sort align-items-start">
-              <Input
+              {/* <Input
                 Icon={Search}
                 error=""
                 className="mb-2 mb-md-0 me-2"
-              />
-              <Dropdown className="mb-2 mb-md-0 me-2" preValue="Show: " options={showOptions} defaultValue={{label: "All", value: "All"}} onChange={(e) => onFilterValueChanged(e)}  />
-              {/* <Dropdown className="mb-2 mb-md-0 me-2" preValue="Sort: "  defaultValue={{label: "Most Recent", value: "Most Recent"}} /> */}
-              <div className="ms-0 ms-xl-auto mt-2 mt-xl-0">
+              /> */}              
+              {/* <div className="ms-0 ms-xl-auto mt-2 mt-xl-0"> */}
+                <Search handleChange={searchOnChange} value={searchedValue}/>
+                <Dropdown className="mb-2 mb-md-0 me-2" preValue="Show: " options={showOptions} defaultValue={{label: "All", value: "All"}} onChange={(e) => onFilterValueChanged(e)}  />
+                <Dropdown className="mb-2 mb-md-0 me-2" preValue="Sort: "  defaultValue={{label: "Most Recent", value: "Most Recent"}} />
+              <div className="ms-auto" >
                 <Button text="Export member list" Icon={Export} variant="secondary"  />
               </div>
             </div>
