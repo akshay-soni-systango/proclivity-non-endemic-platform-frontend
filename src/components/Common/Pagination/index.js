@@ -11,8 +11,8 @@ const Pagination = ({ dataPerPage, totalData, paginate }) => {
         <nav>
             <ul className='pagination pagination-lg'>
                 {
-                    pageNumbers.map(numbers => (
-                        <li key={numbers} style={{ cursor: "pointer" }} className='page-item'>
+                    pageNumbers.map((numbers, index) => (
+                        <li key={index} style={{ cursor: "pointer" }} className='page-item'>
                             <button className='pages-links' onClick={() => paginate(numbers)}>
                                 {numbers}
                             </button>

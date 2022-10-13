@@ -11,8 +11,7 @@ import { useHistory } from "react-router-dom";
 const AdminHomePage = ({ title, MainIcon }) => { 
     const history = useHistory() 
     const dispatch = useDispatch();
-    const handleClick = () => {
-        // localStorage.clear()
+    const handleclick = () => {
         history.push('/member/create')
         dispatch(createMember(true));
     }
@@ -22,7 +21,7 @@ const AdminHomePage = ({ title, MainIcon }) => {
           variant: 'primary',
           Icon: Add,
           text: 'New Member',
-          onClick: handleClick
+          onClick: handleclick
         }
       ]
 
@@ -34,7 +33,7 @@ const AdminHomePage = ({ title, MainIcon }) => {
                 MainIcon={Admin}
             />
             <div>
-                <Tab tabs={tabs} handleClick={handleClick}/>
+                <Tab tabs={tabs} handleclick={handleclick}/>
             </div>
         </div>
     );

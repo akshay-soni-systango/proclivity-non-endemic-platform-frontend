@@ -5,7 +5,7 @@ const SidebarMenuListItem = ({Icon, link, title }) => {
 const {pathname} = useLocation();
   return (
     <li className="list-wrapper">
-      <Link to={link} className={pathname === link && "active"}>
+      <Link to={link} className={pathname === link ? "active" : undefined}>
         {Icon && <Icon />}
         <span>{title} </span>
       </Link>

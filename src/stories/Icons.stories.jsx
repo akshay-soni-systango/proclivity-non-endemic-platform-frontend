@@ -43,9 +43,9 @@ export const PrimaryDropdown = () => {
         </div>
     </div>
     <div className="row">
-      {iconList.filter(({name}) => name.toLowerCase().includes((search || '').toLowerCase())).map(({ Icon, name }) => {
+      {iconList.filter(({name}) => name.toLowerCase().includes((search || '').toLowerCase())).map(({ Icon, name  }) => {
         return (
-          <div className="col-2">
+          <div key={name} className="col-2">
             <div className="d-flex card p-3 flex-grow-1 text-center">
               <Icon className="w-100 my-3" />
               {name}

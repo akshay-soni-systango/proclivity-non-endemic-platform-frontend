@@ -1,11 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./table.scss";
+import { useDispatch, useSelector } from 'react-redux';
 import { useTable, useSortBy, usePagination } from "react-table";
 import arrowUp from "../../../assets/Icons/arrow-up.svg";
 import arrowDown from "../../../assets/Icons/arrow-down.svg";
+import adminData from '../../../util/CampaignData/ADMIN_MEMBER.json'
+import { checkSearch, fetchAsyncMember, getMemberList, getMemberListState, getSearchState } from "../../../Features/Admin/adminSlice";
 
-const Table = ({ tableData, tableColumn }) => {
-  // console.log(tableData , "Data in table");
+const Table = ({ tableColumn }) => {
+  const dispatch = useDispatch();
+
+  const memberListState = useSelector(getMemberListState);
+  const memberArray = memberListState.members
+  // console.log(memberArray, "memberListState in TABLE");
+
+  const searchState = useSelector(getSearchState);
+  console.log(searchState, "searchState in TABLE");
+
+  const isSearch = useSelector(checkSearch);
+  console.log(isSearch, "isSearch in TABLE");
+
+
+  // const tableData = memberArray == undefined ? adminData.members : memberArray;
+
+  const tableData = (isSearch === false) ?
+
+    memberArray === undefined ?
+
+      adminData.members : memberArray
+    :
+    searchState.length !== 0 ?
+      searchState
+      :
+      adminData.members
+
+
   const tableInstance = useTable(
     {
       columns: tableColumn,
@@ -15,14 +44,10 @@ const Table = ({ tableData, tableColumn }) => {
     usePagination
   );
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, } = tableInstance;
-  // console.log(rows, " rows mapped ");
-
-  const [tableRows, setTableRows] = useState([])
-  // console.log(tableRows.length, "state length");
 
   useEffect(() => {
-    setTableRows([...rows])
-  }, [rows])
+    dispatch(getMemberList())
+  }, [dispatch])
 
   return (
     <div className='table-wrapper'>
@@ -56,33 +81,32 @@ const Table = ({ tableData, tableColumn }) => {
           ))}
         </thead>
         {
-          tableRows.length === 0 ?
-            <h1 style={{ textAlign: "center", marginLeft: "40px" }}>Loading...</h1>
-            :
-            <tbody {...getTableBodyProps()}>
-              {tableRows.map((row, index) => {
-                prepareRow(row);
-                return (
-                  <>
-                    <tr key={index} className='TABLE_ROW' {...row.getRowProps()}
-                    >
-                      {row.cells.map((cell, index) => {
-                        const name = cell.row.values.name;
-                        const nameInitials = name?.split(" ").map((name) => name[0]).join(".");
-                        // console.log("====", name,nameInitials );
-                        return (
-                          <td key={index} {...cell.getCellProps()} >
-                            {
-                              index === 0 ? nameInitials : cell.render("Cell")
-                            }
-                          </td>
-                        );
-                      })}
-                    </tr>
-                  </>
-                );
-              })}
-            </tbody>}
+          // tableRows.length === 0 ?
+          //   <h1 style={{ textAlign: "center", marginLeft: "40px" }}>Loading...</h1>
+          //   :
+          <tbody {...getTableBodyProps()}>
+            {rows.map((row, index) => {
+              prepareRow(row);
+              return (
+                <>
+                  <tr key={index} className='TABLE_ROW' {...row.getRowProps()}
+                  >
+                    {row.cells.map((cell, index) => {
+                      const name = cell.row.values.name;
+                      const nameInitials = name?.split(" ").map((name) => name[0]).join(".");
+                      return (
+                        <td key={index} {...cell.getCellProps()} >
+                          {
+                            index === 0 ? nameInitials : cell.render("Cell")
+                          }
+                        </td>
+                      );
+                    })}
+                  </tr>
+                </>
+              );
+            })}
+          </tbody>}
       </table>
     </div>
   );
