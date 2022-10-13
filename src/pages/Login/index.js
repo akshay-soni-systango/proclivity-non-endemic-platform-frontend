@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import './style.scss';
+import { Col, Row } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import LoginImage from "../../assets/images/login.png";
 import { Row, Col, Form } from "react-bootstrap";
 import Label from "../../components/Common/Label";
@@ -29,6 +32,8 @@ const LoginPage = () => {
 
   const validate = (values) => {
     const errors = {};
+    let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
+    console.log(regex);
 
     if (!values.email) {
       errors.email = "email field cannot be empty";

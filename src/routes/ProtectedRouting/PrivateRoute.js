@@ -1,6 +1,6 @@
 import { Redirect, Route } from "react-router-dom"
 import Layout from "../../components/Common/LayoutComponent"
-import SidebarComponent from "../../components/Common/SideBar/SidebarComponent"
+// import SidebarComponent from "../../components/Common/SideBar/SidebarComponent"
 
 const PrivateRoute = ({ component: Component, authenticated, ...rest }) => {
 

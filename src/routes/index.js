@@ -1,6 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
-// import Layout from "../components/Common/LayoutComponent";
+import { Switch } from "react-router-dom";
 import AudiencePage from "../pages/AudiencePage";
 import HomePage from "../pages/HomePage";
 import CampaignDetailCard from "../components/Cards/campaignDetail";
@@ -16,6 +15,7 @@ import PrivateRoute from "./ProtectedRouting/PrivateRoute";
 import PublicRoute from "./ProtectedRouting/PublicRoute";
 import LoginPage from "../pages/Login";
 import ForgotPassword from "../pages/Login/forgotPassword";
+import NewMember from "../components/Admin/Member/NewMember";
 // const HomePage = React.lazy(() => import(  /* webpackChunkName: "home-page" */ '../pages/HomePage'));
 
 const Routes = () => {
@@ -25,6 +25,7 @@ const Routes = () => {
         <PublicRoute path='/' exact component={LoginPage} />
         <PublicRoute path='/forgot-password' component={ForgotPassword} />
         <PrivateRoute path="/home" component={HomePage} />
+        <PrivateRoute path="/member/create" component={NewMember}/>
         <PrivateRoute path="/edit" component={EditMember} />
         <PrivateRoute path="/audiences" component={AudiencePage} />
         <PrivateRoute path="/admin" component={AdminPage} />

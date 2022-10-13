@@ -9,6 +9,7 @@ const SidebarMenuList = ({ list }) => {
         )
     }
     const listItems = list.map(listData);
+    console.log(listItems , "listItems");
     return (
         <nav className="nav-wrapper">
             <ul>{listItems}</ul>
