@@ -1,19 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Badge, Card } from "react-bootstrap";
-import Input from "../../Common/Input";
 import Dropdown from "../../Common/Dropdown";
 import Heading from "../../Common/Heading";
-import {Export, Search} from "../../../assets/Icons"
+import {Export} from "../../../assets/Icons"
 import "./style.scss";
 import { useSelector } from "react-redux";
 import Button from "../../Common/Button";
 import NewMember from "./NewMember";
 import { getToggleCreateMember } from "../../../Features/Admin/adminSlice";
 import AdminTable from "../AdminTable";
+import Search from "../../Common/Search";
+import { globalSearch } from '../../../util/searchUtils';
+import adminData from '../../../util/CampaignData/ADMIN_MEMBER.json'
 
 const MemberPage = () => {
+  const [searchedValue, setSearchedValue]=useState("");
   const gotoMemberPage = useSelector(getToggleCreateMember);
-  
   const showOptions = [
     {
       label: 'All',
@@ -28,6 +30,18 @@ const MemberPage = () => {
       value: 'Deactivated',
     },
   ]
+
+  const searchOnChange=(e)=>{
+    const { value }=e.target;
+    setSearchedValue(value);
+    // if(value==="" && filterAppied==="All"){
+    if(value===""){
+      // set redux state 
+    }else{
+      const result=globalSearch(value,['name','memberStatus','role'],adminData?.members);
+    }
+  }
+  
   return (
     <div>
       {gotoMemberPage ? <NewMember /> : <Card>
@@ -43,11 +57,7 @@ const MemberPage = () => {
               </Badge>
             </div>
             <div className="search-filter-sort align-items-start">
-              <Input
-                Icon={Search}
-                error=""
-                className="mb-0 me-2"
-              />
+              <Search handleChange={searchOnChange} value={searchedValue}/>
               <Dropdown className="me-2" preValue="Show: " options={showOptions} />
               <Dropdown preValue="Sort: " />
               <div className="ms-auto" >
@@ -56,7 +66,7 @@ const MemberPage = () => {
             </div>
           </div>
           <div className="admin-table">
-            <AdminTable />
+            <AdminTable/>
           </div>
         </Card.Body>
       </Card>
