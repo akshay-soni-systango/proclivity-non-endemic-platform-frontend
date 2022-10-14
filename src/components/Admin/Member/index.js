@@ -23,25 +23,29 @@ const MemberPage = () => {
   const membersList = memberListState.members;
   const gotoMemberPage = useSelector(getToggleCreateMember);
 
-
-
   const [filterMembers, setFilterMembers] = useState([...membersList]);
-  // const [isSearch, setSearch] = useState(false)
   const [searchedValue, setSearchedValue] = useState("");
-
-  // console.log(filterMembers, "filterMembers STATE");
-
-
   const [memberStatus, setMemberStatus] = useState("All");
-  const [filteredStateOfMemberStatus, setFilteredStateOfMemberStatus] = useState([])
+  // const [filteredStateOfMemberStatus, setFilteredStateOfMemberStatus] = useState([])
   // console.log(memberStatus, "STATE OF SORTING ACTIVE AND INACTIVE");
 
-  const filterMemberStatus = (event) => {
+  const filterMemberStatus = (event,passedSearchedValue) => {
     setMemberStatus(event.value);
-    const filterMemberStatus = filterMembers.filter((value) => value.memberStatus === event.value)
-    console.log(filterMemberStatus, "MEMBER STATUS FILTERED");
-    setFilteredStateOfMemberStatus(filterMemberStatus)
-    setFilterMembers(filterMemberStatus)
+    let filterListArray=[];
+    console.log('searchedValue---',searchedValue,event.value);
+    if(event.value==="All"){
+      filterListArray=[...membersList]
+    }else{
+      if(searchedValue==="" || passedSearchedValue===""){
+        filterListArray = membersList.filter((value) => value.memberStatus === event.value)
+      }
+      else{
+
+        filterListArray = filterMembers.filter((value) => value.memberStatus === event.value)
+      }
+    }
+    // setFilteredStateOfMemberStatus(filterMemberStatus)
+    setFilterMembers(filterListArray)
 
   };
 
@@ -102,36 +106,21 @@ const MemberPage = () => {
 
   const searchOnChange = (e) => {
     const { value } = e.target;
-    console.log(value , "VALUE SEARCHED");
     setSearchedValue(value);
-
-
-    // if(value==="" && filterAppied==="All"){
-    if (value === "" || memberStatus === "All") {
-      setFilterMembers([...membersList])
+    if ((value === "" && memberStatus === "All") || (value === "")) {
+      if(memberStatus === "All"){
+        setFilterMembers([...membersList])
+      }else{
+        filterMemberStatus({ value: memberStatus },value);
+      }
+    }else if(value!=="" && memberStatus === "All"){
+      const result = globalSearch(value, ['name', 'memberStatus', 'role'], membersList);
+      setFilterMembers(result)
     }
-    else if (value === "" && memberStatus !== "All") {
-      setFilterMembers(filteredStateOfMemberStatus)
-    }
-
-
-    //  else if ( memberStatus !== "All"  ) {
-    // console.log("memberStatus !== 'All'");
-    // const filterMemberStatus = filterMembers.filter((value) => value.memberStatus === memberStatus)
-    // console.log(filterMemberStatus, "MEMBER STATUS FILTERED");
-    // setFilterMembers(filterMemberStatus)
-    // }
-    // else if (memberStatus !== "All" && searchedValue !== ""){
-    //   // const stateToFilter = filterMembers.length > 0 ? filterMembers : membersList
-    //   const result = globalSearch(value, ['name', 'memberStatus', 'role'], memberStatus);
-    //   setFilterMembers(result)
-    // }
-
     else {
-      const stateToFilter = filterMembers.length > 0 ? filterMembers : membersList
+      const stateToFilter = filterMembers.length > 0 ? filterMembers : membersList;
       const result = globalSearch(value, ['name', 'memberStatus', 'role'], stateToFilter);
       setFilterMembers(result)
-      // console.log(result, "RESULT OF SEARCH ");
     }
   }
 
@@ -141,7 +130,6 @@ const MemberPage = () => {
       setFilterMembers(concatList)
     }, 1000);
   };
-
   return (
     <div>
       {gotoMemberPage ? <NewMember /> : <Card className="mb-0">
@@ -157,12 +145,8 @@ const MemberPage = () => {
               </Badge>
             </div>
             <div className="search-filter-sort align-items-start">
-              <Search handleChange={searchOnChange} value={searchedValue} placeholder="Search by Name, Role and Member status " />
-
+              <Search handleChange={searchOnChange} value={searchedValue} placeholder="Search by Name , Role and Status " />
               <Dropdown className="me-2" preValue="Show: " options={showOptions} defaultValue={{ label: "All", value: "All" }} onChange={filterMemberStatus} />
-
-              <Dropdown preValue="Sort: " />
-
               <div className="ms-auto" >
                 <CSVLink data={filterMembers} headers={headers} filename={csvFileName}>
                   <Button text="Export member list" Icon={Export} variant="secondary" />

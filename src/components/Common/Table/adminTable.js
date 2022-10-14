@@ -26,7 +26,7 @@ const Table = ({ tableData, tableColumn, fetchMoreData }) => {
       <InfiniteScroll
         dataLength={rows.length}
         next={fetchMoreData}
-        hasMore={true}
+        hasMore={rows.length>6? true: false}
         scrollableTarget="scrollableDiv"
         loader={<h4 className='mt-2 d-flex justify-content-center align-items-center'>Loading...</h4>}
       >

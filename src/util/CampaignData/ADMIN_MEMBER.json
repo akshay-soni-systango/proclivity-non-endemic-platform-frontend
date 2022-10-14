@@ -6,7 +6,7 @@
             "role": "Super Admin",
             "lastActive": "1 hr ago",
             "createDate": "May 11, 2022",
-            "memberStatus": "Active"
+            "memberStatus": "Inactive"
         },
         {
             "name": "Demi Wilkenson",
@@ -22,7 +22,7 @@
             "role": "Admin",
             "lastActive": "yesterday",
             "createDate": "May 11, 2022",
-            "memberStatus": "Active"
+            "memberStatus": "Inactive"
         },
         {
             "name": "Koray Okumus",
@@ -38,7 +38,7 @@
             "role": "Analyst",
             "lastActive": "1 hr ago",
             "createDate": "May 11, 2022",
-            "memberStatus": "Active"
+            "memberStatus": "Inactive"
         },
         {
             "name": "Loki Bright",
@@ -54,7 +54,7 @@
             "role": "Creative",
             "lastActive": "yesterday",
             "createDate": "May 11, 2022",
-            "memberStatus": "Active"
+            "memberStatus": "Inactive"
         }
     ],
     "totalActive":100
