@@ -3,7 +3,7 @@ import Heading from "../components/Common/Heading";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Component/Headings",
+  title: "Component/Elements/Headings",
   component: Heading,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   parameters: {

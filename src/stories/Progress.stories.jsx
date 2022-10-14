@@ -2,7 +2,7 @@ import React from "react";
 import { ProgressBar } from "react-bootstrap";
 
 export default {
-  title: "Component/ProgressBar",
+  title: "Component/Elements/ProgressBar",
   component: ProgressBar,
 };
 

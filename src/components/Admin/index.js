@@ -33,7 +33,7 @@ const AdminHomePage = ({ title, MainIcon }) => {
                 MainIcon={Admin}
             />
             <div>
-                <Tab tabs={tabs} handleclick={handleclick}/>
+                <Tab tabs={tabs} />
             </div>
         </div>
     );

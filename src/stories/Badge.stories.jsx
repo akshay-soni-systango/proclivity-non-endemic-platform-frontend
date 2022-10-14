@@ -1,10 +1,11 @@
 import React from "react";
 import { Badge } from "react-bootstrap";
+import { AddFile } from "../assets/Icons";
 // import { Add, AddFile } from "../assets/Icons";
 import { iconListObj } from "../components/Common/Icons";
 
 export default {
-  title: "Component/Badge",
+  title: "Component/Elements/Badge",
   component: Badge,
   subtitle: "Set the most appropriate variant of the component for your use.",
   parameters: {
@@ -24,7 +25,7 @@ export default {
       control: {
         type: "select",
         options: {
-          'no icon': null,
+          "no icon": null,
           ...iconListObj,
         },
       },
@@ -60,3 +61,21 @@ BadgeElement.args = {
   children: "active",
   bg: "secondary",
 };
+
+export const AllBadge = () => (
+  <>    
+    <Badge bg="danger" className="me-2">
+      active
+    </Badge>
+    <Badge bg="light" className="me-2">
+      active
+    </Badge>
+    <Badge bg="primary" className="me-2">
+      active
+    </Badge>
+    <Badge bg="secondary" className="me-2">
+      <AddFile />
+      active
+    </Badge>
+  </>
+)

@@ -2,11 +2,10 @@ import React from "react";
 import Dropdown from "../components/Common/Dropdown";
 
 export default {
-  title: "Component/Dropdown",
+  title: "Component/Elements/Dropdown",
   component: Dropdown,
   argTypes: { 
     hasPreValue: { 
-      // type: "Boolean",
       control: 'boolean',
     } ,
     preValue: {
@@ -37,4 +36,5 @@ PrimaryDropdown.args = {
   preValue: 'Static:',
   placeholderName: "Select",
   options,
+  variant: 'primary'
 };

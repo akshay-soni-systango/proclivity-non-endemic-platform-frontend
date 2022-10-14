@@ -32,6 +32,8 @@ export default {
   }
 };
 
+
+
 export const PrimaryDropdown = () => {
    const [search, setSearch] =  useState('')
   
@@ -45,8 +47,8 @@ export const PrimaryDropdown = () => {
     <div className="row">
       {iconList.filter(({name}) => name.toLowerCase().includes((search || '').toLowerCase())).map(({ Icon, name  }) => {
         return (
-          <div key={name} className="col-2">
-            <div className="d-flex card p-3 flex-grow-1 text-center">
+          <div key={name} className="col-2 mb-3">
+            <div className="align-items-stretch card d-flex justify-content-center text-center h-100">
               <Icon className="w-100 my-3" />
               {name}
             </div>

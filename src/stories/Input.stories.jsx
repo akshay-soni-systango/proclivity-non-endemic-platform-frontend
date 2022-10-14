@@ -3,7 +3,7 @@ import { iconListObj } from "../components/Common/Icons";
 import Input from "../components/Common/Input";
 
 export default {
-  title: "Component/Input",
+  title: "Component/Elements/Input",
   component: Input,
   argTypes: {
     Icon: {

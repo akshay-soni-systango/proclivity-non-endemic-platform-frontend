@@ -4,7 +4,7 @@ import { Add } from "../assets/Icons";
 import { iconListObj } from "../components/Common/Icons";
 
 export default {
-  title: "Component/Button",
+  title: "Component/Elements/Button",
   subtitle: "Component/Button",
   subTitle: "Component/Button",
   component: Button,

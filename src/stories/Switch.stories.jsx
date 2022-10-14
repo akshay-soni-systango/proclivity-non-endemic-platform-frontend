@@ -2,7 +2,7 @@ import React from "react";
 import Switch from "../components/Common/Switch";
 
 export default {
-  title: "Example/Switch",
+  title: "Component/Elements/Switch",
   component: Switch,
 };
 

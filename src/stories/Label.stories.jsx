@@ -4,7 +4,7 @@ import Label from "../components/Common/Label";
 
 
 export default {
-  title: "Component/Label",
+  title: "Component/Elements/Label",
   component: Label,
   argTypes: {
     Icon: {

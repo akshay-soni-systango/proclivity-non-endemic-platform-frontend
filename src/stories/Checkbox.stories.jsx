@@ -2,21 +2,18 @@ import React from "react";
 import Checkbox from "../components/Common/Checkbox";
 
 export default {
-  title: "Component/Checkbox",
+  title: "Component/Elements/Checkbox",
   component: Checkbox,
 };
 
-export const CheckboxElement = ({children, ...props}) => (<>
+export const CheckboxElement = ({children,id, ...props}) => (<>
   <Checkbox  
     {...props} 
-    id="html"
-  />
-  <Checkbox  
-    {...props} 
-    id="css"
+    id={id}
   />
 </>
 );
 CheckboxElement.args = {
     text: 'Programmatic Team 1',
+    id: '1',
 };
