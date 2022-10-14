@@ -32,7 +32,6 @@ const MemberPage = () => {
 
   const [statusFilter, setStatusFilter] = useState("All");
   const onFilterValueChanged = event => {
-    console.log("setStatus", event);
     setStatusFilter(event.value);
   };
 
