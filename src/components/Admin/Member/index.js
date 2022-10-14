@@ -18,6 +18,7 @@ const MemberPage = () => {
 
   const searchState = useSelector(getSearchState);
   const memberListState = useSelector(getMemberListState);
+  const activeMembers = memberListState.totalActive;
   const membersList = memberListState.members;
   const gotoMemberPage = useSelector(getToggleCreateMember);
 
@@ -117,15 +118,15 @@ const MemberPage = () => {
               </Heading>
 
               <Badge bg="light" className="me-2">
-                100 active
+                {activeMembers} active
               </Badge>
             </div>
             <div className="search-filter-sort align-items-start">
-              <Search handleChange={searchOnChange} value={searchedValue} />
+              <Search handleChange={searchOnChange} value={searchedValue} placeholder="Search by Name, Role and Member status " />
 
               <Dropdown className="mb-2 mb-md-0 me-2" preValue="Show: " options={showOptions} defaultValue={{ label: "All", value: "All" }} onChange={(e) => onFilterValueChanged(e)} />
 
-              <Dropdown preValue="Sort: " />
+              {/* <Dropdown preValue="Sort: " /> */}
 
               <div className="ms-auto" >
                 <CSVLink data={filterMembers} headers={headers} filename={csvFileName}>
