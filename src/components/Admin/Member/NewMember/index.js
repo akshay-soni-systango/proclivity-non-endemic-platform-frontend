@@ -1,22 +1,27 @@
+import React, { useState } from "react";
+import "./style.scss";
+import { useHistory } from "react-router-dom";
+// import { useDispatch } from "react-redux";
 import { Formik } from "formik";
-import React from "react";
-import { useState } from "react";
 import { Card } from "react-bootstrap";
-// import { Close, Search } from "../../../../assets/Icons";
-// import Checkbox from "../../../Common/Checkbox";
 import Heading from "../../../Common/Heading";
-// import Input from "../../../Common/Input";
-// import Label from "../../../Common/Label";
 import Switch from "../../../Common/Switch";
 import Tab from "../../../Common/Tab";
 import Button from "../../../Common/Button";
-import "./style.scss";
 import CreationCard from "../../../Common/CreationCard";
 import * as Yup from "yup";
 import BasicForm from "./basicForm";
 import { data } from "./data";
+// import { createMember } from "../../../../Features/Admin/adminSlice";
 
 const NewMember = () => {
+  const history = useHistory();
+  // const dispatch = useDispatch()
+
+  const handleRedirect = () =>{
+    // dispatch(createMember(false));
+    history.push('/admin')
+  }
   const schema = Yup.object().shape({
     email: Yup.string().email("Email not correct").required("Required"),
     firstName: Yup.string().required(),
@@ -125,7 +130,7 @@ const NewMember = () => {
             </Card.Body>
           </Card>
           <div className="text-end">
-            <Button variant="secondary" className="me-2" text="Cancel" />
+            <Button onClick={handleRedirect} variant="secondary" className="me-2" text="Cancel" />
             <Button variant="primary" type="submit" text="Create Member" />
           </div>
         </form>

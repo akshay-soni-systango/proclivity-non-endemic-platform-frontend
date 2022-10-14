@@ -1,19 +1,19 @@
 import React from "react";
 import { Add, Admin } from "../../assets/Icons";
 import "./style.scss";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import Tab from "../Common/Tab";
 import { tabs } from "./tabs";
 import AdminHeader from "../Common/AdminHeader";
-import { createMember } from "../../Features/Admin/adminSlice";
+// import { createMember } from "../../Features/Admin/adminSlice";
 import { useHistory } from "react-router-dom";
 
 const AdminHomePage = ({ title, MainIcon }) => { 
     const history = useHistory() 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const handleclick = () => {
         history.push('/member/create')
-        dispatch(createMember(true));
+        // dispatch(createMember(true));
     }
     
     const buttons = [
@@ -33,7 +33,7 @@ const AdminHomePage = ({ title, MainIcon }) => {
                 MainIcon={Admin}
             />
             <div>
-                <Tab tabs={tabs} handleclick={handleclick}/>
+                <Tab tabs={tabs} />
             </div>
         </div>
     );
