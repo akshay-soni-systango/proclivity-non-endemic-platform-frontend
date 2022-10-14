@@ -32,9 +32,17 @@ const MemberPage = () => {
   // console.log(filterMembers, "filterMembers STATE");
 
 
-  const [statusFilter, setStatusFilter] = useState("All");
-  const onFilterValueChanged = event => {
-    setStatusFilter(event.value);
+  const [memberStatus, setMemberStatus] = useState("All");
+  const [filteredStateOfMemberStatus, setFilteredStateOfMemberStatus] = useState([])
+  // console.log(memberStatus, "STATE OF SORTING ACTIVE AND INACTIVE");
+
+  const filterMemberStatus = (event) => {
+    setMemberStatus(event.value);
+    const filterMemberStatus = filterMembers.filter((value) => value.memberStatus === event.value)
+    console.log(filterMemberStatus, "MEMBER STATUS FILTERED");
+    setFilteredStateOfMemberStatus(filterMemberStatus)
+    setFilterMembers(filterMemberStatus)
+
   };
 
   // const memberArray = [...membersList];
@@ -94,17 +102,36 @@ const MemberPage = () => {
 
   const searchOnChange = (e) => {
     const { value } = e.target;
+    console.log(value , "VALUE SEARCHED");
     setSearchedValue(value);
+
+
     // if(value==="" && filterAppied==="All"){
-    if (value === "") {
+    if (value === "" || memberStatus === "All") {
       setFilterMembers([...membersList])
-      // setSearch(false)
-    } else {
-      // setSearch(true)
-      const tableData = filterMembers.length > 0 ? filterMembers : membersList
-      const result = globalSearch(value, ['name', 'memberStatus', 'role'], tableData);
+    }
+    else if (value === "" && memberStatus !== "All") {
+      setFilterMembers(filteredStateOfMemberStatus)
+    }
+
+
+    //  else if ( memberStatus !== "All"  ) {
+    // console.log("memberStatus !== 'All'");
+    // const filterMemberStatus = filterMembers.filter((value) => value.memberStatus === memberStatus)
+    // console.log(filterMemberStatus, "MEMBER STATUS FILTERED");
+    // setFilterMembers(filterMemberStatus)
+    // }
+    // else if (memberStatus !== "All" && searchedValue !== ""){
+    //   // const stateToFilter = filterMembers.length > 0 ? filterMembers : membersList
+    //   const result = globalSearch(value, ['name', 'memberStatus', 'role'], memberStatus);
+    //   setFilterMembers(result)
+    // }
+
+    else {
+      const stateToFilter = filterMembers.length > 0 ? filterMembers : membersList
+      const result = globalSearch(value, ['name', 'memberStatus', 'role'], stateToFilter);
       setFilterMembers(result)
-      console.log(result, "RESULT OF SEARCH ");
+      // console.log(result, "RESULT OF SEARCH ");
     }
   }
 
@@ -132,9 +159,9 @@ const MemberPage = () => {
             <div className="search-filter-sort align-items-start">
               <Search handleChange={searchOnChange} value={searchedValue} placeholder="Search by Name, Role and Member status " />
 
-              <Dropdown className="mb-2 mb-md-0 me-2" preValue="Show: " options={showOptions} defaultValue={{ label: "All", value: "All" }} onChange={(e) => onFilterValueChanged(e)} />
+              <Dropdown className="me-2" preValue="Show: " options={showOptions} defaultValue={{ label: "All", value: "All" }} onChange={filterMemberStatus} />
 
-              {/* <Dropdown preValue="Sort: " /> */}
+              <Dropdown preValue="Sort: " />
 
               <div className="ms-auto" >
                 <CSVLink data={filterMembers} headers={headers} filename={csvFileName}>
