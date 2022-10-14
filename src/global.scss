@@ -47,6 +47,7 @@ $main-font: "Heebo", sans-serif;
 
 html {
   scroll-behavior: smooth;
+
   body {
     height: 100%;
     margin: 0;
@@ -69,22 +70,36 @@ html {
     outline: none !important;
   }
 }
+
 *:focus {
   outline: none !important;
 }
+
 p {
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   color: $fonts-grey-900;
   font-family: $main-font;
+
   &.light-para {
     color: $fonts-light;
   }
 }
+
+a {
+  color: $fonts-blue-600;
+
+  &:hover {
+    color: $fonts-blue-700;
+  }
+
+}
+
 .card-spacing {
   padding: 20px 20px 40px 20px;
 }
+
 .form-link {
   font-weight: 400;
   font-size: 14px;
@@ -92,11 +107,13 @@ p {
   color: $blue-600;
   text-decoration: none;
 }
+
 // ====== override css =====
 
-path{
+path {
   color: current-color;
-} 
+}
+
 // Card
 .card {
   background: $white;
@@ -106,9 +123,11 @@ path{
   margin: 12px 0;
   border: none;
 }
+
 // Progress Bar
 .progress {
   height: 8px;
+
   &-bar {
     background: $primary-600;
   }
@@ -120,37 +139,44 @@ path{
   font-size: 12px;
   line-height: 18px;
   border-radius: 16px;
+
   svg {
     width: 1em;
     height: 1em;
     --svgDefaultColor: currentColor;
     margin-right: 0.3em;
   }
+
   &.bg-primary {
     background: $blue-50 !important;
     color: $fonts-blue-700;
   }
+
   &.bg-secondary {
     background: $grey-100 !important;
     color: $fonts-grey-700;
   }
+
   &.bg-success {
-      background: $success-100 !important;
-      color: $fonts-success;
+    background: $success-100 !important;
+    color: $fonts-success;
   }
+
   &.bg-danger {
-      background: $danger-100 !important;
-      color: $fonts-danger;
+    background: $danger-100 !important;
+    color: $fonts-danger;
   }
+
   &.bg-light {
-      background: $grey-50 !important;
-      color: $primary;
+    background: $grey-50 !important;
+    color: $primary;
   }
 }
 
 // calendar
 .date-picker-wrapper {
   position: relative;
+
   .react-datepicker-wrapper {
     input {
       background: $white;
@@ -159,6 +185,7 @@ path{
       padding: 8px 8px 8px 35px;
     }
   }
+
   .calendar-img {
     position: absolute;
     top: 10px;
@@ -171,6 +198,7 @@ path{
   background: #f1f1f3;
   border-radius: 8px;
   padding: 4px;
+
   .btn-secondary {
     box-shadow: 0 1px 3px rgba(16, 24, 40, 0.1), 0 1px 2px rgba(16, 24, 40, 0.06);
   }
@@ -183,26 +211,32 @@ path{
   font-size: 14px;
   line-height: 20px;
   color: $fonts-light !important;
-  text-decoration: none; 
+  text-decoration: none;
 }
+
 // Formik form css
 .formik-wrapper {
   label {
-      margin-bottom: 8px;
-      font-size: 14px;
-      line-height: 20px;
-      color: $fonts-grey-700;
-      width: 100%;
-      // margin-top: 24px;
-      &:first-child {
-        margin-top: 0;
-      }
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    color: $fonts-grey-700;
+    width: 100%;
+
+    // margin-top: 24px;
+    &:first-child {
+      margin-top: 0;
+    }
   }
-  .input-container, input {
+
+  .input-container,
+  input {
     width: 100%;
   }
+
   .farmikSelect {
     width: 60%;
   }
 }
+
 // ====== override css =====

@@ -3,8 +3,7 @@ import Button from "../Button";
 import Heading from '../Heading';
 import './style.scss'
 
-const AdminHeader = ({ buttons, title, MainIcon, subTitle }) => {
-  // console.log("========", buttons);
+const AdminHeader = ({buttons, title, MainIcon, subTitle}) => {
   return (
     <div className="admin-header">
       <div className="title-wrapper d-flex align-items-center">
@@ -19,7 +18,7 @@ const AdminHeader = ({ buttons, title, MainIcon, subTitle }) => {
       </div>
     </div>
   )
-}
+};
 
-export default AdminHeader
+export default AdminHeader;
 

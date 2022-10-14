@@ -9,25 +9,17 @@ import Logo from "../../assets/Icons/Logo.svg";
 import { useFormik } from "formik";
 import { useHistory } from "react-router-dom";
 import "./style.scss";
-import Heading from "../../components/Common/Heading";
 
-const LoginPage = () => {
-  
+const ForgotPassword = () => {
   const history = useHistory();
 
   const initialValues = {
     email: "",
-    password: "",
   };
 
-  const onSubmit = ({ email, password }) => {
-    // console.log("values", values);
-    // navigate("/home");
-    if (email !== "" && password !== "") {
-      localStorage.setItem("userEmail", email);
-      localStorage.setItem("userPassword", password);
-      history.push("/admin");
-    }
+  const onSubmit = (values) => {
+    console.log("values", values);
+    history.push("/reset-password");
   };
 
   const validate = (values) => {
@@ -37,16 +29,6 @@ const LoginPage = () => {
       errors.email = "email field cannot be empty";
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
       errors.email = "Invalid email address";
-    }
-
-    if (!values.password) {
-      errors.password = "password field cannot be empty";
-    } else if (
-      !/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/i.test(
-        values.password
-      )
-    ) {
-      errors.password = "Invalid password";
     }
 
     return errors;
@@ -63,7 +45,7 @@ const LoginPage = () => {
     <>
       <div className="login-wrapper">
         <img className="login-logo" src={Logo} alt="Logo" />
-        <Row className="w-100">
+        <Row>
           <Col lg={6} md={6} sm={12} className="d-none d-md-flex bg-image">
             <div className="login-image d-flex align-items-center justify-content-center w-100">
               <img src={LoginImage} alt="Login" className="img-fluid" />
@@ -75,7 +57,9 @@ const LoginPage = () => {
                 <div className="row">
                   <div className="col-lg-10 col-xl-7 mx-auto">
                     <Form onSubmit={handleSubmit}>
-                      <Heading level={1}>Login</Heading>
+                      <h2 className="main-title mb-4">
+                        Please Enter Your Email
+                      </h2>
                       <div>
                         <Label value="Email"></Label>
                         <Input
@@ -88,29 +72,10 @@ const LoginPage = () => {
                           error={errors.email && touched.email && errors.email}
                         />
                       </div>
-                      <div>
-                        <Label value="Password"></Label>
-                        <Input
-                          type="password"
-                          placeholder="Please enter password (Test@123)"
-                          value={values.password}
-                          id="password"
-                          name="password"
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          error={
-                            errors.password &&
-                            touched.password &&
-                            errors.password
-                          }
-                        />
-                      </div>
                       <div className="mb-4">
-                        <Link to="/forgot-password">Forgot password ?</Link>
+                        <Link to="/login">Back to Login</Link>
                       </div>
-                      <Button type="submit" className="px-5">
-                        Login
-                      </Button>
+                      <Button type="submit" className="px-5">Submit</Button>
                     </Form>
                   </div>
                 </div>
@@ -123,4 +88,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default ForgotPassword;

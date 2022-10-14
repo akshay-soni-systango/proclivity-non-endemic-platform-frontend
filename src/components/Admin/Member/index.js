@@ -86,8 +86,8 @@ const MemberPage = () => {
       value: 'Active',
     },
     {
-      label: 'Deactivated',
-      value: 'Deactivated',
+      label: 'Inactive',
+      value: 'Inactive',
     },
   ]
 
@@ -109,7 +109,7 @@ const MemberPage = () => {
 
   return (
     <div>
-      {gotoMemberPage ? <NewMember /> : <Card>
+      {gotoMemberPage ? <NewMember /> : <Card className="mb-0">
         <Card.Body>
           <div className="table-header">
             <div className="card-title">
@@ -124,7 +124,7 @@ const MemberPage = () => {
             <div className="search-filter-sort align-items-start">
               <Search handleChange={searchOnChange} value={searchedValue} />
 
-              <Dropdown className="me-2" preValue="Show: " options={showOptions} defaultValue={{label: "All", value: "All"}} />
+<Dropdown className="mb-2 mb-md-0 me-2" preValue="Show: " options={showOptions} defaultValue={{label: "All", value: "All"}} onChange={(e) => onFilterValueChanged(e)}  />
 
               <Dropdown preValue="Sort: "/>
 

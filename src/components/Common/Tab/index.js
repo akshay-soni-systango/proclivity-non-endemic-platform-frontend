@@ -12,7 +12,6 @@ const Tab = ({tabs, tabProps, className, ...props}) => {
           eventKey={key || title}
           title={title}
           {...tabProps}
-          test="asdf"
           {...rest}
         >{content}</Tab>)}
       </Tabs>

@@ -3,6 +3,7 @@ import React from "react";
 import { Button as BootstrapButton } from "react-bootstrap";
 import "./style.scss";
 import PropTypes from 'prop-types'
+import classNames from "classnames";
 
 const Button = ({ text, Icon, iconClassName, iconProps, iconPosition, children, onClick, ...props }) => {
   return (
@@ -13,14 +14,18 @@ const Button = ({ text, Icon, iconClassName, iconProps, iconPosition, children, 
       {iconPosition === 'left' && Icon && (
         <Icon
           alt={text}
-          className={`${!Boolean(text) && "m-0"} btn-icon`}
+          className={classNames("btn-icon",{
+            "m-0" : !Boolean(text)
+          })}
         />
       )}
       {text}{children}
       {iconPosition === 'right' && Icon && (
         <Icon
           alt={text}
-          className={`${!Boolean(text) && "m-0"} btn-icon-right ${iconClassName}`}
+          className={classNames("btn-icon-right",iconClassName, {
+            "m-0" : !Boolean(text)
+          })}
           {...iconProps}
         />
       )}
