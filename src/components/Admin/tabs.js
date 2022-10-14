@@ -1,3 +1,4 @@
+import PageNotFound from "../../pages/PageNotFound";
 import MemberPage from "./Member";
 import TeamsPage from "./Teams";
 
@@ -13,12 +14,13 @@ export const tabs = [
         title: 'Teams',
         key: 'Teams',
         content:<>
-        <TeamsPage/>
+        {/* <TeamsPage/> */}
+        <PageNotFound/>
         </>
     },
     {
         title: 'Advertisers',
         key: 'Advertisers',
-        content: 'Advertisers'
+        content: <PageNotFound/>
     }
 ]
