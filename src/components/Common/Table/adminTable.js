@@ -6,10 +6,10 @@ import arrowUp from "../../../assets/Icons/arrow-up.svg";
 import arrowDown from "../../../assets/Icons/arrow-down.svg";
 // import adminData from '../../../util/CampaignData/ADMIN_MEMBER.json'
 // import { checkSearch, getMemberListState, getSearchState } from "../../../Features/Admin/adminSlice";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 
-
-const Table = ({ tableData, tableColumn }) => {
+const Table = ({ tableData, tableColumn, fetchMoreData }) => {
   const tableInstance = useTable(
     {
       columns: tableColumn,
@@ -20,9 +20,16 @@ const Table = ({ tableData, tableColumn }) => {
   );
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, } = tableInstance;
 
-
+  
   return (
-    <div className='table-wrapper'>
+    <div className='table-wrapper' id="scrollableDiv">
+      <InfiniteScroll
+        dataLength={rows.length}
+        next={fetchMoreData}
+        hasMore={true}
+        scrollableTarget="scrollableDiv"
+        loader={<h4 className='mt-2 d-flex justify-content-center align-items-center'>Loading...</h4>}
+      >
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup, index) => (
@@ -52,30 +59,29 @@ const Table = ({ tableData, tableColumn }) => {
             </tr>
           ))}
         </thead>
-        {
-
-          <tbody {...getTableBodyProps()}>
-            {rows.map((row, index) => {
-              prepareRow(row);
-              return (
-                <>
-                  <tr key={index} className='TABLE_ROW' {...row.getRowProps()}
-                  >
-                    {row.cells.map((cell, index) => {
-                      return (
-                        <td key={index} {...cell.getCellProps()} >
-                          {
-                            cell.render("Cell")
-                          }
-                        </td>
-                      );
-                    })}
-                  </tr>
-                </>
-              );
-            })}
-          </tbody>}
+              <tbody {...getTableBodyProps()}>
+                {rows.map((row, index) => {
+                  prepareRow(row);
+                  return (
+                    <>
+                      <tr key={index} className='TABLE_ROW' {...row.getRowProps()}
+                      >
+                        {row.cells.map((cell, index) => {
+                          return (
+                            <td key={index} {...cell.getCellProps()} >
+                              {
+                                cell.render("Cell")
+                              }
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    </>
+                  );
+                })}
+              </tbody>
       </table>
+      </InfiniteScroll>
     </div>
   );
 };

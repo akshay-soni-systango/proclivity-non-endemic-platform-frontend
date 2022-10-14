@@ -13,6 +13,7 @@ import Search from "../../Common/Search";
 import { globalSearch } from '../../../util/searchUtils';
 import { COLUMNS } from './MemberTable/column';
 import Table from "../../Common/Table/adminTable";
+import Loader from '../../Common/Loader';
 
 const MemberPage = () => {
 
@@ -106,6 +107,13 @@ const MemberPage = () => {
     }
   }
 
+  const fetchMoreData = () => {
+    setTimeout(() => {
+      const concatList=filterMembers.concat([...membersList]);
+      setFilterMembers(concatList)
+    }, 1000);
+  };
+
   return (
     <div>
       {gotoMemberPage ? <NewMember /> : <Card className="mb-0">
@@ -135,7 +143,7 @@ const MemberPage = () => {
             </div>
           </div>
           <div className="admin-table">
-            <Table tableColumn={COLUMNS} tableData={filterMembers} />
+              <Table tableColumn={COLUMNS} tableData={filterMembers} fetchMoreData={fetchMoreData}/>
           </div>
         </Card.Body>
       </Card>
