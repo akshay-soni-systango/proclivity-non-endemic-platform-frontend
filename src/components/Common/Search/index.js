@@ -3,14 +3,14 @@ import Input from "../Input";
 import { Search as SearchIcon } from "../../../assets/Icons"
 
 const Search=(props)=>{
-    const { handleChange } = props;
+    const { handleChange, value } = props;
     return(
         <Input
             Icon={SearchIcon}
             error=""
             className="mb-0 me-2"
             onChange={handleChange}
-            // value={value}
+            value={value}
         />
     )
 }

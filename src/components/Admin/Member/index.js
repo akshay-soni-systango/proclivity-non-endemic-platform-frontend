@@ -124,9 +124,9 @@ const MemberPage = () => {
             <div className="search-filter-sort align-items-start">
               <Search handleChange={searchOnChange} value={searchedValue} />
 
-<Dropdown className="mb-2 mb-md-0 me-2" preValue="Show: " options={showOptions} defaultValue={{label: "All", value: "All"}} onChange={(e) => onFilterValueChanged(e)}  />
+              <Dropdown className="mb-2 mb-md-0 me-2" preValue="Show: " options={showOptions} defaultValue={{ label: "All", value: "All" }} onChange={(e) => onFilterValueChanged(e)} />
 
-              <Dropdown preValue="Sort: "/>
+              <Dropdown preValue="Sort: " />
 
               <div className="ms-auto" >
                 <CSVLink data={filterMembers} headers={headers} filename={csvFileName}>
