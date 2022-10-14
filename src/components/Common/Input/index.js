@@ -2,7 +2,7 @@ import React from "react";
 import classNames from 'classnames';
 import "./style.scss";
 
-const Input = ({ Icon, error, className,onChange, ...props }) => {
+const Input = ({ Icon, error, className, ...props }) => {
   return (
     <div className={classNames("input-container", className, {
       'has-error': error,

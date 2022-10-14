@@ -11,7 +11,7 @@ import NewMember from "./NewMember";
 import { getMemberListState, getSearchState, getToggleCreateMember } from "../../../Features/Admin/adminSlice";
 import Search from "../../Common/Search";
 import { globalSearch } from '../../../util/searchUtils';
-import { COLUMNS } from './MemberTable/columns'
+import { COLUMNS } from './MemberTable/column';
 import Table from "../../Common/Table/adminTable";
 
 const MemberPage = () => {

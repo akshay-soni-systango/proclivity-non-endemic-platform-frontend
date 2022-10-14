@@ -1,16 +1,16 @@
 import React from "react";
 import './style.scss';
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import LoginImage from "../../assets/images/login.png";
 import { Row, Col, Form } from "react-bootstrap";
 import Label from "../../components/Common/Label";
 import Input from "../../components/Common/Input";
 import Button from "../../components/Common/Button";
-import { Link } from "react-router-dom";
+import Heading from "../../components/Common/Heading";
+import {  } from "react-router-dom";
 import Logo from "../../assets/Icons/Logo.svg";
 import { useFormik } from "formik";
 import "./style.scss";
-import Heading from "../../components/Common/Heading";
 
 const LoginPage = () => {
   
@@ -21,6 +21,8 @@ const LoginPage = () => {
     password: "",
   };
 
+  // const [ formValues, setFormVaules ]= useState(initialValues);
+
   const onSubmit = ({ email, password }) => {
     if (email !== "" && password !== "") {
       localStorage.setItem("userEmail", email);
@@ -28,35 +30,36 @@ const LoginPage = () => {
       history.push("/admin");
     }
   };
+  
+  // const validate = (values) => {
+  //   const errors = {};
 
-  const validate = (values) => {
-    const errors = {};
+  //   if (!values.email) {
+  //     errors.email = "email field cannot be empty";
+  //   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+  //     errors.email = "Invalid email address";
+  //   }
 
-    if (!values.email) {
-      errors.email = "email field cannot be empty";
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-      errors.email = "Invalid email address";
-    }
+  //   if (!values.password) {
+  //     errors.password = "password field cannot be empty";
+  //   } else if (
+  //     !/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/i.test(
+  //       values.password
+  //     )
+  //   ) {
+  //     errors.password = "Invalid password";
+  //   }
 
-    if (!values.password) {
-      errors.password = "password field cannot be empty";
-    } else if (
-      !/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/i.test(
-        values.password
-      )
-    ) {
-      errors.password = "Invalid password";
-    }
-
-    return errors;
-  };
+  //   return errors;
+  // };
 
   const { values, errors, handleBlur, handleChange, handleSubmit, touched } =
     useFormik({
       initialValues,
       onSubmit,
-      validate,
+      // validate,
     });
+    console.log(values);
 
   return (
     <>
