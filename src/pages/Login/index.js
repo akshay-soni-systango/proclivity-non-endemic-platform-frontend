@@ -1,4 +1,6 @@
 import React from "react";
+import './style.scss';
+import { useHistory } from "react-router-dom";
 import LoginImage from "../../assets/images/login.png";
 import { Row, Col, Form } from "react-bootstrap";
 import Label from "../../components/Common/Label";
@@ -7,7 +9,6 @@ import Button from "../../components/Common/Button";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Icons/Logo.svg";
 import { useFormik } from "formik";
-import { useHistory } from "react-router-dom";
 import "./style.scss";
 import Heading from "../../components/Common/Heading";
 
