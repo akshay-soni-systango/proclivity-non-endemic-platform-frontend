@@ -7,21 +7,17 @@ import Heading from "../../Common/Heading";
 import { Export } from "../../../assets/Icons"
 import { useSelector } from "react-redux";
 import Button from "../../Common/Button";
-import NewMember from "./NewMember";
-import { getMemberListState, getSearchState, getToggleCreateMember } from "../../../Features/Admin/adminSlice";
+import { getMemberListState } from "../../../Features/Admin/adminSlice";
 import Search from "../../Common/Search";
 import { globalSearch } from '../../../util/searchUtils';
 import { COLUMNS } from './MemberTable/column';
 import Table from "../../Common/Table/adminTable";
-import Loader from '../../Common/Loader';
 
 const MemberPage = () => {
-
-  const searchState = useSelector(getSearchState);
   const memberListState = useSelector(getMemberListState);
-  const activeMembers = memberListState.totalActive;
   const membersList = memberListState.members;
-  const gotoMemberPage = useSelector(getToggleCreateMember);
+  const totalActive = membersList.length;
+  console.log(totalActive , "totalActive");
 
   const [filterMembers, setFilterMembers] = useState([...membersList]);
   const [searchedValue, setSearchedValue] = useState("");
@@ -45,7 +41,6 @@ const MemberPage = () => {
         }
       }
     }
-    // setFilteredStateOfMemberStatus(filterMemberStatus)
     setFilterMembers(filterListArray)
 
   };
@@ -54,15 +49,6 @@ const MemberPage = () => {
     let filterListArray=membersList.filter((value) => value.memberStatus === status)
     setFilterMembers(filterListArray)
   }
-  // const memberArray = [...membersList];
-  // const filterData = memberArray.filter((val) => {
-  //   if (statusFilter === "All") {
-  //     return val;
-  //   } else if (val.memberStatus === statusFilter) {
-  //     return val;
-  //   }
-  // });
-
 
   const headers = [
     { label: 'Name', key: 'name' },
@@ -79,20 +65,6 @@ const MemberPage = () => {
   var currentDate = `${dd}/${mm}/${yyyy}`;
   const csvFileName = `member-list-${currentDate}.csv`;
 
-
-  // const handleChange = (e) => {
-  //   const targetValue = e.target.value
-
-  //   if (targetValue !== "") {
-  //     dispatch(toggleSearch(true));
-  //     const filter = membersList.filter((value) => value.name.toLowerCase().includes(targetValue.toLowerCase()))
-  //     dispatch(searchMember(filter))
-  //   }
-  //   else {
-  //     dispatch(toggleSearch(false));
-  //     dispatch(searchMember([]))
-  //   }
-  // }
 
   const showOptions = [
     {
@@ -112,13 +84,13 @@ const MemberPage = () => {
   const searchOnChange = (e) => {
     const { value } = e.target;
     if ((value === "" && memberStatus === "All") || (value === "")) {
-      if(memberStatus === "All"){
+      if (memberStatus === "All") {
         setFilterMembers([...membersList])
       }else{
         // filterMemberStatus({ value: memberStatus },value);
         handleFilterChange(memberStatus,value);
       }
-    }else if(value!=="" && memberStatus === "All"){
+    } else if (value !== "" && memberStatus === "All") {
       const result = globalSearch(value, ['name', 'memberStatus', 'role'], membersList);
       setFilterMembers(result)
     }
@@ -132,40 +104,39 @@ const MemberPage = () => {
 
   const fetchMoreData = () => {
     setTimeout(() => {
-      const concatList=filterMembers.concat([...membersList]);
+      const concatList = filterMembers.concat([...membersList]);
       setFilterMembers(concatList)
-    }, 1000);
+    }, 500);
   };
   return (
     <div>
-      {gotoMemberPage ? <NewMember /> : <Card className="mb-0">
-        <Card.Body>
-          <div className="table-header">
-            <div className="card-title">
-              <Heading level={3} className="mb-0 me-2">
-                All Members
-              </Heading>
+        <Card className="mb-0">
+          <Card.Body>
+            <div className="table-header">
+              <div className="card-title">
+                <Heading level={3} className="mb-0 me-2">
+                  All Members
+                </Heading>
 
-              <Badge bg="light" className="me-2">
-                {activeMembers} active
-              </Badge>
-            </div>
-            <div className="search-filter-sort align-items-start">
-              <Search handleChange={searchOnChange} value={searchedValue} placeholder="Search by Name , Role and Status " />
-              <Dropdown className="me-2" preValue="Show: " options={showOptions} defaultValue={{ label: "All", value: "All" }} onChange={(event)=>filterMemberStatus(event,"")} />
-              <div className="ms-auto" >
-                <CSVLink data={filterMembers} headers={headers} filename={csvFileName}>
-                  <Button text="Export member list" Icon={Export} variant="secondary" />
-                </CSVLink>
+                <Badge bg="light" className="me-2">
+                  {totalActive} active
+                </Badge>
+              </div>
+              <div className="search-filter-sort align-items-start">
+                <Search handleChange={searchOnChange} value={searchedValue} placeholder="Search by Name , Role and Status " />
+                <Dropdown className="me-2" preValue="Show: " options={showOptions} defaultValue={{ label: "All", value: "All" }} onChange={(event)=>filterMemberStatus(event,"")} />
+                <div className="ms-auto" >
+                  <CSVLink data={filterMembers} headers={headers} filename={csvFileName}>
+                    <Button text="Export member list" Icon={Export} variant="secondary" />
+                  </CSVLink>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="admin-table">
-              <Table tableColumn={COLUMNS} tableData={filterMembers} fetchMoreData={fetchMoreData}/>
-          </div>
-        </Card.Body>
-      </Card>
-      }
+            <div className="admin-table">
+              <Table tableColumn={COLUMNS} tableData={filterMembers} fetchMoreData={fetchMoreData} />
+            </div>
+          </Card.Body>
+        </Card>
     </div>
   );
 };

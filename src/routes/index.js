@@ -24,13 +24,11 @@ const Routes = () => {
       <Switch>
         <PublicRoute path='/' exact component={LoginPage} />
         <PublicRoute path='/forgot-password' component={ForgotPassword} />
-        {/* <PrivateRoute path="/home" component={HomePage} /> */}
         <PrivateRoute path="/member/create" component={NewMember}/>
         <PrivateRoute path="/edit" component={PageNotFound} />
-        {/* <PrivateRoute path="/audiences" component={AudiencePage} /> */}
         <PrivateRoute path="/admin" component={AdminPage} />
-        <PrivateRoute path="/analytics" component={CampaignDetailCard} />
-        <PrivateRoute path="/campaign/home" component={CampaignHomePage} />
+        <PrivateRoute path="//analytics" component={CampaignDetailCard} />
+        <PrivateRoute path="//campaign/home" component={CampaignHomePage} />
         <PrivateRoute path="/campaign/detail" component={CampaignDetail} />
         <PrivateRoute path="/campaign/edit" component={CampaignForm} />
         <PrivateRoute path="/campaign/complete" component={CampaignCompletion} />

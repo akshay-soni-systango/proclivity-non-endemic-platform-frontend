@@ -14,7 +14,6 @@ export const tabs = [
         title: 'Teams',
         key: 'Teams',
         content:<>
-        {/* <TeamsPage/> */}
         <PageNotFound/>
         </>
     },
