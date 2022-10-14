@@ -12,9 +12,10 @@ import CampaignHomePage from "../pages/Campaigns/Overview";
 import EditMember from "../components/Admin/EditMember";
 import PageNotFound from "../pages/PageNotFound";
 import PrivateRoute from "./ProtectedRouting/PrivateRoute";
-import LoginPage from "../pages/Login";
 import PublicRoute from "./ProtectedRouting/PublicRoute";
+import LoginPage from "../pages/Login";
 import NewMember from "../components/Admin/Member/NewMember";
+import ForgotPassword from "../pages/Login/forgotPassword";
 // const HomePage = React.lazy(() => import(  /* webpackChunkName: "home-page" */ '../pages/HomePage'));
 
 const Routes = () => {
@@ -22,6 +23,7 @@ const Routes = () => {
     <>
       <Switch>
         <PublicRoute path='/' exact component={LoginPage} />
+        <PublicRoute path='/forgot-password' component={ForgotPassword} />
         <PrivateRoute path="/home" component={HomePage} />
         <PrivateRoute path="/member/create" component={NewMember}/>
         <PrivateRoute path="/edit" component={EditMember} />

@@ -1,55 +1,31 @@
-@import '../../global.scss';
+@import "../../global.scss";
 
 .login-wrapper {
-    width: 100vw;
-    .login,
-    .bg-image {
-        min-height: 100vh;
-    }
+  width: 100%;
+  .login,
+  .bg-image {
+    min-height: 100vh;
+  }
 
-    .login-logo {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-    }
+  .login-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
 
-    .bg-image {
-        background-color: $primary;
-        background-size: cover;
-        background-position: center center;
-    }
+  .bg-image {
+    background-color: $primary;
+    background-size: cover;
+    background-position: center center;
+  }
 }
-
-
-// @import '../../global.scss';
-
-// // .login-wrapper {
-// //     height: 100%;
-// //     position: relative;
-// //     min-height: 100vh;
-// //     transition: all 0.5s ease 0s;
-// //     .login-form {
-// //         padding: 25px 115px 25px 105px;
-// //     }
-// //     .login-image {
-// //         background-color: $primary-600;
-// //         padding: 130px 25px;
-// //         text-align: center;
-// //         position: relative;
-// //     }
-// //     img.login-logo {
-// //         position: absolute;
-// //         left: 20px;
-// //         top: 20px;
-// //         max-width: 200px;
-// //         z-index: 1;
-// //         width: 100%;
-// //     }
-// // }
-
-// @media screen and (max-width: 992px) {
-//     .login-wrapper .login-form {
-//         padding: 25px 25px 25px 35px;
-//         margin-top: 15px;
-//     }
-// }
+@media screen and (max-width: 767px) {
+  .login-wrapper .login {
+    background: $primary;
+    h1,
+    h2,
+    label {
+      color: $white;
+    }
+  }
+}
