@@ -59,7 +59,6 @@ const LoginPage = () => {
       onSubmit,
       // validate,
     });
-    console.log(values);
 
   return (
     <>
