@@ -161,7 +161,7 @@ const MemberPage = () => {
   };
   return (
     <div>
-      <Card className="mb-0">
+      <Card className="mb-0 card-bottom-none">
         <Card.Body>
           <div className="table-header">
             <div className="card-title">
