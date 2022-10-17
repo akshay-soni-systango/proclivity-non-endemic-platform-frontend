@@ -1,6 +1,5 @@
 import PageNotFound from "../../pages/PageNotFound";
 import MemberPage from "./Member";
-import TeamsPage from "./Teams";
 
 export const tabs = [
     {

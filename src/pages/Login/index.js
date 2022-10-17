@@ -7,15 +7,14 @@ import Label from "../../components/Common/Label";
 import Input from "../../components/Common/Input";
 import Button from "../../components/Common/Button";
 import Heading from "../../components/Common/Heading";
-import {  } from "react-router-dom";
+import { } from "react-router-dom";
 import Logo from "../../assets/Icons/Logo.svg";
 import { useFormik } from "formik";
 import "./style.scss";
 
 const LoginPage = () => {
-  
-  const history = useHistory();
 
+  const history = useHistory();
   const initialValues = {
     email: "",
     password: "",
@@ -30,7 +29,7 @@ const LoginPage = () => {
       history.push("/admin");
     }
   };
-  
+
   const validate = (values) => {
     const errors = {};
 
@@ -86,7 +85,7 @@ const LoginPage = () => {
                           name="email"
                           onChange={handleChange}
                           onBlur={handleBlur}
-                          error={errors.email && touched.email && errors.email}
+                          error={errors.email && touched.email}
                         />
                       </div>
                       <div>
@@ -101,8 +100,7 @@ const LoginPage = () => {
                           onBlur={handleBlur}
                           error={
                             errors.password &&
-                            touched.password &&
-                            errors.password
+                            touched.password                       
                           }
                         />
                       </div>

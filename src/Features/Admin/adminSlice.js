@@ -1,18 +1,13 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import adminData from '../../util/CampaignData/ADMIN_MEMBER.json'
-
-// export const fetchAsyncMember = createAsyncThunk('Members/fetchAsyncThunk',
-//     (adminData) => {
-//         const response = adminData
-//         return response
-//     });
 
 const initialState = {
     isAdminPage: false,
-    toggleCreateMember: false,
-    memberList: {...adminData},
+    memberList: { ...adminData },
     isSearch: false,
     filterMember: [],
+    toggleStatusModal: false,
+    statusModalState:{}
 
 }
 const adminSlice = createSlice({
@@ -22,9 +17,6 @@ const adminSlice = createSlice({
         authenticateAdminTable: (state, { payload }) => {
             state.isAdminPage = payload
         },
-        createMember: (state, { payload }) => {
-            state.toggleCreateMember = payload
-        },
         getMemberList: (state = initialState.memberList) => {
             return state
         },
@@ -33,34 +25,33 @@ const adminSlice = createSlice({
         },
         searchMember: (state, { payload }) => {
             state.filterMember = payload
+        },
+        openStatusModal: (state, { payload }) => {
+            state.toggleStatusModal = payload
+        },
+        setStatusModalState: (state, { payload }) => {
+            console.log(payload , "DATA IN PAYLOAD");
+            state.statusModalState = payload
         }
 
-    },
-    // // extraReducers: {
-    // //     [fetchAsyncMember.pending]: () => {
-    // //         console.log("pending");
-    // //     },
-    // //     [fetchAsyncMember.fulfilled]: (state, { payload }) => {
-
-    // //         console.log("fetched success");
-
-    // //         return { ...state, memberList: payload }
-    // //     },
-    // //     [fetchAsyncMember.pending]: () => {
-    // //         console.log("pending");
-    // //     }
-    // }
+    }
 })
 
-export const { authenticateAdminTable } = adminSlice.actions;
-export const { createMember } = adminSlice.actions;
-export const { getMemberList } = adminSlice.actions;
+// actions
+export const {
+    authenticateAdminTable,
+    getMemberList,
+    openStatusModal,
+    setStatusModalState,
+    toggleSearch,
+    searchMember
+} = adminSlice.actions;
 
-export const { searchMember, toggleSearch } = adminSlice.actions;
-
+// states
 export const getAdminTableCheck = (state) => state.adminTable.isAdminPage;
-export const getToggleCreateMember = (state) => state.adminTable.toggleCreateMember;
 export const getMemberListState = (state) => state.adminTable.memberList;
+export const getToggleStatusModal = (state) => state.adminTable.toggleStatusModal;
+export const getStatusModalState = (state) => state.adminTable.statusModalState;
 export const checkSearch = (state) => state.adminTable.isSearch;
 export const getSearchState = (state) => state.adminTable.filterMember;
 export default adminSlice.reducer

@@ -68,7 +68,7 @@ const ForgotPassword = () => {
                           name="email"
                           onChange={handleChange}
                           onBlur={handleBlur}
-                          error={errors.email && touched.email && errors.email}
+                          error={errors.email && touched.email}
                         />
                       </div>
                       <div className="mb-4">

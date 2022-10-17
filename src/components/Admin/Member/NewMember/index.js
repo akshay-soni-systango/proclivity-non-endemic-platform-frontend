@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./style.scss";
 import { useHistory } from "react-router-dom";
-// import { useDispatch } from "react-redux";
 import { Formik } from "formik";
 import { Card } from "react-bootstrap";
 import Heading from "../../../Common/Heading";
@@ -12,14 +11,12 @@ import CreationCard from "../../../Common/CreationCard";
 import * as Yup from "yup";
 import BasicForm from "./basicForm";
 import { data } from "./data";
-// import { createMember } from "../../../../Features/Admin/adminSlice";
 
 const NewMember = () => {
-  const history = useHistory();
-  // const dispatch = useDispatch()
 
-  const handleRedirect = () =>{
-    // dispatch(createMember(false));
+  const history = useHistory();
+
+  const handleRedirect = () => {
     history.push('/admin')
   }
   const schema = Yup.object().shape({

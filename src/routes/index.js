@@ -1,7 +1,5 @@
 import React from "react";
 import { Switch } from "react-router-dom";
-import AudiencePage from "../pages/AudiencePage";
-import HomePage from "../pages/HomePage";
 import CampaignDetailCard from "../components/Cards/campaignDetail";
 import CampaignForm from "../components/Campaign/CampaignDetail/EditCampaignForm";
 import CampaignDetail from "../pages/Campaigns/Detail";
@@ -9,7 +7,6 @@ import CampaignCompletion from "../components/Campaign/CampaignDetail/CampaignCr
 import AdminPage from "../pages/AdminPage";
 import CampaignViewReport from "../components/Campaign/CampaignDetail/ViewReports";
 import CampaignHomePage from "../pages/Campaigns/Overview";
-import EditMember from "../components/Admin/EditMember";
 import PageNotFound from "../pages/PageNotFound";
 import PrivateRoute from "./ProtectedRouting/PrivateRoute";
 import PublicRoute from "./ProtectedRouting/PublicRoute";
