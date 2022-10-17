@@ -3,13 +3,12 @@ import SidebarMenuListItem from "../SidebarMenuListItemComponent";
 import './style.scss';
 
 const SidebarMenuList = ({ list }) => {
-    const listData = ({ title, Icon, link }) => {
+    const listData = ({ title, Icon, link, ...rest }) => {
         return (
-            <SidebarMenuListItem title={title} Icon={Icon} link={link} key={title} />          
+            <SidebarMenuListItem title={title} Icon={Icon} link={link} key={title} {...rest} />          
         )
     }
     const listItems = list.map(listData);
-    console.log(listItems , "listItems");
     return (
         <nav className="nav-wrapper">
             <ul>{listItems}</ul>

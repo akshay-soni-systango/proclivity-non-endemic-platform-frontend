@@ -8,7 +8,6 @@ import arrowDown from "../../../assets/Icons/arrow-down.svg";
 // import { checkSearch, getMemberListState, getSearchState } from "../../../Features/Admin/adminSlice";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-
 const Table = ({ tableData, tableColumn, fetchMoreData }) => {
   const tableInstance = useTable(
     {
@@ -18,24 +17,31 @@ const Table = ({ tableData, tableColumn, fetchMoreData }) => {
     useSortBy,
     usePagination
   );
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, } = tableInstance;
-
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    tableInstance;
 
   return (
-    <div className='table-wrapper' id="scrollableDiv">
+    <div className="table-wrapper" id="scrollableDiv">
       <InfiniteScroll
         dataLength={rows.length}
         next={fetchMoreData}
         hasMore={rows.length > 6 ? true : false}
         scrollableTarget="scrollableDiv"
-        loader={<h4 className='mt-2 d-flex justify-content-center align-items-center'>Loading...</h4>}
+        loader={
+          <h4 className="mt-2 d-flex justify-content-center align-items-center">
+            Loading...
+          </h4>
+        }
       >
         <table {...getTableProps()}>
           <thead>
             {headerGroups.map((headerGroup, index) => (
               <tr key={index} {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column, index) => (
-                  <th key={index} {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  <th
+                    key={index}
+                    {...column.getHeaderProps(column.getSortByToggleProps())}
+                  >
                     {column.render("Header")}
                     <span>
                       {column.isSorted ? (
