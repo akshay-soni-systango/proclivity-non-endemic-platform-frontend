@@ -3,13 +3,12 @@ import './style.scss';
 import { useDispatch } from 'react-redux';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import { ReactComponent as Menu } from '../../../../assets/Icons/menu.svg';
-import { ReactComponent as Edit } from '../../../../assets/Icons/editMember.svg';
-import { ReactComponent as Deactivate } from '../../../../assets/Icons/deactivate.svg';
-import { ReactComponent as Permission } from '../../../../assets/Icons/viewPermission.svg';
-import { ReactComponent as UserAccess } from '../../../../assets/Icons/viewUserAccess.svg';
 import { useHistory } from 'react-router-dom';
 import { openStatusModal, setStatusModalState } from '../../../../Features/Admin/adminSlice';
+import { Menu, Edit, Deactivate, Permission, Active, UserAccess  } from '../../../../assets/Icons';
+
+// import ContextList from '../../../Common/Dropdown/ContextList';
+
 
 const DropdownMenu = ({ row }) => {
     const dispatch = useDispatch()
@@ -24,6 +23,29 @@ const DropdownMenu = ({ row }) => {
         dispatch(openStatusModal(true))
         dispatch(setStatusModalState(cloneObject))
     }
+    // const menus = [
+    //     {
+    //         onClick: (e)=>handleClick(e,row),
+    //         icon: <Edit />,
+    //         text: 'Edit',
+    //     },
+    //     status === 'Active' && {
+    //         icon: <Deactivate />,
+    //         text: 'Inactive',
+    //     },
+    //     status !== 'Active' && {
+    //         icon: <Active />,
+    //         text: 'Active',
+    //     },
+    //     {
+    //         icon: <Permission />,
+    //         text: 'View Permission History',
+    //     },
+    //     {
+    //         icon: <UserAccess />,
+    //         text: 'View User Access Logs',
+    //     },
+    // ].filter(Boolean)
     return (
         <div>
             <DropdownButton id="dropdown-basic-button" className='view-more-btn' title={<Menu />}>
@@ -47,6 +69,12 @@ const DropdownMenu = ({ row }) => {
                 <Dropdown.Item ><p><span>{<UserAccess />}</span>View User Access Logs</p></Dropdown.Item>
             </DropdownButton>
         </div>
+        // <ContextList 
+        //     items={menus}
+        //     id="dropdown-basic-button"
+        //     className='view-more-btn'
+        //     title={<Menu />}
+        // />
     )
 }
 

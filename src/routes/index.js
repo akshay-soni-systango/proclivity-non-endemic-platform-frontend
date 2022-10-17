@@ -13,9 +13,11 @@ import PublicRoute from "./ProtectedRouting/PublicRoute";
 import LoginPage from "../pages/Login";
 import NewMember from "../components/Admin/Member/NewMember";
 import ForgotPassword from "../pages/Login/forgotPassword";
+import Logout from "../pages/Login/Logout";
 // const HomePage = React.lazy(() => import(  /* webpackChunkName: "home-page" */ '../pages/HomePage'));
 
 const Routes = () => {
+  
   return (
     <>
       <Switch>
@@ -30,6 +32,7 @@ const Routes = () => {
         <PrivateRoute path="/campaign/edit" component={CampaignForm} />
         <PrivateRoute path="/campaign/complete" component={CampaignCompletion} />
         <PrivateRoute path="/campaign/report" component={CampaignViewReport} />
+        <PrivateRoute path="/logout" component={Logout}/>
         <PrivateRoute component={PageNotFound} />
       </Switch>
     </>

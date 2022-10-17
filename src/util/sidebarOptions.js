@@ -6,9 +6,7 @@ import {Book} from '../assets/Icons';
 import {Admin} from '../assets/Icons';
 import {Help} from '../assets/Icons';
 import {Bell} from '../assets/Icons';
-
-
-
+import {Logout} from '../assets/Icons';
 
 export const sidebarMenuOptions = [
     {
@@ -53,7 +51,19 @@ export const sidebarFooterOptions = [
         Icon: Bell,
         link: '/notifications',
     },
+    {
+        title: 'Logout',
+        Icon: Logout,
+        link: '/logout',
+    },
     // {
-    //     title: 'LogOut'
-    // }
+    //     image: "http://via.placeholder.com/45x45",
+    //     contextId: 'menu-user',
+    //     contextOptions: [
+    //         {
+    //             text: 'Logout',
+    //             icon: <Logout />,
+    //         }
+    //     ]
+    // },
 ]
