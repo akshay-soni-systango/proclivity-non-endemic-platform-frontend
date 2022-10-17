@@ -1,11 +1,8 @@
 import React from "react";
 import "./table.scss";
-// import {  useSelector } from 'react-redux';
 import { useTable, useSortBy, usePagination } from "react-table";
 import arrowUp from "../../../assets/Icons/arrow-up.svg";
 import arrowDown from "../../../assets/Icons/arrow-down.svg";
-// import adminData from '../../../util/CampaignData/ADMIN_MEMBER.json'
-// import { checkSearch, getMemberListState, getSearchState } from "../../../Features/Admin/adminSlice";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const Table = ({ tableData, tableColumn, fetchMoreData }) => {
@@ -62,7 +59,13 @@ const Table = ({ tableData, tableColumn, fetchMoreData }) => {
             ))}
           </thead>
           <tbody {...getTableBodyProps()}>
-            {rows.map((row, index) => {
+            { rows.length === 0 ? 
+            <div className="ms-5">            
+            <h2>No Data</h2>
+            <p>Please try another filter....!</p>
+            </div>
+            :         
+            rows.map((row, index) => {
               prepareRow(row);
               return (
                 <>

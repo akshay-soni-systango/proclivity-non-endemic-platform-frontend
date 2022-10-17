@@ -4,7 +4,7 @@ import { CSVLink } from 'react-csv';
 import { Badge, Card } from "react-bootstrap";
 import Dropdown from "../../Common/Dropdown";
 import Heading from "../../Common/Heading";
-import { Export } from "../../../assets/Icons";
+import { Export, Notification } from "../../../assets/Icons";
 import { useSelector, useDispatch } from "react-redux";
 import Button from "../../Common/Button";
 import { getMemberListState, getStatusModalState, getToggleStatusModal, openStatusModal, setStatusModalState } from "../../../Features/Admin/adminSlice";
@@ -23,12 +23,6 @@ const MemberPage = () => {
   const membersList = memberListState.members;
   const activeMembers = membersList.filter((value) => value.memberStatus === 'Active');
   const [filterMembers, setFilterMembers] = useState([...membersList]);
-
-  console.log(memberListState, "filterMembers");
-
-
-
-
   const [searchedValue, setSearchedValue] = useState("");
   const [memberStatus, setMemberStatus] = useState("All");
 
@@ -38,14 +32,13 @@ const MemberPage = () => {
   const memberId = memberData?.id
   const memberName = memberData?.memberDetails?.name;
   const statusOfMember = memberData?.memberDetails?.memberStatus;
-  // console.log(memberData, "MEMBERDATA PUSHED");
 
   const handleClose = () => {
     dispatch(openStatusModal(false))
     dispatch(setStatusModalState(""))
   }
 
-  const submitStatus = (e) => {
+  const submitStatus = () => {
 
     const editMemberData = {
       createDate: memberData?.memberDetails?.createDate,
@@ -56,18 +49,14 @@ const MemberPage = () => {
       name: memberData?.memberDetails?.name,
       role: memberData?.memberDetails?.role
     }
-    console.log(editMemberData, "editMemberData");
 
     const setMemberStatus = filterMembers.map((val) => {
       let clonevalue = { ...val }
-      // console.log(clonevalue, "clonevalue only");
       if (clonevalue.id === memberId) {
         return clonevalue = editMemberData
       }
       return clonevalue
     })
-    console.log(setMemberStatus, "setMemberStatus");
-
     setFilterMembers(setMemberStatus)
     handleClose()
   }
@@ -189,14 +178,15 @@ const MemberPage = () => {
           <div>
             <Modal show={show}
               onHide={handleClose}
-              modalHeading={<Export />}
+              modalHeading={<Notification />}
               primaryBtnText="Cancel"
               secondaryBtnText={statusOfMember === "Inactive" ? "Activate" : "Deactivate"}
               onPrimaryBtnClick={handleClose}
               onSecondaryBtnClick={submitStatus}
+              variant={statusOfMember === "Inactive" ? "info" : "danger"}
             >
               <Heading level={4}>
-                Confirm that {memberName} be {statusOfMember === "Inactive" ? "Activated" : "Deactivated"}
+                Confirm that {memberName} will be {statusOfMember === "Inactive" ? "Activated" : "Deactivated"}
               </Heading>
               <p className="light-para fw-normal">A deactivated user will no longer have access to the platform</p>
             </Modal>

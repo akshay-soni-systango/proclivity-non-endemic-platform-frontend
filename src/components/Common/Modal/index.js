@@ -3,9 +3,8 @@ import { Modal as BootstrapModal } from 'react-bootstrap';
 import Button from '../Button';
 import './style.scss'
 
-const Modal = ({ primaryBtnText, secondaryBtnText, show, onHide, modalHeading, children, onPrimaryBtnClick, onSecondaryBtnClick }) => {
+const Modal = ({ primaryBtnText, secondaryBtnText, show, variant, onHide, modalHeading, children, onPrimaryBtnClick, onSecondaryBtnClick }) => {
 
-  console.log(show, "PROPS RECIEVed");
   return (
     <>
       <BootstrapModal show={show} onHide={onHide}>
@@ -17,7 +16,7 @@ const Modal = ({ primaryBtnText, secondaryBtnText, show, onHide, modalHeading, c
         </BootstrapModal.Body>
         <BootstrapModal.Footer>
           {primaryBtnText && <Button variant="secondary" onClick={onPrimaryBtnClick} text={primaryBtnText} />}
-          {secondaryBtnText && <Button variant="danger" onClick={onSecondaryBtnClick} text={secondaryBtnText} />}
+          {secondaryBtnText && <Button variant={variant} onClick={onSecondaryBtnClick} text={secondaryBtnText} />}
         </BootstrapModal.Footer>
       </BootstrapModal>
     </>

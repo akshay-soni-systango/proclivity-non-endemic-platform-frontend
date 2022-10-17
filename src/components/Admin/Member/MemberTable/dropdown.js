@@ -14,8 +14,7 @@ const DropdownMenu = ({ row }) => {
     const dispatch = useDispatch()
     const status = row.values.memberStatus;
     const history = useHistory()
-    const handleClick = (e, row) => {
-        // console.log(row , "EDIT BUTTON CLICKED");
+    const handleClick = () => {
         history.push('/edit')
     }
     const manageStatus = (e, row) => {
@@ -49,7 +48,7 @@ const DropdownMenu = ({ row }) => {
     return (
         <div>
             <DropdownButton id="dropdown-basic-button" className='view-more-btn' title={<Menu />}>
-                <Dropdown.Item onClick={(e) => handleClick(e, row)}><p><span>{<Edit />}</span>Edit</p></Dropdown.Item>
+                <Dropdown.Item onClick={handleClick}><p><span>{<Edit />}</span>Edit</p></Dropdown.Item>
                 <Dropdown.Item onClick={(e) => manageStatus(e, row)}>
                     <p> {status === 'Active' ?
                         <>
@@ -60,7 +59,7 @@ const DropdownMenu = ({ row }) => {
                         :
                         <>
                             <span>
-                                {<Deactivate />}
+                                {<Active />}
                             </span>Active
                         </>}
                     </p>

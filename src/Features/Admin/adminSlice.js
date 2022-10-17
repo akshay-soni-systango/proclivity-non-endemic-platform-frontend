@@ -30,7 +30,6 @@ const adminSlice = createSlice({
             state.toggleStatusModal = payload
         },
         setStatusModalState: (state, { payload }) => {
-            console.log(payload , "DATA IN PAYLOAD");
             state.statusModalState = payload
         }
 

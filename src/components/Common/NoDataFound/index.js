@@ -9,7 +9,7 @@ const NoDataFound = () => {
             <img src={NoData} alt="No data" />
             <div className='under-construction-text mt-2'>
                 <Heading level={4}>No data found</Heading>
-                <Heading className="light-title" level={6}>Man day data is empty or try adjustion your filter.</Heading>
+                <Heading className="light-title" level={6}> Please try another filter....!</Heading>
             </div>
         </div>
     )

@@ -51,3 +51,14 @@
 .btn-danger {
     background-color: $danger;
 }
+
+.btn-info {
+    background-color: $blue-600;
+    color: $white;
+    &:hover,
+    &:focus{
+        background-color: $blue-600;
+    color: $white;
+    }
+
+}
