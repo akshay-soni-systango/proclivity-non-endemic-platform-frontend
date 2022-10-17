@@ -17,7 +17,7 @@
     width: 100%;
     background-color: $white;
     box-shadow: 0 -1px 2px rgb(16 24 40 / 10%), 0 -1px 2px rgb(16 24 40 / 6%) ;
-    border-radius: 8px 80px 0px 0px; 
+    border-radius: 8px 8px 0px 0px; 
     border-collapse: collapse; 
 
     thead {
@@ -72,7 +72,7 @@
         }
 
         &:last-child {
-          border-radius: 0 0 0px 0px;
+          border-radius: 0 0 8px 8px;
 
           td {
             &:first-child {
