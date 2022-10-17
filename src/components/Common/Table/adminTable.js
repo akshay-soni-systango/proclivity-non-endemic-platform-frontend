@@ -27,13 +27,9 @@ const Table = ({ tableData, tableColumn, fetchMoreData }) => {
         next={fetchMoreData}
         hasMore={rows.length > 6 ? true : false}
         scrollableTarget="scrollableDiv"
-        loader={
-          <h4 className="mt-2 d-flex justify-content-center align-items-center">
-            Loading...
-          </h4>
-        }
+        loader={<h4 className='mt-2 d-flex justify-content-center align-items-center scroll-header-fix'>Loading...</h4>}
       >
-        <table {...getTableProps()}>
+        <table {...getTableProps()} className="tableFixHead">
           <thead>
             {headerGroups.map((headerGroup, index) => (
               <tr key={index} {...headerGroup.getHeaderGroupProps()}>
